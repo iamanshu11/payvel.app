@@ -23,7 +23,7 @@ export default function Header() {
       <nav className="container mx-auto flex items-center justify-between py-6 px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-4  text-3xl font-bold">
-          <img src="/img/web-logo.png" alt="Payvel Logo" />
+          <img src="/img/web-logo.png" alt="Payvel Logo" width={100} height={100} />
         </Link>
 
         {/* Desktop Nav */}

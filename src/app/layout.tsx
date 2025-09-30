@@ -7,9 +7,9 @@ import ThemeToggle from "@/components/layout/ThemeToggle";
 import Script from "next/script"; 
 
 export const metadata: Metadata = {
-  title: "Dummy",
+  title: "Payvel - Send Money Globally",
   description:
-    "Dummy is a money app for testing payments. It allows you to create a virtual card and make payments without using real money.",
+    "Payvel is a money app for testing payments. It allows you to create a virtual card and make payments without using real money.",
   // icons: {
   //   icon: "/fav.svg",
   //   shortcut: "/fav.svg",
@@ -17,17 +17,17 @@ export const metadata: Metadata = {
   // },
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Dummy",
+    title: "Payvel - Send Money Globally",
     description:
-      "Dummy is a money app for testing payments. It allows you to create a virtual card and make payments without using real money.",
+      "Payvel is a money app for testing payments. It allows you to create a virtual card and make payments without using real money.",
     url: "#",
-    siteName: "Dummy",
+    siteName: "Payvel",
     images: [
       {
-        url: "https://www.dummy.com/fav.svg",
+        url: "#",
         width: 1200,
         height: 630,
-        alt: "Dummy - Money Transfer App",
+        alt: "Payvel - Money Transfer App",
       },
     ],
     type: "website",
@@ -58,50 +58,6 @@ export default function RootLayout({
             `,
           }}
         />
-
-        {/* ✅ Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5D3TDDJ1M"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-Y5D3TDDJ1M');
-            `,
-          }}
-        />
-
-        {/* ✅ HubSpot Embed Code */}
-        <script
-          type="text/javascript"
-          id="hs-script-loader"
-          async
-          defer
-          src="//js-na2.hs-scripts.com/243753600.js"
-        ></script>
-
-        {/* ✅ Leadfeeder script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(ss,ex){
-                window.ldfdr=window.ldfdr||function(){
-                  (ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));
-                };
-                (function(d,s){
-                  fs=d.getElementsByTagName(s)[0];
-                  function ce(src){
-                    var cs=d.createElement(s);
-                    cs.src=src; cs.async=1;
-                    fs.parentNode.insertBefore(cs,fs);
-                  };
-                  ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');
-                })(document,'script');
-              })('DzLR5a5NqxA8BoQ2');
-            `,
-          }}
-        />
       </head>
       <body>
         <ThemeProvider>
@@ -119,16 +75,6 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
 
-        {/* ✅ Microsoft Clarity script */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "t1vyo36qbd");
-          `}
-        </Script>
       </body>
     </html>
   );
