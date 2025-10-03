@@ -24,12 +24,12 @@ export default function Footer() {
   const sections = [
     {
       title: "Product",
-      color: "blue",
+      color: "cyan",
       links: ["Home", "About", "Features", "Pricing"],
     },
     {
       title: "Company",
-      color: "purple",
+      color: "cyan",
       links: ["Services", "Careers", "Partners", "Contact"],
     },
     {
@@ -63,7 +63,7 @@ export default function Footer() {
         <div className="absolute inset-0 bg-grid-pattern animate-gridMove"></div>
       </div>
 
-      <div className="relative container mx-auto px-6 py-16">
+      <div className="relative container mx-auto px-4 md:px-12 lg:px-16 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           {/* Brand Section */}

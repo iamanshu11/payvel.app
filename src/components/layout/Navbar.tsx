@@ -5,12 +5,10 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/layout/ThemeToggle";
-import RequestDemoPopup from "@/components/ui/RequestDemoPopup";
 
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showForm, setShowForm] = useState(false);
   const pathname = usePathname();
 
   const getLinkClass = (path: string) =>
@@ -20,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-black text-gray-800 dark:text-gray-200 transition-colors z-50">
-      <nav className="container mx-auto flex items-center justify-between py-6 px-6">
+      <nav className="container mx-auto flex items-center justify-between py-6 px-4 md:px-6 lg:px-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-4  text-3xl font-bold">
           <img src="/img/web-logo.png" alt="Payvel Logo" width={100} height={100} />

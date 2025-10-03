@@ -38,7 +38,7 @@ export default function NoFeesSection() {
     return (
         <section className="relative py-2 lg:py-16 bg-white dark:bg-black text-gray-900 dark:text-gray-100 overflow-hidden">
             {/* Animated Background Blobs */}
-            <div className="container  mx-auto px-6 lg:px-12 relative z-10">
+            <div className="container  mx-auto px-6 lg:px-16 relative z-10">
                 <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-black rounded-2xl px-2 lg:px-8 py-6 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
                     {/* Left Content */}
                     <div className="w-full lg:w-1/2 text-center lg:text-left">

@@ -40,7 +40,7 @@ export default function DirectLineHome() {
 
   return (
     <div className=" bg-white dark:bg-black text-gray-900 dark:text-gray-100 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl container mx-auto px-4 md:px-12 lg:px-16">
         {/* Header */}
         <div className="text-center mb-16 animate-slideDown">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
