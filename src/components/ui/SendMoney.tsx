@@ -131,9 +131,9 @@ const SendMoney = () => {
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center gap-2">
-            <span className="text-sm text-white/60 dark:text-gray-400/60">Scroll to Send Money</span>
-            <div className="w-6 h-10 border-2 border-white/30 dark:border-gray-400/30 rounded-full flex justify-center p-1">
-              <div className="w-1 h-2 bg-white/60 dark:bg-gray-400/60 rounded-full animate-pulse"></div>
+            <span className="text-sm text-gray-500 dark:text-gray-400/60">Scroll to Send Money</span>
+            <div className="w-6 h-10 border-2 border-gray-300 dark:border-gray-400/30 rounded-full flex justify-center p-1">
+              <div className="w-1 h-2 bg-gray-300 dark:bg-gray-400/60 rounded-full animate-pulse"></div>
             </div>
           </div>
         </div>
