@@ -69,13 +69,13 @@ const SendMoney = () => {
       >
         {/* Floating Badge */}
         <div className="mb-8 animate-bounce">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 dark:border-gray-700/20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 dark:bg-gray-900/7 border border-gray-200/50 dark:border-gray-700/50  backdrop-blur-xl rounded-full ">
             <Sparkles size={16} className="text-yellow-400" />
-            <span className="text-sm text-white font-medium">Trusted by 1M+ users worldwide</span>
+            <span className="text-sm dark:text-white text-gray-900font-medium">Trusted by 1M+ users worldwide</span>
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white text-center mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white text-center mb-6 leading-tight">
           Send Money with
           <br />
           <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
@@ -83,7 +83,7 @@ const SendMoney = () => {
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-300 dark:text-gray-400 text-center mb-12 max-w-3xl font-light">
+        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 text-center mb-12 max-w-3xl ">
           The platform you love. Zero fees. Instant transfers. Global reach.
         </p>
 
@@ -94,11 +94,11 @@ const SendMoney = () => {
             return (
               <div 
                 key={index}
-                className="flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 dark:border-gray-700/10 hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-2 px-6 py-3  backdrop-blur-xl rounded-full bg-white/70 dark:bg-gray-900/7  hover:bg-white/10 dark:hover:bg-white/5 border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <Icon size={20} className="text-teal-400" />
-                <span className="text-white font-medium">{feature.title}</span>
+                <span className="dark:text-white text-gray-900 font-medium">{feature.title}</span>
               </div>
             );
           })}
