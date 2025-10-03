@@ -247,200 +247,198 @@ export default function HomeHero() {
               </div>
             </div>
 
-             {/* Phone Mockup Section */}
-          <div className="w-full lg:w-1/2 hidden  lg:flex justify-center relative">
+            {/* Phone Mockup Section */}
+            <div className="w-full lg:w-1/2 hidden  lg:flex justify-center relative">
 
-            {/* Phone Mockup */}
-            <div 
-              className="phone-mockup relative w-80 h-[600px] cursor-pointer"
-              style={{
-                transform: 'perspective(1000px) rotateY(0deg)',
-                transition: 'transform 0.3s ease-out'
-              }}
-              onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -10;
-                const rotateY = ((x - centerX) / centerX) * 10;
-                e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-              }}
-            >
-              
-              {/* Phone Frame */}
-              <div className="absolute inset-0 bg-white dark:bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-800 overflow-hidden">
-                {/* Reflection Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
-              </div>
+              {/* Phone Mockup */}
+              <div
+                className="phone-mockup relative w-80 h-[600px] cursor-pointer"
+                style={{
+                  transform: 'perspective(1000px) rotateY(0deg)',
+                  transition: 'transform 0.3s ease-out'
+                }}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  const centerX = rect.width / 2;
+                  const centerY = rect.height / 2;
+                  const rotateX = ((y - centerY) / centerY) * -10;
+                  const rotateY = ((x - centerX) / centerX) * 10;
+                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                }}
+              >
 
-              {/* Notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-20">
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-gray-700 rounded-full"></div>
-              </div>
-
-              {/* Screen */}
-              <div className="absolute inset-4 bg-white dark:bg-gradient-to-br from-gray-950 via-gray-900 to-black dark:from-black dark:via-gray-950 dark:to-gray-900 rounded-[2.5rem] overflow-hidden">
-                {/* Status Bar */}
-                <div className="flex items-center justify-between px-6 pt-4 pb-1 
-                ">
-  <span className="text-sm font-semibold text-gray-900 dark:text-white">
-    {currentTime}
-  </span>
-
-  <div className="flex items-center gap-1">
-    {/* Bar chart icon */}
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-4 h-4 text-gray-900 dark:text-white"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path d="M2 22h2v-4H2v4zm4 0h2v-7H6v7zm4 0h2v-10h-2v10zm4 0h2V8h-2v14zm4 0h2V4h-2v18zm4-18v18h2V4h-2z" />
-    </svg>
-
-    {/* Monitor icon */}
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-8 h-4 text-green-500 dark:text-green-400"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path d="M16 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm4 6h-1v4h1v-4z" />
-    </svg>
-  </div>
-</div>
-
-
-                {/* App Logo with Pulse */}
-                <div className="flex flex-col items-center mt-6">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-3xl blur-2xl opacity-60 animate-pulse"></div>
-                    <div 
-                      className="relative w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-3xl flex items-center justify-center shadow-2xl transform transition-transform hover:scale-110 hover:rotate-6 cursor-pointer"
-                      onClick={() => {
-                        const logo = document.querySelector('.app-logo');
-                        logo?.classList.add('animate-spin');
-                        setTimeout(() => logo?.classList.remove('animate-spin'), 1000);
-                      }}
-                    >
-                      <img src="/img/logo.png" alt="Payvel Logo" width={50} height={40} className="app-logo" />
-                    </div>
-                  </div>
+                {/* Phone Frame */}
+                <div className="absolute inset-0 bg-white dark:bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-800 overflow-hidden">
+                  {/* Reflection Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
                 </div>
 
-                {/* Interactive Carousel */}
-                <div
-                  className="relative mx-6 mt-6 h-72 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10"
-                  onMouseEnter={() => setIsPaused(true)}
-                  onMouseLeave={() => setIsPaused(false)}
-                >
-                  {slides.map((slide, index) => (
-                    <div
-                      key={index}
-                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                        index === currentSlide
-                          ? "opacity-100 translate-x-0 scale-100"
-                          : index < currentSlide
-                            ? "opacity-0 -translate-x-full scale-95"
-                            : "opacity-0 translate-x-full scale-95"
-                      }`}
-                    >
-                      <div className={`relative w-full h-full bg-gradient-to-br ${slide.gradient} p-6 flex flex-col items-center justify-center text-white overflow-hidden`}>
-                        {/* Animated Background */}
-                        <div className="absolute inset-0 opacity-20">
-                          {[...Array(20)].map((_, i) => (
-                            <div
-                              key={i}
-                              className="absolute rounded-full bg-white"
-                              style={{
-                                width: Math.random() * 100 + 50 + 'px',
-                                height: Math.random() * 100 + 50 + 'px',
-                                top: Math.random() * 100 + '%',
-                                left: Math.random() * 100 + '%',
-                                animation: `float ${Math.random() * 10 + 5}s infinite ease-in-out`,
-                                animationDelay: `${Math.random() * 5}s`
-                              }}
-                            />
-                          ))}
-                        </div>
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-20">
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-gray-700 rounded-full"></div>
+                </div>
 
-                        {/* Icon with interaction */}
-                        <div 
-                          className="relative text-7xl mb-4 transform transition-all duration-300 hover:scale-125 hover:rotate-12 cursor-pointer z-10"
-                          onClick={() => {
-                            const icon = document.querySelector(`#icon-${index}`);
-                            icon?.classList.add('animate-bounce');
-                            setTimeout(() => icon?.classList.remove('animate-bounce'), 1000);
-                          }}
-                          id={`icon-${index}`}
-                        >
-                          {slide.icon}
-                        </div>
-                        
-                        <h3 className="relative text-3xl font-black mb-2 z-10 animate-pulse">{slide.title}</h3>
-                        <p className="relative text-lg opacity-90 z-10">{slide.subtitle}</p>
+                {/* Screen */}
+                <div className="absolute inset-4 bg-white dark:bg-gradient-to-br from-gray-950 via-gray-900 to-black dark:from-black dark:via-gray-950 dark:to-gray-900 rounded-[2.5rem] overflow-hidden">
+                  {/* Status Bar */}
+                  <div className="flex items-center justify-between px-6 pt-4 pb-1 
+                ">
+                    <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                      {currentTime}
+                    </span>
 
-                        {/* Particles */}
-                        <div className="absolute inset-0 pointer-events-none">
-                          {[...Array(15)].map((_, i) => (
-                            <div
-                              key={i}
-                              className="absolute w-1 h-1 bg-white rounded-full animate-ping"
-                              style={{
-                                top: Math.random() * 100 + '%',
-                                left: Math.random() * 100 + '%',
-                                animationDelay: `${Math.random() * 2}s`,
-                                animationDuration: `${Math.random() * 2 + 1}s`
-                              }}
-                            />
-                          ))}
-                        </div>
+                    <div className="flex items-center gap-1">
+                      {/* Bar chart icon */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 h-4 text-gray-900 dark:text-white"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M2 22h2v-4H2v4zm4 0h2v-7H6v7zm4 0h2v-10h-2v10zm4 0h2V8h-2v14zm4 0h2V4h-2v18zm4-18v18h2V4h-2z" />
+                      </svg>
+
+                      {/* Monitor icon */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-8 h-4 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M16 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm4 6h-1v4h1v-4z" />
+                      </svg>
+                    </div>
+                  </div>
+
+
+                  {/* App Logo with Pulse */}
+                  <div className="flex flex-col items-center mt-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-3xl blur-2xl opacity-60 animate-pulse"></div>
+                      <div
+                        className="relative w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-3xl flex items-center justify-center shadow-2xl transform transition-transform hover:scale-110 hover:rotate-6 cursor-pointer"
+                        onClick={() => {
+                          const logo = document.querySelector('.app-logo');
+                          logo?.classList.add('animate-spin');
+                          setTimeout(() => logo?.classList.remove('animate-spin'), 1000);
+                        }}
+                      >
+                        <img src="/img/logo.png" alt="Payvel Logo" width={50} height={40} className="app-logo" />
                       </div>
                     </div>
-                  ))}
+                  </div>
 
-                  {/* Interactive Slide Indicators */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                    {slides.map((_, index) => (
-                      <button
+                  {/* Interactive Carousel */}
+                  <div
+                    className="relative mx-6 mt-6 h-72 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                  >
+                    {slides.map((slide, index) => (
+                      <div
                         key={index}
-                        onClick={() => setCurrentSlide(index)}
-                        className={`h-2 rounded-full transition-all duration-300 transform hover:scale-125 ${
-                          index === currentSlide
-                            ? "bg-white w-8 shadow-lg shadow-white/50"
-                            : "bg-white/50 w-2 hover:bg-white/75"
-                        }`}
-                      />
+                        className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentSlide
+                            ? "opacity-100 translate-x-0 scale-100"
+                            : index < currentSlide
+                              ? "opacity-0 -translate-x-full scale-95"
+                              : "opacity-0 translate-x-full scale-95"
+                          }`}
+                      >
+                        <div className={`relative w-full h-full bg-gradient-to-br ${slide.gradient} p-6 flex flex-col items-center justify-center text-white overflow-hidden`}>
+                          {/* Animated Background */}
+                          <div className="absolute inset-0 opacity-20">
+                            {[...Array(20)].map((_, i) => (
+                              <div
+                                key={i}
+                                className="absolute rounded-full bg-white"
+                                style={{
+                                  width: Math.random() * 100 + 50 + 'px',
+                                  height: Math.random() * 100 + 50 + 'px',
+                                  top: Math.random() * 100 + '%',
+                                  left: Math.random() * 100 + '%',
+                                  animation: `float ${Math.random() * 10 + 5}s infinite ease-in-out`,
+                                  animationDelay: `${Math.random() * 5}s`
+                                }}
+                              />
+                            ))}
+                          </div>
+
+                          {/* Icon with interaction */}
+                          <div
+                            className="relative text-7xl mb-4 transform transition-all duration-300 hover:scale-125 hover:rotate-12 cursor-pointer z-10"
+                            onClick={() => {
+                              const icon = document.querySelector(`#icon-${index}`);
+                              icon?.classList.add('animate-bounce');
+                              setTimeout(() => icon?.classList.remove('animate-bounce'), 1000);
+                            }}
+                            id={`icon-${index}`}
+                          >
+                            {slide.icon}
+                          </div>
+
+                          <h3 className="relative text-3xl font-black mb-2 z-10 animate-pulse">{slide.title}</h3>
+                          <p className="relative text-lg opacity-90 z-10">{slide.subtitle}</p>
+
+                          {/* Particles */}
+                          <div className="absolute inset-0 pointer-events-none">
+                            {[...Array(15)].map((_, i) => (
+                              <div
+                                key={i}
+                                className="absolute w-1 h-1 bg-white rounded-full animate-ping"
+                                style={{
+                                  top: Math.random() * 100 + '%',
+                                  left: Math.random() * 100 + '%',
+                                  animationDelay: `${Math.random() * 2}s`,
+                                  animationDuration: `${Math.random() * 2 + 1}s`
+                                }}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     ))}
+
+                    {/* Interactive Slide Indicators */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                      {slides.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentSlide(index)}
+                          className={`h-2 rounded-full transition-all duration-300 transform hover:scale-125 ${index === currentSlide
+                              ? "bg-white w-8 shadow-lg shadow-white/50"
+                              : "bg-white/50 w-2 hover:bg-white/75"
+                            }`}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Swipe indicators */}
+                    <div className="absolute left-2 top-1/2 -translate-y-1/2 text-white/30 animate-pulse">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </div>
+                    <div className="absolute right-2 top-1/2 -translate-y-1/2 text-white/30 animate-pulse">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
 
-                  {/* Swipe indicators */}
-                  <div className="absolute left-2 top-1/2 -translate-y-1/2 text-white/30 animate-pulse">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </div>
-                  <div className="absolute right-2 top-1/2 -translate-y-1/2 text-white/30 animate-pulse">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                  {/* Bottom Text with Animation */}
+                  <p className="text-center text-xs text-gray-400 mt-4 px-6 animate-pulse">
+                    Made with <span className="text-red-500 animate-ping inline-block">❤️</span> by Payvel
+                  </p>
                 </div>
 
-                {/* Bottom Text with Animation */}
-                <p className="text-center text-xs text-gray-400 mt-4 px-6 animate-pulse">
-                  Made with <span className="text-red-500 animate-ping inline-block">❤️</span> by Payvel
-                </p>
+                {/* Home Indicator */}
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full backdrop-blur-sm"></div>
               </div>
-
-              {/* Home Indicator */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full backdrop-blur-sm"></div>
-            </div>
             </div>
           </div>
         </div>

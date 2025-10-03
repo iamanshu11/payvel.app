@@ -43,7 +43,6 @@ export default function Header() {
         {/* Desktop Button */}
         <div className="hidden md:block">
           <button
-            onClick={() => setShowForm(true)}
             className="px-4 py-3 rounded-md bg-teal-500 text-white font-medium shadow-md hover:opacity-90 transition"
           >
             Send Money

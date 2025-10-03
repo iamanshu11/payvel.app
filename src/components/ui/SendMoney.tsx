@@ -7,7 +7,6 @@ import { Sparkles, Shield, Zap, Globe, ArrowRight, Star } from 'lucide-react';
 import Calculator from './Calculator';
 
 
-
 const SendMoney = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -37,7 +36,6 @@ const SendMoney = () => {
 
   const heroOpacity = 1 - scrollProgress;
   const heroScale = 1 - (scrollProgress * 0.2);
-  const calculatorTransform = 100 - (scrollProgress * 100);
 
   const features = [
     { icon: Zap, title: 'Instant Transfers', desc: 'Money arrives in seconds' },
@@ -46,33 +44,10 @@ const SendMoney = () => {
   ];
 
   return (
-    <div className="min-h-[200vh] bg-gradient-to-br from-indigo-950 via-purple-900 to-pink-900 dark:from-gray-950 dark:via-purple-950 dark:to-gray-950 relative overflow-hidden">
+    <div className="min-h-[160vh] bg-white dark:bg-black text-gray-900 dark:text-gray-100 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {/* Gradient Orbs */}
-        <div 
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-20 animate-pulse"
-          style={{ 
-            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-            transition: 'transform 0.3s ease-out'
-          }}
-        ></div>
-        <div 
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500 rounded-full filter blur-3xl opacity-20 animate-pulse"
-          style={{ 
-            transform: `translate(${-mousePosition.x}px, ${-mousePosition.y}px)`,
-            transition: 'transform 0.3s ease-out',
-            animationDelay: '1s'
-          }}
-        ></div>
-        <div 
-          className="absolute top-1/2 left-1/2 w-96 h-96 bg-teal-500 rounded-full filter blur-3xl opacity-20 animate-pulse"
-          style={{ 
-            transform: `translate(${mousePosition.y}px, ${mousePosition.x}px)`,
-            transition: 'transform 0.3s ease-out',
-            animationDelay: '2s'
-          }}
-        ></div>
+        
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" 
@@ -94,7 +69,7 @@ const SendMoney = () => {
       >
         {/* Floating Badge */}
         <div className="mb-8 animate-bounce">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 dark:border-gray-700/20">
             <Sparkles size={16} className="text-yellow-400" />
             <span className="text-sm text-white font-medium">Trusted by 1M+ users worldwide</span>
           </div>
@@ -108,7 +83,7 @@ const SendMoney = () => {
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-300 text-center mb-12 max-w-3xl font-light">
+        <p className="text-xl md:text-2xl text-gray-300 dark:text-gray-400 text-center mb-12 max-w-3xl font-light">
           The platform you love. Zero fees. Instant transfers. Global reach.
         </p>
 
@@ -119,7 +94,7 @@ const SendMoney = () => {
             return (
               <div 
                 key={index}
-                className="flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 dark:border-gray-700/10 hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <Icon size={20} className="text-teal-400" />
@@ -156,31 +131,22 @@ const SendMoney = () => {
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center gap-2">
-            <span className="text-sm text-white/60">Scroll to Send Money</span>
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-              <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
+            <span className="text-sm text-white/60 dark:text-gray-400/60">Scroll to Send Money</span>
+            <div className="w-6 h-10 border-2 border-white/30 dark:border-gray-400/30 rounded-full flex justify-center p-1">
+              <div className="w-1 h-2 bg-white/60 dark:bg-gray-400/60 rounded-full animate-pulse"></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Calculator Section */}
-      <div 
-        className="fixed bottom-0 left-0 w-full px-6 pb-12 pointer-events-auto"
-        style={{
-          transform: `translateY(${calculatorTransform}%)`,
-          transition: 'transform 0.2s ease-out'
-        }}
-      >
+      <div className="relative w-full px-6 pb-12 pointer-events-auto pt-[100vh]">
         <div className="relative">
           {/* Glow Effect */}
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 to-transparent blur-3xl"></div>
           <Calculator />
         </div>
       </div>
-
-      {/* Spacer for scroll */}
-      <div className="h-screen"></div>
 
       <style jsx>{`
         @keyframes float {
