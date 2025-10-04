@@ -42,11 +42,11 @@ export default function Header() {
 
         {/* Desktop Button */}
         <div className="hidden md:block">
-          <button
+          <a href="/send-money" target="_blank" rel="noopener noreferrer"
             className="px-4 py-3 rounded-md bg-teal-500 text-white font-medium shadow-md hover:opacity-90 transition"
           >
             Send Money
-          </button>
+          </a>
         </div>
 
         {/* Mobile Controls */}
@@ -99,11 +99,11 @@ export default function Header() {
             </Link> */}
 
             {/* Button */}
-            <button
+            <a href="/send-money" target="_blank" rel="noopener noreferrer"
               className="px-4 py-2 rounded-md bg-teal-500 text-whit font-medium shadow-md hover:opacity-90 transition"
             >
               Send Money
-            </button>
+            </a>
 
             {/* Theme Toggle */}
             <div className="mt-4">

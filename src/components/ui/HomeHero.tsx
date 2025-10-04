@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 
 export default function HomeHero() {
@@ -32,6 +32,7 @@ export default function HomeHero() {
     }
   }, [isPaused]);
 
+  // GSAP Animations
   useEffect(() => {
     if (heroRef.current) {
       const ctx = gsap.context(() => {
@@ -114,6 +115,22 @@ export default function HomeHero() {
     },
   ];
 
+  // Persistent random positions for slide backgrounds
+  const slideBubbles = useMemo(
+    () =>
+      slides.map(() =>
+        Array.from({ length: 20 }, () => ({
+          width: `${Math.random() * 100 + 50}px`,
+          height: `${Math.random() * 100 + 50}px`,
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          duration: `${Math.random() * 10 + 5}s`,
+          delay: `${Math.random() * 5}s`,
+        }))
+      ),
+    []
+  );
+
   return (
     <section
       ref={heroRef}
@@ -127,7 +144,10 @@ export default function HomeHero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           {/* Text Section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
-            <p className="bg-red-400 max-w-fit p-2 rounded-full px-6 text-white mb-4">AUSTRAC Registered</p>
+            <p className="bg-red-400 max-w-fit text-center lg:text-left lg:mx-0 mx-auto p-2 rounded-full px-6 text-white mb-4">
+  AUSTRAC Registered
+</p>
+
             <h1 className="hero-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
               <span className="relative">
                 <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-teal-500 to-cyan-400 opacity-40 -z-10"></span>
@@ -141,47 +161,48 @@ export default function HomeHero() {
               <a href="/send-money" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                 Send Money
               </a>
-              {/* <a href="" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all">
-                Learn More
-              </a> */}
             </div>
           </div>
 
-          {/* Phone Mockup Section */}
-          <div className="w-full lg:w-1/2 hidden  lg:flex justify-center relative">
+           {/* Phone Mockup Section */}
+          <div className="w-full lg:w-1/2 hidden lg:flex justify-center relative">
             {/* Floating Cards */}
-      <div 
-        data-aos="fade-right"
-        data-aos-delay="800"
-        className="floating-card z-10 absolute top-20 left-0 lg:left-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block"
-      >
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
-            <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <p className="font-bold text-gray-900 dark:text-gray-100">$250 to Kel</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">Arrived safely</p>
-          </div>
-        </div>
-        <p className="text-xs text-green-600 dark:text-green-400 flex items-center gap-1">
-          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-          </svg>
-          Just a moment ago
-        </p>
-      </div>
+            <div className="floating-card z-10 absolute top-20 left-0 lg:left-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+  <Image
+    src="/img/person/img-1.webp"
+    alt="Avatar"
+    width={32}  // match your Tailwind w-8
+    height={24} // match your Tailwind h-6
+    className="object-cover rounded"
+  />
+</div>
+                <div className="flex-1">
+                  <p className="font-bold text-gray-900 dark:text-gray-100">$250 to Kel</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Arrived safely</p>
+                </div>
+              </div>
+              <p className="text-xs text-green-600 dark:text-green-400 flex items-center gap-1">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                </svg>
+                Just a moment ago
+              </p>
+            </div>
 
       <div 
-        data-aos="fade-left"
-        data-aos-delay="900"
         className="floating-card z-10 absolute top-16 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
       >
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center">
-            <span className="text-xl">❤️</span>
+            <Image
+    src="/img/person/img-6.webp"
+    alt="Avatar"
+    width={32}  // match your Tailwind w-8
+    height={24} // match your Tailwind h-6
+    className="object-cover rounded"
+  />
           </div>
           <div className="flex-1">
             <p className="font-bold text-gray-900 dark:text-gray-100">$500 to Mom</p>
@@ -197,15 +218,17 @@ export default function HomeHero() {
       </div>
 
       <div 
-        data-aos="fade-right"
-        data-aos-delay="1000"
         className="floating-card z-10 absolute bottom-20 left-0 lg:left-5 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block"
       >
         <div className="flex items-start gap-2 mb-3">
           <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0">
-            <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
+            <Image
+    src="/img/person/img-2.webp"
+    alt="Avatar"
+    width={32}  // match your Tailwind w-8
+    height={24} // match your Tailwind h-6
+    className="object-cover rounded"
+  />
           </div>
           <div className="flex-1">
             <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">Sarah says:</p>
@@ -216,8 +239,6 @@ export default function HomeHero() {
       </div>
 
       <div 
-        data-aos="fade-left"
-        data-aos-delay="1100"
         className="floating-card z-10 absolute bottom-0 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
       >
         <div className="flex items-center gap-2 mb-3">
@@ -227,10 +248,35 @@ export default function HomeHero() {
           <p className="font-bold text-gray-900 dark:text-gray-100">Your Loved Ones</p>
         </div>
         <div className="flex -space-x-2 mb-3">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white dark:border-gray-800"></div>
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-white dark:border-gray-800"></div>
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white dark:border-gray-800"></div>
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-xs text-white font-bold">+5</div>
+          <Image
+    src="/img/person/img-1.webp"
+    alt="Avatar"
+    width={32}  // match your Tailwind w-8
+    height={24} // match your Tailwind h-6
+    className="object-cover rounded"
+  />
+  <Image
+    src="/img/person/img-2.webp"
+    alt="Avatar"
+    width={32}  // match your Tailwind w-8
+    height={24} // match your Tailwind h-6
+    className="object-cover rounded"
+  />
+  <Image
+    src="/img/person/img-3.webp"
+    alt="Avatar"
+    width={32}  // match your Tailwind w-8
+    height={24} // match your Tailwind h-6
+    className="object-cover rounded"
+  />
+  <Image
+    src="/img/person/img-4.webp"
+    alt="Avatar"
+    width={32}  // match your Tailwind w-8
+    height={24} // match your Tailwind h-6
+    className="object-cover rounded"
+  />
+          
         </div>
         <button className="w-full text-xs text-blue-600 dark:text-blue-400 font-semibold hover:underline text-left">
           Send again or add someone new →
@@ -240,27 +286,27 @@ export default function HomeHero() {
             {/* Phone Mockup Section */}
             <div className="w-full lg:w-1/2 hidden  lg:flex justify-center relative">
 
-              {/* Phone Mockup */}
-              <div
-                className="phone-mockup relative w-80 h-[600px] cursor-pointer"
-                style={{
-                  transform: 'perspective(1000px) rotateY(0deg)',
-                  transition: 'transform 0.3s ease-out'
-                }}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
-                  const rotateX = ((y - centerY) / centerY) * -10;
-                  const rotateY = ((x - centerX) / centerX) * 10;
-                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-                }}
-              >
+               {/* Phone Mockup */}
+            <div
+              className="phone-mockup relative w-80 h-[600px] cursor-pointer"
+              style={{
+                transform: 'perspective(1000px) rotateY(0deg)',
+                transition: 'transform 0.3s ease-out'
+              }}
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -10;
+                const rotateY = ((x - centerX) / centerX) * 10;
+                e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+              }}
+            >
 
                 {/* Phone Frame */}
                 <div className="absolute inset-0 bg-white dark:bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-800 overflow-hidden">

@@ -68,13 +68,13 @@ const SendMoney = () => {
       >
         {/* Floating Badge */}
         <div className="mb-8 animate-bounce">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 dark:bg-gray-900/7 border border-gray-200/50 dark:border-gray-700/50  backdrop-blur-xl rounded-full ">
+          <div className="hidden lg:flex  items-center gap-2 px-4 py-2 bg-white/70 dark:bg-gray-900/7 border border-gray-200/50 dark:border-gray-700/50  backdrop-blur-xl rounded-full ">
             <Sparkles size={16} className="text-yellow-400" />
             <span className="text-sm dark:text-white text-gray-900font-medium">Trusted by 1M+ users worldwide</span>
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white text-center mb-6 leading-tight">
+        <h1 className="text-5xl mt-6 md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white text-center mb-6 leading-tight">
           Send Money with
           <br />
           <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
@@ -129,7 +129,7 @@ const SendMoney = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center gap-2">
+          <div className="hidden lg:flex  flex-col items-center gap-2">
             <span className="text-sm text-gray-500 dark:text-gray-400/60">Scroll to Send Money</span>
             <div className="w-6 h-10 border-2 border-gray-300 dark:border-gray-400/30 rounded-full flex justify-center p-1">
               <div className="w-1 h-2 bg-gray-300 dark:bg-gray-400/60 rounded-full animate-pulse"></div>

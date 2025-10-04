@@ -1,5 +1,7 @@
 import NoFeesSection from "@/components/ui/NoFeesSection";
+import SendApp from "@/components/ui/SendApp";
 import SendMoney from "@/components/ui/SendMoney";
+import TransferGuarantee from "@/components/ui/TransferGuarantee";
 import TrustedCustomers from "@/components/ui/TrustedCustomers";
 import type { Metadata } from "next";
 
@@ -15,6 +17,8 @@ export default function HomePage() {
     <>
      
       <SendMoney />
+      <TransferGuarantee />
+      <SendApp />
       <TrustedCustomers />
     
     </>

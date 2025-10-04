@@ -35,7 +35,7 @@ export default function ScrollingMarquee() {
     <section className="relative w-full bg-white dark:bg-black py-12 overflow-hidden">
       {/* header text wrapped in container */}
       <div className="container mx-auto px-4 text-center mb-8">
-        <p className="text-sm  font-bold tracking-widest text-gray-600 dark:text-white">
+        <p className="text-lg  font-bold tracking-widest text-gray-600 dark:text-white">
            Send Directly To
         </p>
       </div>
