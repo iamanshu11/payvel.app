@@ -7,6 +7,8 @@ import ComparisonSection from "@/components/ui/ComparisonSection";
 import NoFeesSection from "@/components/ui/NoFeesSection";
 import ChipperCashHero from "@/components/ui/ChipperCashHero";
 import DirectLineHome from "@/components/ui/DirectLineHome";
+import TrustedEverywhere from "@/components/ui/TrustedEverywhere";
+import AfriexHero from "@/components/ui/AfriexHero";
 
 export default function HomePage() {
   return (
@@ -15,6 +17,8 @@ export default function HomePage() {
       <NoFeesSection />
       <ScrollingMarquee />
       <DirectLineHome />
+      <AfriexHero />
+      <TrustedEverywhere />
       <ChipperCashHero />
       {/* <ComparisonSection />
       <GlobalReachSection />

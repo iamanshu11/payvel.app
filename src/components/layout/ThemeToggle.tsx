@@ -20,16 +20,16 @@ export default function ThemeToggle() {
 
   // Building skyline data
   const buildings = [
-    { height: 20, width: 12, windows: 4 },
-    { height: 30, width: 10, windows: 6 },
-    { height: 26, width: 10, windows: 5 },
-    { height: 32, width: 12, windows: 8 },
-    { height: 34, width: 10, windows: 6 },
-    { height: 38, width: 11, windows: 7 },
-    { height: 26, width: 10, windows: 4 },
-    { height: 32, width: 10, windows: 6 },
-    { height: 28, width: 10, windows: 5 },
-    { height: 20, width: 10, windows: 4 },
+    { height: 10, width: 10, windows: 4 },
+    { height: 20, width: 20, windows: 6 },
+    { height: 16, width: 10, windows: 5 },
+    { height: 22, width: 22, windows: 8 },
+    { height: 24, width: 10, windows: 6 },
+    { height: 28, width: 21, windows: 7 },
+    { height: 16, width: 10, windows: 4 },
+    { height: 22, width: 10, windows: 6 },
+    { height: 18, width: 10, windows: 5 },
+    { height: 10, width: 10, windows: 4 },
   ];
 
   // Star positions for night mode
@@ -56,8 +56,8 @@ export default function ThemeToggle() {
       onHoverEnd={() => setIsHovered(false)}
       className="relative overflow-hidden rounded-full focus:outline-none focus:ring-4 focus:ring-blue-500/30 shadow-lg hover:shadow-xl transition-shadow"
       style={{
-        width: "140px",
-        height: "50px",
+        width: "100px",
+        height: "40px",
       }}
       whileTap={{ scale: 0.98 }}
     >
@@ -126,9 +126,9 @@ export default function ThemeToggle() {
             >
               <div className="relative">
                 <div className="w-6 h-3 bg-white/90 rounded-full" />
-                <div className="absolute top-0 left-1.5 w-5 h-4 bg-white/90 rounded-full" />
-                <div className="absolute top-0 left-3 w-5 h-3 bg-white/90 rounded-full" />
-                <div className="absolute top-0.5 left-4.5 w-4 h-2 bg-white/90 rounded-full" />
+                <div className="absolute top-4 left-4 w-5 h-4 bg-white/90 rounded-full" />
+                <div className="absolute top-5 left-6 w-5 h-3 bg-white/90 rounded-full" />
+                <div className="absolute top-8 left-8 w-4 h-2 bg-white/90 rounded-full" />
               </div>
             </motion.div>
           ))
@@ -166,7 +166,7 @@ export default function ThemeToggle() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="absolute right-8 top-8"
+            className="absolute left-10 top-0"
           >
             <svg width="100" height="50" viewBox="0 0 100 50">
               <path
@@ -213,7 +213,7 @@ export default function ThemeToggle() {
       <motion.div
         className="absolute z-20"
         animate={{
-          left: isDark ? "65%" : "15%",
+          left: isDark ? "65%" : "20%",
           top: "20%",
         }}
         transition={{
@@ -237,7 +237,7 @@ export default function ThemeToggle() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative w-8 h-8 rounded-full bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 shadow-2xl"
+              className="relative w-6 h-6 rounded-full bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 shadow-2xl"
               style={{
                 boxShadow: "0 0 40px rgba(255, 255, 255, 0.5), inset -5px -5px 10px rgba(0, 0, 0, 0.1)",
               }}
@@ -259,7 +259,7 @@ export default function ThemeToggle() {
               className="relative"
             >
               <motion.div
-                className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400"
+                className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400"
                 style={{
                   boxShadow: "0 0 30px rgba(255, 200, 0, 0.8), 0 0 60px rgba(255, 200, 0, 0.4)",
                 }}

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: "Payvel - Send Money Globally",
   description:
     "Payvel is a money app for testing payments. It allows you to create a virtual card and make payments without using real money.",
-  // icons: {
-  //   icon: "/fav.svg",
-  //   shortcut: "/fav.svg",
-  //   apple: "/fav.svg",
-  // },
+  icons: {
+    icon: "/fav.svg",
+    shortcut: "/fav.svg",
+    apple: "/fav.svg",
+  },
   alternates: { canonical: "/" },
   openGraph: {
     title: "Payvel - Send Money Globally",

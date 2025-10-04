@@ -48,7 +48,6 @@ const SendMoney = () => {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         
-        
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" 
           style={{

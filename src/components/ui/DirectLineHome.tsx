@@ -44,10 +44,10 @@ export default function DirectLineHome() {
         {/* Header */}
         <div className="text-center mb-16 animate-slideDown">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Your Direct Line to Home
+            Closer to Home
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            From Melbourne to Mombasa, Sydney to Soweto, we're building bridges to the places and people you love.
+            Send fast, low-cost transfers to family and friends across Africa.
           </p>
         </div>
 
@@ -103,13 +103,6 @@ export default function DirectLineHome() {
             </button>
           </div>
         )}
-
-        {/* Footer Message */}
-        <div className="text-center mt-16 animate-fadeIn">
-          <p className="text-gray-700 dark:text-gray-300 text-lg">
-            And our family is always growing. More countries coming soon!
-          </p>
-        </div>
       </div>
 
       <style jsx>{`

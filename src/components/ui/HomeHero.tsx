@@ -127,6 +127,7 @@ export default function HomeHero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           {/* Text Section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
+            <p className="bg-red-400 max-w-fit p-2 rounded-full px-6 text-white mb-4">AUSTRAC Registered</p>
             <h1 className="hero-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
               <span className="relative">
                 <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-teal-500 to-cyan-400 opacity-40 -z-10"></span>
@@ -140,112 +141,101 @@ export default function HomeHero() {
               <a href="/send-money" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                 Send Money
               </a>
-              <a href="" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all">
+              {/* <a href="" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all">
                 Learn More
-              </a>
+              </a> */}
             </div>
           </div>
 
           {/* Phone Mockup Section */}
           <div className="w-full lg:w-1/2 hidden  lg:flex justify-center relative">
             {/* Floating Cards */}
-            <div className="floating-card z-10 absolute top-20 left-0 lg:left-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-48 border border-gray-200 dark:border-gray-700">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="relative overflow-hidden rounded-xl">
-                  <Image
-                    src="/img/person/img-4.webp"
-                    alt="The Old Way - Complex Multi-Vendor Setup"
-                    width={20}
-                    height={20}
-                    className="w-full h-auto object-contain "
-                  />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">Send Money</p>
-                  <p className="font-bold text-gray-900 dark:text-gray-100">1,000.00 AUD</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">🇦🇺</span>
-                <span className="text-gray-400">→</span>
-                <span className="text-2xl">🇳🇬</span>
-              </div>
-            </div>
+      <div 
+        data-aos="fade-right"
+        data-aos-delay="800"
+        className="floating-card z-10 absolute top-20 left-0 lg:left-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block"
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+            <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div className="flex-1">
+            <p className="font-bold text-gray-900 dark:text-gray-100">$250 to Kel</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">Arrived safely</p>
+          </div>
+        </div>
+        <p className="text-xs text-green-600 dark:text-green-400 flex items-center gap-1">
+          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+          </svg>
+          Just a moment ago
+        </p>
+      </div>
 
-            <div className="floating-card z-10 absolute top-16 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-40 border border-gray-200 dark:border-gray-700">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white text-xl">✓</div>
-                <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">KYC Status</p>
-                  <p className="font-bold text-green-500 text-sm">Verified</p>
-                </div>
-              </div>
-            </div>
+      <div 
+        data-aos="fade-left"
+        data-aos-delay="900"
+        className="floating-card z-10 absolute top-16 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
+      >
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-10 h-10 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center">
+            <span className="text-xl">❤️</span>
+          </div>
+          <div className="flex-1">
+            <p className="font-bold text-gray-900 dark:text-gray-100">$500 to Mom</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">With love</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2 mt-3 pt-2 border-t border-gray-200 dark:border-gray-700">
+          <svg className="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+          </svg>
+          <p className="text-xs text-gray-500 dark:text-gray-400">5 minutes ago</p>
+        </div>
+      </div>
 
-            <div className="floating-card z-10 absolute bottom-20 left-0 lg:left-5 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-44 border border-gray-200 dark:border-gray-700">
-              <div className="flex items-center gap-2">
-                <div className="relative overflow-hidden rounded-xl">
-                  <Image
-                    src="/img/person/img-1.webp"
-                    alt="The Old Way - Complex Multi-Vendor Setup"
-                    width={20}
-                    height={20}
-                    className="w-full h-auto object-contain "
-                  />
-                </div>
-                <div className="relative overflow-hidden rounded-xl">
-                  <Image
-                    src="/img/person/img-2.webp"
-                    alt="The Old Way - Complex Multi-Vendor Setup"
-                    width={20}
-                    height={20}
-                    className="w-full h-auto object-contain "
-                  />
-                </div>
-                <div className="relative overflow-hidden rounded-xl">
-                  <Image
-                    src="/img/person/img-3.webp"
-                    alt="The Old Way - Complex Multi-Vendor Setup"
-                    width={20}
-                    height={20}
-                    className="w-full h-auto object-contain "
-                  />
-                </div>
-                <div className="relative overflow-hidden rounded-xl">
-                  <Image
-                    src="/img/person/img-6.webp"
-                    alt="The Old Way - Complex Multi-Vendor Setup"
-                    width={20}
-                    height={20}
-                    className="w-full h-auto object-contain "
-                  />
-                </div>
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Recipients</p>
-              <p className="font-bold text-gray-900 dark:text-gray-100">Manage</p>
-            </div>
+      <div 
+        data-aos="fade-right"
+        data-aos-delay="1000"
+        className="floating-card z-10 absolute bottom-20 left-0 lg:left-5 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block"
+      >
+        <div className="flex items-start gap-2 mb-3">
+          <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <div className="flex-1">
+            <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">Sarah says:</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 italic">"Got it in minutes! Thanks 🎉"</p>
+          </div>
+        </div>
+        <p className="text-xs text-gray-500 dark:text-gray-400">2 mins ago</p>
+      </div>
 
-            <div className="floating-card z-10 absolute bottom-0 right-0 lg:right-16 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-48 border border-gray-200 dark:border-gray-700">
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Recent Transaction</p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <Image
-                      src="/img/person/img-4.webp"
-                      alt="The Old Way - Complex Multi-Vendor Setup"
-                      width={20}
-                      height={20}
-                      className="w-full h-auto object-contain "
-                    />
-                  </div>
-                  <div>
-                    <p className="font-bold text-xs text-gray-900 dark:text-gray-100">Family Support</p>
-                    <p className="text-xs mt-1 text-gray-500">2 mins ago</p>
-                  </div>
-                </div>
-                <p className="font-bold text-teal-500">$250</p>
-              </div>
-            </div>
+      <div 
+        data-aos="fade-left"
+        data-aos-delay="1100"
+        className="floating-card z-10 absolute bottom-0 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
+      >
+        <div className="flex items-center gap-2 mb-3">
+          <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <p className="font-bold text-gray-900 dark:text-gray-100">Your Loved Ones</p>
+        </div>
+        <div className="flex -space-x-2 mb-3">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white dark:border-gray-800"></div>
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-white dark:border-gray-800"></div>
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white dark:border-gray-800"></div>
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-white dark:border-gray-800 flex items-center justify-center text-xs text-white font-bold">+5</div>
+        </div>
+        <button className="w-full text-xs text-blue-600 dark:text-blue-400 font-semibold hover:underline text-left">
+          Send again or add someone new →
+        </button>
+      </div>
 
             {/* Phone Mockup Section */}
             <div className="w-full lg:w-1/2 hidden  lg:flex justify-center relative">
@@ -279,7 +269,7 @@ export default function HomeHero() {
                 </div>
 
                 {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-20">
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-35 h-7 bg-gray-900 rounded-b-3xl z-20">
                   <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-gray-700 rounded-full"></div>
                 </div>
 
@@ -343,10 +333,10 @@ export default function HomeHero() {
                       <div
                         key={index}
                         className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentSlide
-                            ? "opacity-100 translate-x-0 scale-100"
-                            : index < currentSlide
-                              ? "opacity-0 -translate-x-full scale-95"
-                              : "opacity-0 translate-x-full scale-95"
+                          ? "opacity-100 translate-x-0 scale-100"
+                          : index < currentSlide
+                            ? "opacity-0 -translate-x-full scale-95"
+                            : "opacity-0 translate-x-full scale-95"
                           }`}
                       >
                         <div className={`relative w-full h-full bg-gradient-to-br ${slide.gradient} p-6 flex flex-col items-center justify-center text-white overflow-hidden`}>
@@ -410,8 +400,8 @@ export default function HomeHero() {
                           key={index}
                           onClick={() => setCurrentSlide(index)}
                           className={`h-2 rounded-full transition-all duration-300 transform hover:scale-125 ${index === currentSlide
-                              ? "bg-white w-8 shadow-lg shadow-white/50"
-                              : "bg-white/50 w-2 hover:bg-white/75"
+                            ? "bg-white w-8 shadow-lg shadow-white/50"
+                            : "bg-white/50 w-2 hover:bg-white/75"
                             }`}
                         />
                       ))}
@@ -431,13 +421,13 @@ export default function HomeHero() {
                   </div>
 
                   {/* Bottom Text with Animation */}
-                  <p className="text-center text-xs text-gray-400 mt-4 px-6 animate-pulse">
+                  <p className="absolute bottom-5 left-1/2 -translate-x-1/2 w-full text-center text-xs text-gray-400 mt-4 px-6 animate-pulse">
                     Made with <span className="text-red-500 animate-ping inline-block">❤️</span> by Payvel
                   </p>
                 </div>
 
                 {/* Home Indicator */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full backdrop-blur-sm"></div>
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full backdrop-blur-sm"></div>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import NoFeesSection from "@/components/ui/NoFeesSection";
 import SendMoney from "@/components/ui/SendMoney";
+import TrustedCustomers from "@/components/ui/TrustedCustomers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
      
       <SendMoney />
+      <TrustedCustomers />
     
     </>
   );

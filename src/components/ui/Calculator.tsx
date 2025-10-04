@@ -12,6 +12,10 @@ const Calculator = ({ standalone = false }) => {
   const [fromDropdownOpen, setFromDropdownOpen] = useState(false);
   const [toDropdownOpen, setToDropdownOpen] = useState(false);
 
+  // New: search states for dropdowns
+  const [fromSearch, setFromSearch] = useState('');
+  const [toSearch, setToSearch] = useState('');
+
   const currencies = [
     { code: 'AUD', flag: 'au', name: 'Australian Dollar' },
     { code: 'NGN', flag: 'ng', name: 'Nigerian Naira' },
@@ -34,6 +38,13 @@ const Calculator = ({ standalone = false }) => {
     if (value === '' || /^\d*\.?\d*$/.test(value)) {
       setSendAmount(value);
     }
+  };
+
+  // helpers for filtering
+  const filterCurrencies = (list, q) => {
+    const s = q.trim().toLowerCase();
+    if (!s) return list;
+    return list.filter((c) => c.code.toLowerCase().includes(s) || c.name.toLowerCase().includes(s));
   };
 
   return (
@@ -60,9 +71,12 @@ const Calculator = ({ standalone = false }) => {
               />
 
               {/* Currency Dropdown */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 z-30">
+              <div className="absolute right-4 top-4 z-9">
                 <button
-                  onClick={() => setFromDropdownOpen(!fromDropdownOpen)}
+                  onClick={() => {
+                    setFromDropdownOpen(!fromDropdownOpen);
+                    setToDropdownOpen(false);
+                  }}
                   className="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700/80 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
                 >
                   <img
@@ -82,27 +96,41 @@ const Calculator = ({ standalone = false }) => {
                 </button>
 
                 {fromDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50">
-                    {currencies.map((currency) => (
-                      <button
-                        key={currency.code}
-                        onClick={() => {
-                          setFromCurrency(currency.code);
-                          setFromDropdownOpen(false);
-                        }}
-                        className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
-                      >
-                        <img
-                          src={`https://flagcdn.com/32x24/${currency.flag}.png`}
-                          alt={currency.code}
-                          className="w-8 h-6 object-cover rounded"
-                        />
-                        <div className="text-left">
-                          <p className="font-semibold text-gray-900 dark:text-white">{currency.code}</p>
-                          <p className="text-xs text-gray-500 dark:text-gray-400">{currency.name}</p>
-                        </div>
-                      </button>
-                    ))}
+                  <div className="absolute right-0 mb-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden" style={{ bottom: '100%', top: 'auto' }}>
+                    {/* Search Bar */}
+                    <div className="px-3 pt-3 pb-2">
+                      <input
+                        type="text"
+                        value={fromSearch}
+                        onChange={(e) => setFromSearch(e.target.value)}
+                        placeholder="Search currency or country"
+                        className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/60 text-sm outline-none"
+                      />
+                    </div>
+
+                    <div className="max-h-56 overflow-auto ">
+                      {filterCurrencies(currencies, fromSearch).map((currency) => (
+                        <button
+                          key={currency.code}
+                          onClick={() => {
+                            setFromCurrency(currency.code);
+                            setFromDropdownOpen(false);
+                            setFromSearch('');
+                          }}
+                          className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                        >
+                          <img
+                            src={`https://flagcdn.com/32x24/${currency.flag}.png`}
+                            alt={currency.code}
+                            className="w-8 h-6 object-cover rounded"
+                          />
+                          <div className="text-left">
+                            <p className="font-semibold text-gray-900 dark:text-white">{currency.code}</p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">{currency.name}</p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -124,9 +152,12 @@ const Calculator = ({ standalone = false }) => {
               />
 
               {/* Currency Dropdown */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20">
+              <div className="absolute right-4 top-4 ">
                 <button
-                  onClick={() => setToDropdownOpen(!toDropdownOpen)}
+                  onClick={() => {
+                    setToDropdownOpen(!toDropdownOpen);
+                    setFromDropdownOpen(false);
+                  }}
                   className="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700/80 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
                 >
                   <img
@@ -146,27 +177,41 @@ const Calculator = ({ standalone = false }) => {
                 </button>
 
                 {toDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50">
-                    {currencies.map((currency) => (
-                      <button
-                        key={currency.code}
-                        onClick={() => {
-                          setToCurrency(currency.code);
-                          setToDropdownOpen(false);
-                        }}
-                        className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
-                      >
-                        <img
-                          src={`https://flagcdn.com/32x24/${currency.flag}.png`}
-                          alt={currency.code}
-                          className="w-8 h-6 object-cover rounded"
-                        />
-                        <div className="text-left">
-                          <p className="font-semibold text-gray-900 dark:text-white">{currency.code}</p>
-                          <p className="text-xs text-gray-500 dark:text-gray-400">{currency.name}</p>
-                        </div>
-                      </button>
-                    ))}
+                  <div className="absolute right-0 top-full mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden z-40">
+                    {/* Search Bar */}
+                    <div className="px-3 pt-3 pb-2">
+                      <input
+                        type="text"
+                        value={toSearch}
+                        onChange={(e) => setToSearch(e.target.value)}
+                        placeholder="Search currency or country"
+                        className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/60 text-sm outline-none"
+                      />
+                    </div>
+
+                    <div className="max-h-56 overflow-auto">
+                      {filterCurrencies(currencies, toSearch).map((currency) => (
+                        <button
+                          key={currency.code}
+                          onClick={() => {
+                            setToCurrency(currency.code);
+                            setToDropdownOpen(false);
+                            setToSearch('');
+                          }}
+                          className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                        >
+                          <img
+                            src={`https://flagcdn.com/32x24/${currency.flag}.png`}
+                            alt={currency.code}
+                            className="w-8 h-6 object-cover rounded"
+                          />
+                          <div className="text-left">
+                            <p className="font-semibold text-gray-900 dark:text-white">{currency.code}</p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">{currency.name}</p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
