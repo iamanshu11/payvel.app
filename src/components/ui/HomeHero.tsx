@@ -309,7 +309,7 @@ export default function HomeHero() {
               >
 
                 {/* Phone Frame */}
-                <div className="absolute inset-0 bg-white dark:bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-800 overflow-hidden">
+                <div className="absolute inset-0 bg-black dark:bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-800 overflow-hidden">
                   {/* Reflection Effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
                 </div>
