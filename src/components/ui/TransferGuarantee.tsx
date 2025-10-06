@@ -26,7 +26,7 @@ const TransferGuarantee = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-8 bg-white dark:bg-black transition-colors duration-300">
+    <div className="flex items-center justify-center p-8 bg-white dark:bg-black transition-colors duration-300">
       <div className="max-w-7xl w-full">
         {/* Header */}
         <div className="text-center mb-16">

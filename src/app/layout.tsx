@@ -4,7 +4,7 @@ import { ThemeProvider } from "./providers/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ThemeToggle from "@/components/layout/ThemeToggle";
-import Script from "next/script"; 
+import FirstLoadWrapper from "@/components/ui/FirstLoadAnimation"; // ✅ wrapper import
 
 export const metadata: Metadata = {
   title: "Payvel - Send Money Globally",
@@ -59,8 +59,12 @@ export default function RootLayout({
           }}
         />
       </head>
+
       <body>
         <ThemeProvider>
+          {/* ✅ Animated Loader (runs client-side only) */}
+          <FirstLoadWrapper />
+
           <Navbar />
           <div id="smooth-wrapper">
             <div id="smooth-content">
@@ -74,7 +78,6 @@ export default function RootLayout({
             <ThemeToggle />
           </div>
         </ThemeProvider>
-
       </body>
     </html>
   );

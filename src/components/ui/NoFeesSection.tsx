@@ -62,7 +62,7 @@ export default function NoFeesSection() {
 
   return (
     <section className="relative py-12 bg-white dark:bg-black overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-16">
+      <div className="container mx-auto px-2 lg:px-16">
         <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-black rounded-2xl p-6 flex flex-col lg:flex-row justify-between gap-10">
           
           {/* Text Section */}
@@ -102,7 +102,7 @@ export default function NoFeesSection() {
                     value={sendAmount}
                     onChange={handleSendAmountChange}
                     placeholder="0"
-                    className="w-full pr-32 bg-transparent text-4xl font-bold text-gray-900 dark:text-white outline-none"
+                    className="w-full pr-32 bg-transparent text-xl lg:text-4xl font-bold text-gray-900 dark:text-white outline-none"
                   />
                   
                   {/* Dropdown Button */}
@@ -178,7 +178,7 @@ export default function NoFeesSection() {
                     value={receiveAmount}
                     readOnly
                     placeholder="0"
-                    className="w-full pr-32 bg-transparent text-4xl font-bold text-gray-900 dark:text-white outline-none"
+                    className="w-full pr-32 bg-transparent text-xl lg:text-4xl font-bold text-gray-900 dark:text-white outline-none"
                   />
                   
                   {/* Dropdown Button */}

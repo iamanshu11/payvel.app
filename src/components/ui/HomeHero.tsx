@@ -134,7 +134,7 @@ export default function HomeHero() {
   return (
     <section
       ref={heroRef}
-      className="relative py-16 lg:py-24 mt-10 flex items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-gray-100 overflow-hidden"
+      className="relative min-h-screen py-16 lg:py-24 mt-10 flex items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-gray-100 overflow-hidden"
     >
       {/* Floating Gradient Shapes */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-teal-500 to-cyan-400 rounded-full blur-3xl opacity-20 floating-shape"></div>
@@ -145,8 +145,8 @@ export default function HomeHero() {
           {/* Text Section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <p className="bg-red-400 max-w-fit text-center lg:text-left lg:mx-0 mx-auto p-2 rounded-full px-6 text-white mb-4">
-  AUSTRAC Registered
-</p>
+              AUSTRAC Registered
+            </p>
 
             <h1 className="hero-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
               <span className="relative">
@@ -164,20 +164,20 @@ export default function HomeHero() {
             </div>
           </div>
 
-           {/* Phone Mockup Section */}
-          <div className="w-full lg:w-1/2 hidden lg:flex justify-center relative">
+          {/* Phone Mockup Section */}
+          <div className="w-full lg:w-1/2 flex justify-center relative">
             {/* Floating Cards */}
             <div className="floating-card z-10 absolute top-20 left-0 lg:left-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
-  <Image
-    src="/img/person/img-1.webp"
-    alt="Avatar"
-    width={32}  // match your Tailwind w-8
-    height={24} // match your Tailwind h-6
-    className="object-cover rounded"
-  />
-</div>
+                  <Image
+                    src="/img/person/img-1.webp"
+                    alt="Avatar"
+                    width={32}  // match your Tailwind w-8
+                    height={24} // match your Tailwind h-6
+                    className="object-cover rounded"
+                  />
+                </div>
                 <div className="flex-1">
                   <p className="font-bold text-gray-900 dark:text-gray-100">$250 to Kel</p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">Arrived safely</p>
@@ -191,122 +191,122 @@ export default function HomeHero() {
               </p>
             </div>
 
-      <div 
-        className="floating-card z-10 absolute top-16 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
-      >
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center">
-            <Image
-    src="/img/person/img-6.webp"
-    alt="Avatar"
-    width={32}  // match your Tailwind w-8
-    height={24} // match your Tailwind h-6
-    className="object-cover rounded"
-  />
-          </div>
-          <div className="flex-1">
-            <p className="font-bold text-gray-900 dark:text-gray-100">$500 to Mom</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">With love</p>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 mt-3 pt-2 border-t border-gray-200 dark:border-gray-700">
-          <svg className="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-          </svg>
-          <p className="text-xs text-gray-500 dark:text-gray-400">5 minutes ago</p>
-        </div>
-      </div>
+            <div
+              className="floating-card z-10 absolute top-16 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center">
+                  <Image
+                    src="/img/person/img-6.webp"
+                    alt="Avatar"
+                    width={32}  // match your Tailwind w-8
+                    height={24} // match your Tailwind h-6
+                    className="object-cover rounded"
+                  />
+                </div>
+                <div className="flex-1">
+                  <p className="font-bold text-gray-900 dark:text-gray-100">$500 to Mom</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">With love</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 mt-3 pt-2 border-t border-gray-200 dark:border-gray-700">
+                <svg className="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                </svg>
+                <p className="text-xs text-gray-500 dark:text-gray-400">5 minutes ago</p>
+              </div>
+            </div>
 
-      <div 
-        className="floating-card z-10 absolute bottom-20 left-0 lg:left-5 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block"
-      >
-        <div className="flex items-start gap-2 mb-3">
-          <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0">
-            <Image
-    src="/img/person/img-2.webp"
-    alt="Avatar"
-    width={32}  // match your Tailwind w-8
-    height={24} // match your Tailwind h-6
-    className="object-cover rounded"
-  />
-          </div>
-          <div className="flex-1">
-            <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">Sarah says:</p>
-            <p className="text-xs text-gray-600 dark:text-gray-400 italic">"Got it in minutes! Thanks 🎉"</p>
-          </div>
-        </div>
-        <p className="text-xs text-gray-500 dark:text-gray-400">2 mins ago</p>
-      </div>
+            <div
+              className="floating-card z-10 absolute bottom-20 left-0 lg:left-5 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block"
+            >
+              <div className="flex items-start gap-2 mb-3">
+                <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Image
+                    src="/img/person/img-2.webp"
+                    alt="Avatar"
+                    width={32}  // match your Tailwind w-8
+                    height={24} // match your Tailwind h-6
+                    className="object-cover rounded"
+                  />
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">Sarah says:</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 italic">"Got it in minutes! Thanks 🎉"</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 dark:text-gray-400">2 mins ago</p>
+            </div>
 
-      <div 
-        className="floating-card z-10 absolute bottom-0 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
-      >
-        <div className="flex items-center gap-2 mb-3">
-          <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-          <p className="font-bold text-gray-900 dark:text-gray-100">Your Loved Ones</p>
-        </div>
-        <div className="flex -space-x-2 mb-3">
-          <Image
-    src="/img/person/img-1.webp"
-    alt="Avatar"
-    width={32}  // match your Tailwind w-8
-    height={24} // match your Tailwind h-6
-    className="object-cover rounded"
-  />
-  <Image
-    src="/img/person/img-2.webp"
-    alt="Avatar"
-    width={32}  // match your Tailwind w-8
-    height={24} // match your Tailwind h-6
-    className="object-cover rounded"
-  />
-  <Image
-    src="/img/person/img-3.webp"
-    alt="Avatar"
-    width={32}  // match your Tailwind w-8
-    height={24} // match your Tailwind h-6
-    className="object-cover rounded"
-  />
-  <Image
-    src="/img/person/img-4.webp"
-    alt="Avatar"
-    width={32}  // match your Tailwind w-8
-    height={24} // match your Tailwind h-6
-    className="object-cover rounded"
-  />
-          
-        </div>
-        <button className="w-full text-xs text-blue-600 dark:text-blue-400 font-semibold hover:underline text-left">
-          Send again or add someone new →
-        </button>
-      </div>
+            <div
+              className="floating-card z-10 absolute bottom-0 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <p className="font-bold text-gray-900 dark:text-gray-100">Your Loved Ones</p>
+              </div>
+              <div className="flex -space-x-2 mb-3">
+                <Image
+                  src="/img/person/img-1.webp"
+                  alt="Avatar"
+                  width={32}  // match your Tailwind w-8
+                  height={24} // match your Tailwind h-6
+                  className="object-cover rounded"
+                />
+                <Image
+                  src="/img/person/img-2.webp"
+                  alt="Avatar"
+                  width={32}  // match your Tailwind w-8
+                  height={24} // match your Tailwind h-6
+                  className="object-cover rounded"
+                />
+                <Image
+                  src="/img/person/img-3.webp"
+                  alt="Avatar"
+                  width={32}  // match your Tailwind w-8
+                  height={24} // match your Tailwind h-6
+                  className="object-cover rounded"
+                />
+                <Image
+                  src="/img/person/img-4.webp"
+                  alt="Avatar"
+                  width={32}  // match your Tailwind w-8
+                  height={24} // match your Tailwind h-6
+                  className="object-cover rounded"
+                />
+
+              </div>
+              <button className="w-full text-xs text-blue-600 dark:text-blue-400 font-semibold hover:underline text-left">
+                Send again or add someone new →
+              </button>
+            </div>
 
             {/* Phone Mockup Section */}
-            <div className="w-full lg:w-1/2 hidden  lg:flex justify-center relative">
+            <div className="w-full lg:w-1/2 flex justify-center relative">
 
-               {/* Phone Mockup */}
-            <div
-              className="phone-mockup relative w-80 h-[600px] cursor-pointer"
-              style={{
-                transform: 'perspective(1000px) rotateY(0deg)',
-                transition: 'transform 0.3s ease-out'
-              }}
-              onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -10;
-                const rotateY = ((x - centerX) / centerX) * 10;
-                e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-              }}
-            >
+              {/* Phone Mockup */}
+              <div
+                className="phone-mockup relative w-80 h-[600px] cursor-pointer"
+                style={{
+                  transform: 'perspective(1000px) rotateY(0deg)',
+                  transition: 'transform 0.3s ease-out'
+                }}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  const centerX = rect.width / 2;
+                  const centerY = rect.height / 2;
+                  const rotateX = ((y - centerY) / centerY) * -10;
+                  const rotateY = ((x - centerX) / centerX) * 10;
+                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                }}
+              >
 
                 {/* Phone Frame */}
                 <div className="absolute inset-0 bg-white dark:bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-800 overflow-hidden">
