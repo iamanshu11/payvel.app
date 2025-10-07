@@ -18,6 +18,7 @@ export default function DirectLineHome() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -38,8 +39,21 @@ export default function DirectLineHome() {
 
   const hasMore = isMobile && filteredCountries.length > 4 && !showAll;
 
+  const handleCountryClick = (countryName) => {
+    if (countryName === 'Nigeria') {
+      // Redirect to sendmoney page
+      window.location.href = '/send-money';
+    } else {
+      // Show coming soon popup for other countries
+      setShowComingSoon(true);
+      setTimeout(() => {
+        setShowComingSoon(false);
+      }, 2000);
+    }
+  };
+
   return (
-    <div className=" bg-white dark:bg-black text-gray-900 dark:text-gray-100 py-12 px-4">
+    <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100 py-12 px-4">
       <div className="max-w-6xl container mx-auto px-4 md:px-12 lg:px-16">
         {/* Header */}
         <div className="text-center mb-16 animate-slideDown">
@@ -72,8 +86,9 @@ export default function DirectLineHome() {
               key={country.code}
               className="animate-fadeInUp"
               style={{ animationDelay: `${index * 100}ms` }}
+              onClick={() => handleCountryClick(country.name)}
             >
-              <div className="backdrop-blur-xl bg-white/70 dark:bg-gray-900/7 border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+              <div className="backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
                     <img
@@ -104,6 +119,31 @@ export default function DirectLineHome() {
           </div>
         )}
       </div>
+
+      {/* Coming Soon Popup */}
+      {showComingSoon && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 px-4">
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm animate-fadeIn pointer-events-none"></div>
+          <div className="relative bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600 text-white px-6 py-8 md:px-10 md:py-10 rounded-3xl shadow-2xl animate-popupBounce max-w-md w-full">
+            <div className="text-center">
+              <div className="mb-4 animate-bounce">
+                <span className="text-6xl md:text-7xl">🚀</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">Coming Soon!</h3>
+              <p className="text-sm md:text-base opacity-90">
+                We're working hard to bring this service to you
+              </p>
+              <div className="mt-4 flex justify-center space-x-1">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{ animationDelay: '0ms' }}></div>
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{ animationDelay: '150ms' }}></div>
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{ animationDelay: '300ms' }}></div>
+              </div>
+            </div>
+            <div className="absolute -top-2 -right-2 w-20 h-20 bg-yellow-300 rounded-full opacity-20 blur-xl animate-pulse"></div>
+            <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-pink-300 rounded-full opacity-20 blur-xl animate-pulse" style={{ animationDelay: '500ms' }}></div>
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         @keyframes fadeIn {
@@ -137,6 +177,42 @@ export default function DirectLineHome() {
           }
         }
 
+        @keyframes popupFade {
+          0% {
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+          }
+          10% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+          90% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(0.8) translateY(-20px);
+          }
+        }
+
+        @keyframes popupBounce {
+          0% {
+            opacity: 0;
+            transform: scale(0.3) rotate(-10deg);
+          }
+          50% {
+            transform: scale(1.05) rotate(2deg);
+          }
+          70% {
+            transform: scale(0.95) rotate(-1deg);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+          }
+        }
+
         .animate-fadeIn {
           animation: fadeIn 0.8s ease-out;
         }
@@ -148,6 +224,14 @@ export default function DirectLineHome() {
         .animate-fadeInUp {
           animation: fadeInUp 0.6s ease-out;
           animation-fill-mode: both;
+        }
+
+        .animate-popupFade {
+          animation: popupFade 2s ease-in-out;
+        }
+
+        .animate-popupBounce {
+          animation: popupBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       `}</style>
     </div>

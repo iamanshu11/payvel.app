@@ -19,9 +19,9 @@ const Calculator = ({ standalone = false }) => {
   const currencies = [
     { code: 'AUD', flag: 'au', name: 'Australian Dollar' },
     { code: 'NGN', flag: 'ng', name: 'Nigerian Naira' },
-    { code: 'USD', flag: 'us', name: 'US Dollar' },
-    { code: 'GBP', flag: 'gb', name: 'British Pound' },
-    { code: 'EUR', flag: 'eu', name: 'Euro' },
+    // { code: 'USD', flag: 'us', name: 'US Dollar' },
+    // { code: 'GBP', flag: 'gb', name: 'British Pound' },
+    // { code: 'EUR', flag: 'eu', name: 'Euro' },
   ];
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const Calculator = ({ standalone = false }) => {
                 value={sendAmount}
                 onChange={handleSendAmountChange}
                 placeholder="0"
-                className="w-full pr-32 bg-transparent text-4xl font-bold text-gray-900 dark:text-white outline-none"
+                className="w-full pr-32 bg-transparent text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white outline-none"
               />
 
               {/* Currency Dropdown */}
@@ -148,7 +148,7 @@ const Calculator = ({ standalone = false }) => {
                 value={receiveAmount}
                 readOnly
                 placeholder="0"
-                className="w-full pr-32 bg-transparent text-4xl font-bold text-gray-900 dark:text-white outline-none"
+                className="w-full pr-32 bg-transparent text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white outline-none"
               />
 
               {/* Currency Dropdown */}

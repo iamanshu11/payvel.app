@@ -47,9 +47,9 @@ const SendMoney = () => {
     <div className="min-h-[160vh] bg-white dark:bg-black text-gray-900 dark:text-gray-100 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        
+
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" 
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"
           style={{
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
             backgroundSize: '50px 50px'
@@ -58,7 +58,7 @@ const SendMoney = () => {
       </div>
 
       {/* Hero Section */}
-      <div 
+      <div
         className="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center px-6 pointer-events-none"
         style={{
           opacity: heroOpacity,
@@ -67,21 +67,27 @@ const SendMoney = () => {
         }}
       >
         {/* Floating Badge */}
-        <div className="mb-8 animate-bounce">
+        <div className="mb-2 mt-8 animate-bounce">
           <div className="hidden lg:flex  items-center gap-2 px-4 py-2 bg-white/70 dark:bg-gray-900/7 border border-gray-200/50 dark:border-gray-700/50  backdrop-blur-xl rounded-full ">
             <Sparkles size={16} className="text-yellow-400" />
             <span className="text-sm dark:text-white text-gray-900font-medium">Trusted by 1M+ users worldwide</span>
           </div>
         </div>
 
-        <h1 className="text-5xl mt-6 md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white text-center mb-6 leading-tight">
-          Send Money with
+        <h1 className="text-3xl mt-6 md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white text-center mb-6 leading-tight">
+          Send Money from   <br /> <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-teal-400 bg-clip-text text-transparent animate-pulse">
+             Australia 
+          </span>   to  <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-teal-400 bg-clip-text text-transparent animate-pulse">
+              Nigeria
+          </span>  
           <br />
-          <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
-            Payvel
+          with   <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-teal-400 bg-clip-text text-transparent animate-pulse">
+              Payvel
           </span>
+             
         </h1>
-        
+
+
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 text-center mb-12 max-w-3xl ">
           The platform you love. Zero fees. Instant transfers. Global reach.
         </p>
@@ -91,7 +97,7 @@ const SendMoney = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div 
+              <div
                 key={index}
                 className="flex items-center gap-2 px-6 py-3  backdrop-blur-xl rounded-full bg-white/70 dark:bg-gray-900/7  hover:bg-white/10 dark:hover:bg-white/5 border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.2}s` }}
@@ -112,10 +118,10 @@ const SendMoney = () => {
             { emoji: '💳', pos: 'bottom-[25%] right-[15%]', delay: '1.5s', size: 'w-16 h-16' },
             { emoji: '🌍', pos: 'top-[15%] right-[10%]', delay: '0.5s', size: 'w-24 h-24' }
           ].map((item, idx) => (
-            <div 
+            <div
               key={idx}
               className={`absolute ${item.pos} ${item.size} flex items-center justify-center text-4xl opacity-30`}
-              style={{ 
+              style={{
                 animation: 'float 6s ease-in-out infinite',
                 animationDelay: item.delay,
                 transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px)`,
@@ -128,8 +134,8 @@ const SendMoney = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="hidden lg:flex  flex-col items-center gap-2">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="flex  flex-col items-center gap-2">
             <span className="text-sm text-gray-500 dark:text-gray-400/60">Scroll to Send Money</span>
             <div className="w-6 h-10 border-2 border-gray-300 dark:border-gray-400/30 rounded-full flex justify-center p-1">
               <div className="w-1 h-2 bg-gray-300 dark:bg-gray-400/60 rounded-full animate-pulse"></div>
