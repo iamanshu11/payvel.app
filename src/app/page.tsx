@@ -9,6 +9,7 @@ import ChipperCashHero from "@/components/ui/ChipperCashHero";
 import DirectLineHome from "@/components/ui/DirectLineHome";
 import TrustedEverywhere from "@/components/ui/TrustedEverywhere";
 import AfriexHero from "@/components/ui/AfriexHero";
+import BudgetHome from "@/components/ui/BudgetHome";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <HomeHero />
       <NoFeesSection />
       <ScrollingMarquee />
+      <BudgetHome />
       <DirectLineHome />
       <AfriexHero />
       <TrustedEverywhere />

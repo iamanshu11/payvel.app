@@ -8,7 +8,7 @@ export default function AfriexHero() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/img/dash.jpg')" }}
+        style={{ backgroundImage: "url('/img/payout-home.webp')" }}
       />
       
       {/* Overlay - Dark mode: darker overlay, Light mode: lighter overlay */}
@@ -16,17 +16,17 @@ export default function AfriexHero() {
 
       {/* Content Card */}
       <div className="relative z-10 w-full max-w-5xl">
-        <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12">
+        <div className="bg-white/5 dark:bg-gray-900/10 backdrop-blur-xs rounded-3xl shadow-2xl p-8 md:p-12">
           {/* App Store Badges */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-            <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+            <div className="flex items-center gap-2 text-sm text-gray-100 dark:text-gray-300">
               <span className="flex items-center gap-1">
                 ⭐ <span className="font-semibold">4.8</span>
               </span>
               <span>on App Store</span>
             </div>
-            <div className="w-px h-4 bg-gray-300 dark:bg-gray-600" />
-            <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+            <div className="w-px h-4 bg-gray-100 dark:bg-gray-600" />
+            <div className="flex items-center gap-2 text-sm text-gray-100 dark:text-gray-300">
               <span className="flex items-center gap-1">
                 ⭐ <span className="font-semibold">4.9</span>
               </span>
@@ -35,13 +35,13 @@ export default function AfriexHero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-8 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-200 dark:text-white mb-8 leading-tight">
             Payvel is how the world moves money now
           </h1>
 
           {/* QR Code Card */}
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md">
+          <div className="bg-gray-50/5 dark:bg-gray-800/5 rounded-2xl p-6 mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="bg-white/25 dark:bg-gray-900 p-4 rounded-xl shadow-md">
               <div className="w-32 h-32 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
                 {/* QR Code Placeholder */}
                 <svg className="w-full h-full p-2" viewBox="0 0 100 100" fill="currentColor">
@@ -59,10 +59,10 @@ export default function AfriexHero() {
               </div>
             </div>
             <div className="text-center sm:text-left">
-              <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+              <p className="text-sm font-semibold text-gray-200 dark:text-white mb-1">
                 Scan to download
               </p>
-              <p className="text-xs text-gray-600 dark:text-gray-400">
+              <p className="text-xs text-gray-200 dark:text-gray-400">
                 for iPhone and Android
               </p>
             </div>

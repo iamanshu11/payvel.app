@@ -4,14 +4,25 @@ import React, { useState, useEffect } from 'react';
 import { Search, ChevronDown } from 'lucide-react';
 
 const countries = [
-  { name: 'Nigeria', code: 'ng' },
-  { name: 'Ghana', code: 'gh' },
-  { name: 'Kenya', code: 'ke' },
-  { name: 'Ethiopia', code: 'et' },
-  { name: 'South Africa', code: 'za' },
-  { name: 'Zimbabwe', code: 'zw' },
-  { name: 'Uganda', code: 'ug' },
+  { name: 'Benin', code: 'bj' },
+  { name: 'Botswana', code: 'bw' },
+  { name: 'Burkina Faso', code: 'bf' },
   { name: 'Cameroon', code: 'cm' },
+  { name: 'Cote d’Ivoire', code: 'ci' },
+  { name: 'DR Congo', code: 'cd' },
+  { name: 'Gabon', code: 'ga' },
+  { name: 'Kenya', code: 'ke' },
+  { name: 'Malawi', code: 'mw' },
+  { name: 'Mali', code: 'ml' },
+  { name: 'Nigeria', code: 'ng' },
+  { name: 'Republic of Congo', code: 'cg' },
+  { name: 'Rwanda', code: 'rw' },
+  { name: 'Senegal', code: 'sn' },
+  { name: 'South Africa', code: 'za' },
+  { name: 'Tanzania', code: 'tz' },
+  { name: 'Togo', code: 'tg' },
+  { name: 'Uganda', code: 'ug' },
+  { name: 'Zambia', code: 'zm' },
 ];
 
 export default function DirectLineHome() {
@@ -33,8 +44,8 @@ export default function DirectLineHome() {
     country.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const displayedCountries = isMobile && !showAll 
-    ? filteredCountries.slice(0, 4) 
+  const displayedCountries = isMobile && !showAll
+    ? filteredCountries.slice(0, 4)
     : filteredCountries;
 
   const hasMore = isMobile && filteredCountries.length > 4 && !showAll;
@@ -53,8 +64,15 @@ export default function DirectLineHome() {
   };
 
   return (
-    <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100 py-12 px-4">
-      <div className="max-w-6xl container mx-auto px-4 md:px-12 lg:px-16">
+    <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100 py-12 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
+          }}
+        ></div>
+         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-teal-500 to-yellow-400 rounded-full blur-3xl opacity-20 floating-shape"></div>
+      <div className="w-full container mx-auto px-4 md:px-12 lg:px-16">
         {/* Header */}
         <div className="text-center mb-16 animate-slideDown">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
@@ -80,31 +98,37 @@ export default function DirectLineHome() {
         </div>
 
         {/* Countries Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-8 place-items-center">
           {displayedCountries.map((country, index) => (
             <div
               key={country.code}
               className="animate-fadeInUp"
-              style={{ animationDelay: `${index * 100}ms` }}
+              style={{
+                animationDelay: `${index * 100}ms`,
+              }}
               onClick={() => handleCountryClick(country.name)}
             >
-              <div className="backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <img
-                      src={`https://flagcdn.com/w80/${country.code}.png`}
-                      alt={`${country.name} flag`}
-                      className="w-full h-full object-cover"
-                    />
+              {/* Gradient Border Wrapper */}
+              <div className="p-[2px] rounded-full bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 transition-all duration-300 group-hover:from-teal-500 group-hover:to-teal-400">
+                <div className="backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 rounded-full w-48 flex items-center p-3 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-10 h-10 rounded-full overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <img
+                        src={`https://flagcdn.com/w80/${country.code}.png`}
+                        alt={`${country.name} flag`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-sm font-semibold dark:text-white text-gray-800 group-hover:text-teal-600 transition-colors">
+                      {country.name}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-semibold dark:text-white text-gray-800 group-hover:text-blue-600 transition-colors">
-                    {country.name}
-                  </h3>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
 
         {/* Show More Button */}
         {hasMore && (

@@ -8,6 +8,10 @@ export default function HomeHero() {
   const [currentTime, setCurrentTime] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [amount, setAmount] = useState(1);
+  const [rate, setRate] = useState(970);
+  const [fromDate, setFromDate] = useState('2024-10-11');
+  const [toDate, setToDate] = useState('2024-10-12');
 
   // Real-time clock
   useEffect(() => {
@@ -26,7 +30,7 @@ export default function HomeHero() {
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % 4);
+        setCurrentSlide((prev) => (prev + 1) % 6);
       }, 3000);
       return () => clearInterval(interval);
     }
@@ -90,6 +94,18 @@ export default function HomeHero() {
 
   const slides = [
     {
+      title: "See Your Spending",
+      subtitle: "Track every dollar, automatically.",
+      gradient: "from-green-400 to-blue-500",
+      icon: "📊",
+    },
+    {
+      title: "Set Your Target",
+      subtitle: "You decide the perfect rate to send.",
+      gradient: "from-yellow-400 to-orange-500",
+      icon: "🎯",
+    },
+    {
       title: "Lightning Fast",
       subtitle: "Transfers in minutes",
       gradient: "from-teal-500 to-cyan-500",
@@ -124,8 +140,8 @@ export default function HomeHero() {
           height: `${Math.random() * 100 + 50}px`,
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
-          duration: `${Math.random() * 10 + 5}s`,
-          delay: `${Math.random() * 5}s`,
+          duration: `${Math.random() * 10 + 8}s`,
+          delay: `${Math.random() * 8}s`,
         }))
       ),
     []
@@ -165,7 +181,7 @@ export default function HomeHero() {
           </div>
 
           {/* Phone Mockup Section */}
-          <div className="w-full lg:w-1/2 flex justify-center relative">
+          <div className="w-full md:w-1/2 flex justify-center relative">
             {/* Floating Cards */}
             <div className="floating-card z-10 absolute top-20 left-0 lg:left-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block">
               <div className="flex items-center gap-3 mb-3">
@@ -217,29 +233,92 @@ export default function HomeHero() {
               </div>
             </div>
 
-            <div
-              className="floating-card z-10 absolute bottom-20 left-0 lg:left-5 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-56 border border-gray-200 dark:border-gray-700 hidden lg:block"
-            >
-              <div className="flex items-start gap-2 mb-3">
-                <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Image
-                    src="/img/person/img-2.webp"
-                    alt="Avatar"
-                    width={32}  // match your Tailwind w-8
-                    height={24} // match your Tailwind h-6
-                    className="object-cover rounded"
-                  />
-                </div>
-                <div className="flex-1">
-                  <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">Sarah says:</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 italic">"Got it in minutes! Thanks 🎉"</p>
+
+            <div className="floating-card z-10 w-76 absolute bottom-6  lg:-right-15 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 border border-gray-200 dark:border-gray-700 hidden lg:block">
+              {/* Header */}
+              <div className="flex justify-between items-center mb-3">
+                <h3 className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
+                  Set rate alert
+                </h3>
+                <div className="flex items-center gap-2">
+                  <button className="text-blue-500 hover:text-blue-600 transition-colors hover:scale-110 transform duration-200">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                  </button>
+                  <button className="text-red-500 hover:text-red-600 transition-colors hover:scale-110 transform duration-200">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </button>
+                  <button className="text-blue-600 hover:text-blue-700 transition-colors hover:scale-110 transform duration-200">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400">2 mins ago</p>
+
+              {/* Input Row */}
+              <div className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-900 rounded-xl border border-gray-300 dark:border-gray-600 px-3 py-2 mb-3 hover:shadow-md transition-shadow">
+                <input
+                  type=""
+                  value={amount}
+                  className="w-10 bg-transparent text-gray-800 dark:text-gray-100 text-sm outline-none font-medium"
+                />
+                <span className="text-gray-600 dark:text-gray-400 text-sm font-semibold">AUD</span>
+                <div className="mx-2 text-blue-500 dark:text-blue-400">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+                <input
+                  type=""
+                  value={rate}
+                  className="w-12 bg-transparent text-gray-800 dark:text-gray-100 text-sm outline-none font-medium"
+                />
+                <span className="text-gray-600 dark:text-gray-400 text-sm font-semibold">NGN</span>
+              </div>
+
+              {/* Date Range */}
+              <div className="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
+                <div className="flex flex-col group">
+                  <div className="flex items-center gap-1 mb-1">
+                    <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-[11px] text-gray-500">From</span>
+                  </div>
+                  <input
+                    type="date"
+                    value={fromDate}
+                    onChange={(e) => setFromDate(e.target.value)}
+                    className="bg-white dark:bg-gray-900 rounded-md border border-gray-300 dark:border-gray-700 px-2 py-1 text-gray-700 dark:text-gray-200 text-xs hover:border-blue-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all cursor-pointer"
+                  />
+                </div>
+                <svg className="w-4 h-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+                <div className="flex flex-col group">
+                  <div className="flex items-center gap-1 mb-1">
+                    <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-[11px] text-gray-500">To</span>
+                  </div>
+                  <input
+                    type="date"
+                    value={toDate}
+                    onChange={(e) => setToDate(e.target.value)}
+                    className="bg-white dark:bg-gray-900 rounded-md border border-gray-300 dark:border-gray-700 px-2 py-1 text-gray-700 dark:text-gray-200 text-xs hover:border-blue-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all cursor-pointer"
+                  />
+                </div>
+              </div>
             </div>
 
+
             <div
-              className="floating-card z-10 absolute bottom-0 right-0 lg:right-10 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
+              className="floating-card z-10 absolute bottom-5 left-0 lg:left-6  bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 w-52 border border-gray-200 dark:border-gray-700 hidden lg:block"
             >
               <div className="flex items-center gap-2 mb-3">
                 <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -284,11 +363,11 @@ export default function HomeHero() {
             </div>
 
             {/* Phone Mockup Section */}
-            <div className="w-full lg:w-1/2 flex justify-center relative">
+            <div className="w-full md:w-[320px] flex justify-center relative">
 
               {/* Phone Mockup */}
               <div
-                className="phone-mockup relative w-80 h-[600px] cursor-pointer"
+                className="phone-mockup relative w-full h-[600px] cursor-pointer"
                 style={{
                   transform: 'perspective(1000px) rotateY(0deg)',
                   transition: 'transform 0.3s ease-out'
@@ -397,8 +476,8 @@ export default function HomeHero() {
                                   height: Math.random() * 100 + 50 + 'px',
                                   top: Math.random() * 100 + '%',
                                   left: Math.random() * 100 + '%',
-                                  animation: `float ${Math.random() * 10 + 5}s infinite ease-in-out`,
-                                  animationDelay: `${Math.random() * 5}s`
+                                  animation: `float ${Math.random() * 10 + 8}s infinite ease-in-out`,
+                                  animationDelay: `${Math.random() * 8}s`
                                 }}
                               />
                             ))}
@@ -417,8 +496,8 @@ export default function HomeHero() {
                             {slide.icon}
                           </div>
 
-                          <h3 className="relative text-3xl font-black mb-2 z-10 animate-pulse">{slide.title}</h3>
-                          <p className="relative text-lg opacity-90 z-10">{slide.subtitle}</p>
+                          <h3 className="relative text-2xl text-center font-black mb-2 z-10 animate-pulse">{slide.title}</h3>
+                          <p className="relative text-center text-lg opacity-90 z-10">{slide.subtitle}</p>
 
                           {/* Particles */}
                           <div className="absolute inset-0 pointer-events-none">
@@ -453,17 +532,6 @@ export default function HomeHero() {
                       ))}
                     </div>
 
-                    {/* Swipe indicators */}
-                    <div className="absolute left-2 top-1/2 -translate-y-1/2 text-white/30 animate-pulse">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </div>
-                    <div className="absolute right-2 top-1/2 -translate-y-1/2 text-white/30 animate-pulse">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
                   </div>
 
                   {/* Bottom Text with Animation */}
