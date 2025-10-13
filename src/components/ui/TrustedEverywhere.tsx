@@ -3,31 +3,34 @@
 import React from 'react';
 
 export default function TrustedEverywhere() {
-    const topFlags = [
-        'https://flagcdn.com/w160/nl.png',
-        'https://flagcdn.com/w160/eg.png',
-        'https://flagcdn.com/w160/rw.png',
-        'https://flagcdn.com/w160/za.png',
-        'https://flagcdn.com/w160/jm.png',
-        'https://flagcdn.com/w160/nl.png',
-        'https://flagcdn.com/w160/eg.png',
-        'https://flagcdn.com/w160/rw.png',
+   const africanFlags = [
+        'https://flagcdn.com/w160/bj.png', // Benin
+        'https://flagcdn.com/w160/bw.png', // Botswana
+        'https://flagcdn.com/w160/bf.png', // Burkina Faso
+        'https://flagcdn.com/w160/cm.png', // Cameroon
+        'https://flagcdn.com/w160/ci.png', // Côte d'Ivoire
+        'https://flagcdn.com/w160/cd.png', // DR Congo
+        'https://flagcdn.com/w160/ga.png', // Gabon
+        'https://flagcdn.com/w160/ke.png', // Kenya
+        'https://flagcdn.com/w160/mw.png', // Malawi
+        'https://flagcdn.com/w160/ml.png', // Mali
+        'https://flagcdn.com/w160/ng.png', // Nigeria
+        'https://flagcdn.com/w160/cg.png', // Republic of Congo
+        'https://flagcdn.com/w160/rw.png', // Rwanda
+        'https://flagcdn.com/w160/sn.png', // Senegal
+        'https://flagcdn.com/w160/za.png', // South Africa
+        'https://flagcdn.com/w160/tz.png', // Tanzania
+        'https://flagcdn.com/w160/tg.png', // Togo
+        'https://flagcdn.com/w160/ug.png', // Uganda
+        'https://flagcdn.com/w160/zm.png', // Zambia
     ];
 
-    const bottomFlags = [
-        'https://flagcdn.com/w160/rw.png',
-        'https://flagcdn.com/w160/za.png',
-        'https://flagcdn.com/w160/be.png',
-        'https://flagcdn.com/w160/cn.png',
-        'https://flagcdn.com/w160/rw.png',
-        'https://flagcdn.com/w160/za.png',
-        'https://flagcdn.com/w160/be.png',
-        'https://flagcdn.com/w160/cn.png',
-    ];
+    const topFlags = [...africanFlags, ...africanFlags.slice(0, 10)];
+    const bottomFlags = [...africanFlags.slice(9), ...africanFlags.slice(0, 10)];
 
     return (
         <div className="py-16 flex items-center justify-center  transition-colors duration-300 bg-white dark:bg-black text-gray-900 dark:text-gray-100">
-            <div className="w-full flex flex-col lg:flex-row items-center justify-center">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center justify-center">
                 {/* Main Content */}
                 <div className="relative">
                     {/* Social Proof */}

@@ -3,36 +3,36 @@
 import React from 'react';
 import { Shield, Clock, Headphones } from 'lucide-react';
 
-const TransferGuarantee = () => {
+const TransferGuaranteeV2 = () => {
   const features = [
     {
       icon: Shield,
-      title: "Peace of Mind",
+      title: "Safe & Secure",
       description:
-        "Track your transfer every step of the way with real-time updates for you and your loved one.",
-      gradient: "from-blue-500 to-purple-600",
+        "Monitor your transfer with complete transparency and real-time notifications for peace of mind.",
+      gradient: "from-indigo-500 to-purple-600",
     },
     {
       icon: Clock,
-      title: "Delivery Time Guaranteed",
+      title: "On-Time Delivery",
       description:
-        "We guarantee your money will be delivered on time, or we'll refund your fees.",
-      gradient: "from-purple-500 to-pink-600",
+        "We ensure your money reaches your recipient exactly when promised, or we refund your fees.",
+      gradient: "from-purple-500 to-pink-500",
     },
     {
       icon: Headphones,
-      title: "24/7 Customer Support",
+      title: "Support Anytime",
       description:
-        "Our friendly support team is always available to help you and your recipient, day or night.",
-      gradient: "from-pink-500 to-red-600",
+        "Our customer support team is available 24/7 to help you with any transfer queries.",
+      gradient: "from-pink-500 to-red-500",
     },
   ];
 
   return (
-    <div className="flex items-center justify-center p-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-black transition-colors duration-500">
+    <div className="flex items-center justify-center p-12 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-900 dark:to-black transition-colors duration-500">
       <div className="max-w-7xl w-full text-gray-900 dark:text-gray-100">
+        {/* Header */}
         
-
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => {
@@ -87,7 +87,7 @@ const TransferGuarantee = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <button className="group relative px-8 py-4 bg-teal-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
-            <span className="relative z-10">Get Started Now</span>
+            <span className="relative z-10">Start Your Transfer</span>
           </button>
         </div>
       </div>
@@ -108,4 +108,4 @@ const TransferGuarantee = () => {
   );
 };
 
-export default TransferGuarantee;
+export default TransferGuaranteeV2;

@@ -14,21 +14,80 @@ export default function NoFeesSection() {
   const [fromSearch, setFromSearch] = useState('');
   const [toSearch, setToSearch] = useState('');
 
-  // ✅ Dynamic Exchange Rate Table
+  // ✅ Dynamic Exchange Rate Table (sending countries to receiving countries)
   const exchangeRates: Record<string, Record<string, number>> = {
-    AUD: { NGN: 1140, USD: 0.65, GBP: 0.52, EUR: 0.59 },
-    USD: { NGN: 1760, AUD: 1.54, GBP: 0.80, EUR: 0.91 },
-    GBP: { NGN: 2200, USD: 1.25, AUD: 1.92, EUR: 1.14 },
-    EUR: { NGN: 1900, USD: 1.10, GBP: 0.88, AUD: 1.69 },
-    NGN: { USD: 0.00057, AUD: 0.00088, GBP: 0.00045, EUR: 0.00053 },
+    AUD: { 
+      XOF: 380, // Benin, Burkina Faso, Cote d'Ivoire, Mali, Senegal, Togo (West African CFA franc)
+      BWP: 8.5, // Botswana
+      XAF: 380, // Cameroon, Gabon, Republic of Congo (Central African CFA franc)
+      CDF: 1850, // DR Congo
+      KES: 85, // Kenya
+      MWK: 1100, // Malawi
+      NGN: 1140, // Nigeria
+      RWF: 850, // Rwanda
+      ZAR: 11.5, // South Africa
+      TZS: 1650, // Tanzania
+      UGX: 2450, // Uganda
+      ZMW: 16.5, // Zambia
+    },
+    USD: { 
+      XOF: 585, 
+      BWP: 13.2, 
+      XAF: 585, 
+      CDF: 2850, 
+      KES: 131, 
+      MWK: 1700, 
+      NGN: 1760, 
+      RWF: 1310, 
+      ZAR: 18, 
+      TZS: 2550, 
+      UGX: 3780, 
+      ZMW: 25.5,
+    },
+    CAD: { 
+      XOF: 430, 
+      BWP: 9.7, 
+      XAF: 430, 
+      CDF: 2100, 
+      KES: 96, 
+      MWK: 1250, 
+      NGN: 1290, 
+      RWF: 965, 
+      ZAR: 13.2, 
+      TZS: 1875, 
+      UGX: 2780, 
+      ZMW: 18.7,
+    },
   };
 
-  const currencies = [
-    { code: 'AUD', flag: 'au', name: 'Australian Dollar' },
-    { code: 'NGN', flag: 'ng', name: 'Nigerian Naira' },
-    { code: 'USD', flag: 'us', name: 'US Dollar' },
-    { code: 'GBP', flag: 'gb', name: 'British Pound' },
-    { code: 'EUR', flag: 'eu', name: 'Euro' },
+  // ✅ Sending Countries (FROM)
+  const sendingCurrencies = [
+    { code: 'AUD', flag: 'au', name: 'Australian Dollar', country: 'Australia' },
+    { code: 'USD', flag: 'us', name: 'US Dollar', country: 'United States' },
+    { code: 'CAD', flag: 'ca', name: 'Canadian Dollar', country: 'Canada' },
+  ];
+
+  // ✅ Receiving Countries (TO)
+  const receivingCurrencies = [
+    { code: 'XOF', flag: 'bj', name: 'West African CFA Franc', country: 'Benin' },
+    { code: 'BWP', flag: 'bw', name: 'Botswana Pula', country: 'Botswana' },
+    { code: 'XOF', flag: 'bf', name: 'West African CFA Franc', country: 'Burkina Faso' },
+    { code: 'XAF', flag: 'cm', name: 'Central African CFA Franc', country: 'Cameroon' },
+    { code: 'XOF', flag: 'ci', name: 'West African CFA Franc', country: "Cote d'Ivoire" },
+    { code: 'CDF', flag: 'cd', name: 'Congolese Franc', country: 'DR Congo' },
+    { code: 'XAF', flag: 'ga', name: 'Central African CFA Franc', country: 'Gabon' },
+    { code: 'KES', flag: 'ke', name: 'Kenyan Shilling', country: 'Kenya' },
+    { code: 'MWK', flag: 'mw', name: 'Malawian Kwacha', country: 'Malawi' },
+    { code: 'XOF', flag: 'ml', name: 'West African CFA Franc', country: 'Mali' },
+    { code: 'NGN', flag: 'ng', name: 'Nigerian Naira', country: 'Nigeria' },
+    { code: 'XAF', flag: 'cg', name: 'Central African CFA Franc', country: 'Republic of Congo' },
+    { code: 'RWF', flag: 'rw', name: 'Rwandan Franc', country: 'Rwanda' },
+    { code: 'XOF', flag: 'sn', name: 'West African CFA Franc', country: 'Senegal' },
+    { code: 'ZAR', flag: 'za', name: 'South African Rand', country: 'South Africa' },
+    { code: 'TZS', flag: 'tz', name: 'Tanzanian Shilling', country: 'Tanzania' },
+    { code: 'XOF', flag: 'tg', name: 'West African CFA Franc', country: 'Togo' },
+    { code: 'UGX', flag: 'ug', name: 'Ugandan Shilling', country: 'Uganda' },
+    { code: 'ZMW', flag: 'zm', name: 'Zambian Kwacha', country: 'Zambia' },
   ];
 
   useEffect(() => {
@@ -48,16 +107,18 @@ export default function NoFeesSection() {
   };
 
   // Filtered lists
-  const filteredFromCurrencies = currencies.filter(
+  const filteredFromCurrencies = sendingCurrencies.filter(
     (c) =>
       c.code.toLowerCase().includes(fromSearch.toLowerCase()) ||
-      c.name.toLowerCase().includes(fromSearch.toLowerCase())
+      c.name.toLowerCase().includes(fromSearch.toLowerCase()) ||
+      c.country.toLowerCase().includes(fromSearch.toLowerCase())
   );
 
-  const filteredToCurrencies = currencies.filter(
+  const filteredToCurrencies = receivingCurrencies.filter(
     (c) =>
       c.code.toLowerCase().includes(toSearch.toLowerCase()) ||
-      c.name.toLowerCase().includes(toSearch.toLowerCase())
+      c.name.toLowerCase().includes(toSearch.toLowerCase()) ||
+      c.country.toLowerCase().includes(toSearch.toLowerCase())
   );
 
   return (
@@ -115,7 +176,7 @@ export default function NoFeesSection() {
                       className="flex items-center gap-2 px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-full"
                     >
                       <img
-                        src={`https://flagcdn.com/24x18/${currencies.find(c => c.code === fromCurrency)?.flag}.png`}
+                        src={`https://flagcdn.com/24x18/${sendingCurrencies.find(c => c.code === fromCurrency)?.flag}.png`}
                         alt={fromCurrency}
                         className="w-6 h-4 object-cover rounded"
                       />
@@ -135,7 +196,7 @@ export default function NoFeesSection() {
                       <div className="p-2 border-b border-gray-200 dark:border-gray-700">
                         <input
                           type="text"
-                          placeholder="Search currency..."
+                          placeholder="Search country..."
                           value={fromSearch}
                           onChange={(e) => setFromSearch(e.target.value)}
                           className="w-full p-2 rounded-md bg-gray-100 dark:bg-gray-700 text-sm text-gray-900 dark:text-white outline-none"
@@ -157,9 +218,9 @@ export default function NoFeesSection() {
                               alt={currency.code}
                               className="w-8 h-6 object-cover rounded"
                             />
-                            <div>
-                              <p className="font-semibold text-black dark:text-white">{currency.code}</p>
-                              <p className="text-xs text-gray-500">{currency.name}</p>
+                            <div className="text-left">
+                              <p className="font-semibold text-black dark:text-white">{currency.country}</p>
+                              <p className="text-xs text-gray-500">{currency.code} - {currency.name}</p>
                             </div>
                           </button>
                         ))}
@@ -191,7 +252,7 @@ export default function NoFeesSection() {
                       className="flex items-center gap-2 px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-full"
                     >
                       <img
-                        src={`https://flagcdn.com/24x18/${currencies.find(c => c.code === toCurrency)?.flag}.png`}
+                        src={`https://flagcdn.com/24x18/${receivingCurrencies.find(c => c.code === toCurrency)?.flag}.png`}
                         alt={toCurrency}
                         className="w-6 h-4 object-cover rounded"
                       />
@@ -206,21 +267,21 @@ export default function NoFeesSection() {
 
                   {/* Overlapping Dropdown */}
                   {toDropdownOpen && (
-                    <div className="absolute right-4 top-0 translate-y-10 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50">
+                    <div className="absolute right-4 top-0 translate-y-10 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50">
                       {/* ✅ Search Bar */}
                       <div className="p-2 border-b border-gray-200 dark:border-gray-700">
                         <input
                           type="text"
-                          placeholder="Search currency..."
+                          placeholder="Search country..."
                           value={toSearch}
                           onChange={(e) => setToSearch(e.target.value)}
                           className="w-full p-2 rounded-md bg-gray-100 dark:bg-gray-700 text-sm text-gray-900 dark:text-white outline-none"
                         />
                       </div>
                       <div className="max-h-60 overflow-y-auto">
-                        {filteredToCurrencies.map(currency => (
+                        {filteredToCurrencies.map((currency, idx) => (
                           <button
-                            key={currency.code}
+                            key={`${currency.code}-${currency.flag}-${idx}`}
                             onClick={() => {
                               setToCurrency(currency.code);
                               setToDropdownOpen(false);
@@ -233,9 +294,9 @@ export default function NoFeesSection() {
                               alt={currency.code}
                               className="w-8 h-6 object-cover rounded"
                             />
-                            <div>
-                              <p className="font-semibold text-black dark:text-white">{currency.code}</p>
-                              <p className="text-xs text-gray-500">{currency.name}</p>
+                            <div className="text-left">
+                              <p className="font-semibold text-black dark:text-white">{currency.country}</p>
+                              <p className="text-xs text-gray-500">{currency.code} - {currency.name}</p>
                             </div>
                           </button>
                         ))}

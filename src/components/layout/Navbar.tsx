@@ -4,25 +4,38 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight, Zap, Shield, Globe, CreditCard, Users, BarChart, ChevronLeft, Sparkles, TrendingUp, Award } from "lucide-react";
-import ThemeToggle from "@/components/layout/ThemeToggle";
 
-const products = [
-  { name: "Payment Gateway", icon: CreditCard, desc: "Accept payments worldwide" },
-  { name: "Cross-Border", icon: Globe, desc: "International transfers" },
-  { name: "Business Account", icon: BarChart, desc: "Manage your finances" },
+const countries = [
+  { name: "Benin", flag: "🇧🇯", code: "benin", href: "/send-money/benin" },
+  { name: "Botswana", flag: "🇧🇼", code: "BW", href: "/send-money/botswana" },
+  { name: "Burkina Faso", flag: "🇧🇫", code: "BF", href: "/send-money/burkina-faso" },
+  { name: "Cameroon", flag: "🇨🇲", code: "CM", href: "/send-money/cameroon" },
+  { name: "Cote d'Ivoire", flag: "🇨🇮", code: "CI", href: "/send-money/cote-d-ivoire" },
+  { name: "DR Congo", flag: "🇨🇩", code: "CD", href: "/send-money/dr-congo" },
+  { name: "Gabon", flag: "🇬🇦", code: "GA", href: "/send-money/gabon" },
+  { name: "Kenya", flag: "🇰🇪", code: "KE", href: "/send-money/kenya" },
+  { name: "Malawi", flag: "🇲🇼", code: "MW", href: "/send-money/malawi" },
+  { name: "Mali", flag: "🇲🇱", code: "ML", href: "/send-money/mali" },
+  { name: "Nigeria", flag: "🇳🇬", code: "NG", href: "/send-money/nigeria" },
+  { name: "Republic of Congo", flag: "🇨🇬", code: "CG", href: "/send-money/republic-of-congo" },
+  { name: "Rwanda", flag: "🇷🇼", code: "RW", href: "/send-money/rwanda" },
+  { name: "Senegal", flag: "🇸🇳", code: "SN", href: "/send-money/senegal" },
+  { name: "South Africa", flag: "🇿🇦", code: "ZA", href: "/send-money/south-africa" },
+  { name: "Tanzania", flag: "🇹🇿", code: "TZ", href: "/send-money/tanzania" },
+  { name: "Togo", flag: "🇹🇬", code: "TG", href: "/send-money/togo" },
+  { name: "Uganda", flag: "🇺🇬", code: "UG", href: "/send-money/uganda" },
+  { name: "Zambia", flag: "🇿🇲", code: "ZM", href: "/send-money/zambia" },
 ];
 
-const solutions = [
-  { name: "For Startups", icon: Zap, desc: "Scale your business" },
-  { name: "Enterprise", icon: Shield, desc: "Enterprise-grade security" },
-  { name: "Developers", icon: Users, desc: "APIs and integrations" },
-];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [showAllCountries, setShowAllCountries] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [dropdownTimeout, setDropdownTimeout] = useState(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -33,27 +46,102 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleDropdownEnter = (dropdown) => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+    }
+    setActiveDropdown(dropdown);
+  };
+
+  const handleDropdownLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300);
+    setDropdownTimeout(timeout);
+  };
+
   const getLinkClass = (path) =>
     pathname === path
       ? "text-teal-500 font-bold"
       : "hover:text-teal-400 transition-colors duration-200";
 
-  const DropdownMenu = ({ title, items, isActive, onToggle }) => (
-    <div 
+  const filteredCountries = countries.filter(country =>
+    country.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const CountriesDropdown = ({ isActive }) => (
+    <div
       className="relative"
-      onMouseEnter={() => onToggle(title)}
-      onMouseLeave={() => onToggle(null)}
+      onMouseEnter={() => handleDropdownEnter('Send to')}
+      onMouseLeave={handleDropdownLeave}
     >
       <button className="flex items-center gap-1 hover:text-teal-400 transition-colors duration-200 font-medium">
-        {title}
-        <ChevronDown 
-          size={16} 
+        Send to
+        <ChevronDown
+          size={16}
           className={`transform transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`}
         />
       </button>
-      
+
       {isActive && (
-        <div className="absolute top-full left-0 mt-2 w-72 bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden animate-fadeIn">
+        <div
+          className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden animate-fadeIn"
+          onMouseEnter={() => handleDropdownEnter('Send to')}
+          onMouseLeave={handleDropdownLeave}
+        >
+          <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Send Money to</h3>
+            <div className="space-y-2">
+              {countries.slice(0, 5).map((country, idx) => (
+                <a
+                  key={idx}
+                  href={`/send-money/${country.code.toLowerCase()}`}
+                  className="flex items-center gap-3 p-2 hover:bg-teal-50 dark:hover:bg-teal-900/20 rounded-lg transition-colors duration-200 group"
+                >
+                  <span className="text-2xl">{country.flag}</span>
+                  <span className="font-medium text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                    {country.name}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+          <button
+            onClick={() => {
+              setShowAllCountries(true);
+              setActiveDropdown(null);
+            }}
+            className="w-full p-4 flex items-center justify-center gap-2 text-teal-600 dark:text-teal-400 font-medium hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-colors duration-200 group"
+          >
+            <Globe size={18} className="group-hover:rotate-12 transition-transform" />
+            Show All Countries
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+
+  const DropdownMenu = ({ title, items, isActive }) => (
+    <div
+      className="relative"
+      onMouseEnter={() => handleDropdownEnter(title)}
+      onMouseLeave={handleDropdownLeave}
+    >
+      <button className="flex items-center gap-1 hover:text-teal-400 transition-colors duration-200 font-medium">
+        {title}
+        <ChevronDown
+          size={16}
+          className={`transform transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      {isActive && (
+        <div
+          className="absolute top-full left-0 mt-2 w-72 bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden animate-fadeIn"
+          onMouseEnter={() => handleDropdownEnter(title)}
+          onMouseLeave={handleDropdownLeave}
+        >
           {items.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -94,21 +182,20 @@ export default function Header() {
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 w-full text-gray-800 dark:text-gray-200 transition-all duration-300 z-50 ${
-          scrolled 
-            ? 'bg-white/90 dark:bg-black/90 backdrop-blur-lg shadow-lg' 
-            : 'bg-white dark:bg-black'
-        }`}
+      <header
+        className={`fixed top-0 left-0 w-full text-gray-800 dark:text-gray-200 transition-all duration-300 z-50 ${scrolled
+          ? 'bg-white/90 dark:bg-black/90 backdrop-blur-lg shadow-lg'
+          : 'bg-white dark:bg-black'
+          }`}
       >
         <nav className="container mx-auto flex items-center justify-between py-4 px-4 md:px-6 lg:px-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4 group">
             <div className="relative">
-              <img 
-                src="/img/web-logo.png" 
-                alt="Payvel Logo" 
-                width={100} 
+              <img
+                src="/img/web-logo.png"
+                alt="Payvel Logo"
+                width={100}
                 height={100}
                 className="transform group-hover:scale-105 transition-transform duration-300"
               />
@@ -117,40 +204,34 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex gap-8 items-center font-medium text-gray-700 dark:text-gray-300">
-            <DropdownMenu 
-              title="Products" 
-              items={products}
-              isActive={activeDropdown === 'Products'}
-              onToggle={setActiveDropdown}
-            />
-            <DropdownMenu 
-              title="Solutions" 
-              items={solutions}
-              isActive={activeDropdown === 'Solutions'}
-              onToggle={setActiveDropdown}
+            <CountriesDropdown
+              isActive={activeDropdown === 'Send to'}
             />
             <Link href="#" className={getLinkClass("#")}>
-              Platform
+              How It Works
             </Link>
             <Link href="#" className={getLinkClass("#")}>
-              Pricing
+              Download App
             </Link>
             <Link href="#" className={getLinkClass("#")}>
-              Developers
+              Help Center
+            </Link>
+            <Link href="#" className={getLinkClass("#")}>
+              Blog
             </Link>
           </div>
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link 
+            <Link
               href="#"
               className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-200 font-medium"
             >
               Contact Sales
             </Link>
-            <a 
-              href="/send-money" 
-              target="_blank" 
+            <a
+              href="/send-money"
+              target="_blank"
               rel="noopener noreferrer"
               className="group px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
             >
@@ -161,8 +242,7 @@ export default function Header() {
 
           {/* Mobile Controls */}
           <div className="flex lg:hidden items-center gap-4">
-            <ThemeToggle />
-            <button 
+            <button
               onClick={() => setIsOpen(true)}
               className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
             >
@@ -172,9 +252,8 @@ export default function Header() {
         </nav>
 
         {/* Sub-header - Desktop only */}
-        <div className={`hidden lg:block border-t border-gray-200 dark:border-gray-800 transition-all duration-500 overflow-hidden ${
-          scrolled ? 'max-h-0 opacity-0' : 'max-h-20 opacity-100'
-        }`}>
+        <div className={`hidden lg:block border-t border-gray-200 dark:border-gray-800 transition-all duration-500 overflow-hidden ${scrolled ? 'max-h-0 opacity-0' : 'max-h-20 opacity-100'
+          }`}>
           <div className="bg-gradient-to-r from-teal-500/5 via-cyan-500/5 to-blue-500/5 dark:from-teal-900/20 dark:via-cyan-900/20 dark:to-blue-900/20">
             <div className="container mx-auto px-4 md:px-6 lg:px-16 py-3 flex items-center justify-between">
               <div className="flex items-center gap-8">
@@ -234,22 +313,89 @@ export default function Header() {
         </div>
       </header>
 
+      {/* All Countries Modal */}
+      {showAllCountries && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fadeIn"
+            onClick={() => setShowAllCountries(false)}
+          />
+          <div className="relative w-full max-w-4xl max-h-[80vh] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden animate-scaleIn">
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6 z-10">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                  <Globe className="text-teal-600 dark:text-teal-400" size={28} />
+                  Select Country
+                </h2>
+                <button
+                  onClick={() => setShowAllCountries(false)}
+                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                >
+                  <X size={24} className="text-gray-600 dark:text-gray-400" />
+                </button>
+              </div>
+              <input
+                type="text"
+                placeholder="Search countries..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all"
+              />
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 overflow-y-auto max-h-[calc(80vh-180px)]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {filteredCountries.map((country, idx) => (
+                  <a
+                    key={idx}
+                    href={`/send-money/${country.code.toLowerCase()}`}
+                    onClick={() => setShowAllCountries(false)}
+                    className="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 dark:border-gray-800 hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 group"
+                  >
+                    <span className="text-3xl">{country.flag}</span>
+                    <span className="font-medium text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                      {country.name}
+                    </span>
+                    <ArrowRight size={16} className="ml-auto text-gray-400 group-hover:text-teal-600 dark:group-hover:text-teal-400 group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100" />
+                  </a>
+                ))}
+              </div>
+              {filteredCountries.length === 0 && (
+                <div className="flex flex-col items-center justify-center py-12 space-y-4">
+                  <img
+                    src="/img/sad.gif"
+                    alt="No Countries"
+                    width={80}
+                    height={80}
+                    className="transform transition-transform duration-300"
+                  />
+                  <p className="text-gray-600 dark:text-gray-400 text-lg font-medium text-center">
+                    We’re expanding fast! This country isn’t live yet.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Mobile Menu */}
       {isOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div 
+          <div
             className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fadeIn"
             onClick={closeMobileMenu}
           />
-          
+
           {/* Main Menu */}
-          <div className={`absolute right-0 top-0 h-full w-full  bg-white dark:bg-gray-900 shadow-2xl flex flex-col transition-transform duration-300 ${
-            mobileSubmenu ? 'translate-x-full' : 'translate-x-0'
-          } animate-slideInRight`}>
+          <div className={`absolute right-0 top-0 h-full w-full bg-white dark:bg-gray-900 shadow-2xl flex flex-col transition-transform duration-300 ${mobileSubmenu ? 'translate-x-full' : 'translate-x-0'
+            } animate-slideInRight`}>
             {/* Mobile Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
               <span className="text-xl font-bold text-gray-900 dark:text-white">Menu</span>
-              <button 
+              <button
                 onClick={closeMobileMenu}
                 className="p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               >
@@ -258,33 +404,18 @@ export default function Header() {
             </div>
 
             {/* Mobile Nav Content */}
-            <div className="flex-1 overflow-y-auto p-6 ">
+            <div className="flex-1 overflow-y-auto p-6">
               <div className="space-y-3">
-                {/* Products Button */}
+                {/* Send To Button */}
                 <button
-                  onClick={() => handleMobileMenuClick('products')}
-                  className="w-full flex items-center justify-between p-4  rounded-lg bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 hover:from-teal-100 hover:to-cyan-100 dark:hover:from-teal-900/30 dark:hover:to-cyan-900/30 transition-all group"
+                  onClick={() => handleMobileMenuClick('countries')}
+                  className="w-full flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 hover:from-teal-100 hover:to-cyan-100 dark:hover:from-teal-900/30 dark:hover:to-cyan-900/30 transition-all group"
                 >
                   <div className="flex items-center gap-3">
-                    <CreditCard className="text-teal-600 dark:text-teal-400" size={24} />
+                    <Globe className="text-teal-600 dark:text-teal-400" size={24} />
                     <div className="text-left">
-                      <div className="font-bold text-gray-900 dark:text-white">Products</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">{products.length} options</div>
-                    </div>
-                  </div>
-                  <ChevronDown className="text-gray-400 group-hover:translate-x-1 transition-transform rotate-[-90deg]" size={20} />
-                </button>
-
-                {/* Solutions Button */}
-                <button
-                  onClick={() => handleMobileMenuClick('solutions')}
-                  className="w-full flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 hover:from-purple-100 hover:to-pink-100 dark:hover:from-purple-900/30 dark:hover:to-pink-900/30 transition-all group"
-                >
-                  <div className="flex items-center gap-3">
-                    <Zap className="text-purple-600 dark:text-purple-400" size={24} />
-                    <div className="text-left">
-                      <div className="font-bold text-gray-900 dark:text-white">Solutions</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">{solutions.length} options</div>
+                      <div className="font-bold text-gray-900 dark:text-white">Send to</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">{countries.length} countries</div>
                     </div>
                   </div>
                   <ChevronDown className="text-gray-400 group-hover:translate-x-1 transition-transform rotate-[-90deg]" size={20} />
@@ -294,24 +425,31 @@ export default function Header() {
                 <div className="space-y-2 pt-4">
                   <Link
                     href="#"
-                    className="block p-4 rounded-lg text-gray-900 dark:text-white  hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
+                    className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
                     onClick={closeMobileMenu}
                   >
-                    Platform
+                    How It Works
                   </Link>
                   <Link
                     href="#"
                     className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
                     onClick={closeMobileMenu}
                   >
-                    Pricing
+                    Download App
                   </Link>
                   <Link
                     href="#"
                     className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
                     onClick={closeMobileMenu}
                   >
-                    Developers
+                    Help Center
+                  </Link>
+                  <Link
+                    href="#"
+                    className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Blog
                   </Link>
                 </div>
               </div>
@@ -337,9 +475,9 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Submenu Panel */}
-          {mobileSubmenu && (
-            <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-white dark:bg-gray-900 shadow-2xl flex flex-col animate-slideInLeft">
+          {/* Submenu Panel for Countries */}
+          {mobileSubmenu === 'countries' && (
+            <div className="absolute right-0 top-0 h-full w-full bg-white dark:bg-gray-900 shadow-2xl flex flex-col animate-slideInLeft">
               {/* Submenu Header */}
               <div className="flex items-center gap-4 p-6 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-800">
                 <button
@@ -348,32 +486,53 @@ export default function Header() {
                 >
                   <ChevronLeft size={24} />
                 </button>
-                <span className="text-xl font-bold text-gray-900 dark:text-white capitalize">{mobileSubmenu}</span>
+                <span className="text-xl font-bold text-gray-900 dark:text-white">Select Country</span>
+              </div>
+
+              {/* Search */}
+              <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+                <input
+                  type="text"
+                  placeholder="Search countries..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all"
+                />
               </div>
 
               {/* Submenu Content */}
               <div className="flex-1 overflow-y-auto p-6">
                 <div className="space-y-3">
-                  {(mobileSubmenu === 'products' ? products : solutions).map((item, idx) => {
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={idx}
-                        href={`/${mobileSubmenu}/${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all group"
-                        onClick={closeMobileMenu}
-                      >
-                        <div className="p-3 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-xl group-hover:scale-110 transition-transform shadow-md">
-                          <Icon size={24} className="text-white" />
+                  {filteredCountries.map((country, idx) => (
+                    <a
+                      key={idx}
+                      href={`/send-money/${country.code.toLowerCase()}`}
+                      className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all group"
+                      onClick={closeMobileMenu}
+                    >
+                      <span className="text-3xl">{country.flag}</span>
+                      <div className="flex-1">
+                        <div className="font-bold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                          {country.name}
                         </div>
-                        <div className="flex-1">
-                          <div className="font-bold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">{item.name}</div>
-                          <div className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</div>
-                        </div>
-                        <ArrowRight size={20} className="text-gray-400 group-hover:translate-x-1 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all" />
-                      </Link>
-                    );
-                  })}
+                      </div>
+                      <ArrowRight size={20} className="text-gray-400 group-hover:translate-x-1 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all" />
+                    </a>
+                  ))}
+                  {filteredCountries.length === 0 && (
+                    <div className="flex flex-col items-center justify-center py-12 space-y-4">
+                      <img
+                        src="/img/sad.gif"
+                        alt="No Countries"
+                        width={80}
+                        height={80}
+                        className="transform transition-transform duration-300"
+                      />
+                      <p className="text-gray-600 dark:text-gray-400 text-lg font-medium text-center">
+                        We’re expanding fast! This country isn’t live yet.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -404,6 +563,17 @@ export default function Header() {
             transform: translateX(0);
           }
         }
+
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
         
         .animate-fadeIn {
           animation: fadeIn 0.2s ease-out;
@@ -415,6 +585,10 @@ export default function Header() {
 
         .animate-slideInLeft {
           animation: slideInLeft 0.3s ease-out;
+        }
+
+        .animate-scaleIn {
+          animation: scaleIn 0.3s ease-out;
         }
       `}</style>
     </>

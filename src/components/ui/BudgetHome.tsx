@@ -365,21 +365,74 @@ export default function BudgetHome() {
             <div className="container mx-auto px-4 md:px-12 lg:px-16 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
                     {/* Text Section */}
+                    {/* Text Section - Dynamic based on current slide */}
                     <div className="w-full lg:w-1/2 text-center lg:text-left">
+                        <div className="transition-all duration-700 ease-in-out">
+                            {currentSlide === 0 && (
+                                <>
+                                    <h1 className="hero-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                                        <span className="relative">
+                                            <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-teal-500 to-cyan-400 opacity-40 -z-10"></span>
+                                            Everything in One <span className="text-teal-500">Place</span>
+                                        </span>
+                                    </h1>
+                                    <p className="hero-subtitle mt-6 text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-xl">
+                                        Instantly check rates, access specialized hubs for students or travel, and manage your profile. Payvel puts your entire financial world at your fingertips.
+                                    </p>
+                                    <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                                        <a href="/dashboard" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            Get Started
+                                        </a>
+                                        <a href="/learn-more" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            Learn More
+                                        </a>
+                                    </div>
+                                </>
+                            )}
 
-                        <h1 className="hero-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
-                            <span className="relative">
-                                <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-teal-500 to-cyan-400 opacity-40 -z-10"></span>
-                                Budget <span className="text-teal-500">Home</span>
-                            </span>
-                        </h1>
-                        <p className="hero-subtitle mt-6 text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-xl">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </p>
-                        <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
-                            <a href="/send-money" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
-                                Send Money
-                            </a>
+                            {currentSlide === 1 && (
+                                <>
+                                    <h1 className="hero-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                                        <span className="relative">
+                                            <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-cyan-500 to-blue-400 opacity-40 -z-10"></span>
+                                            Transfer  <span className="text-cyan-500">Smarter</span>
+                                        </span>
+                                    </h1>
+                                    <p className="hero-subtitle mt-6 text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-xl">
+                                        Never guess the best time to send. Set your ideal exchange rate, and we'll monitor the markets 24/7, notifying you instantly when it's the right time to transfer.
+                                    </p>
+                                    <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                                        <a href="/rate-alerts" className="px-8 py-4 bg-cyan-500 text-white rounded-full font-semibold text-lg hover:bg-cyan-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            Set Alert
+                                        </a>
+                                        <a href="/view-rates" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            View Rates
+                                        </a>
+                                    </div>
+                                </>
+                            )}
+
+                            {currentSlide === 2 && (
+                                <>
+                                    <h1 className="hero-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                                        <span className="relative">
+                                            <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-500 to-purple-400 opacity-40 -z-10"></span>
+                                            Master Your  <span className="text-blue-500">Money</span>
+                                        </span>
+                                    </h1>
+                                    <p className="hero-subtitle mt-6 text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-xl">
+                                        From automatic spending categories to personalized budgets and savings goals, Payvel gives you the tools to see where your money goes and make it work for you.
+                                    </p>
+                                    <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                                        <a href="/budget" className="px-8 py-4 bg-blue-500 text-white rounded-full font-semibold text-lg hover:bg-blue-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            View Budget
+                                        </a>
+                                        <a href="/add-expense" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            Add Expense
+                                        </a>
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
 

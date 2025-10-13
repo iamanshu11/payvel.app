@@ -22,10 +22,6 @@ export default function HomePage() {
       <AfriexHero />
       <TrustedEverywhere />
       <ChipperCashHero />
-      {/* <ComparisonSection />
-      <GlobalReachSection />
-      <TestimonialsSection /> */}
-      {/* <CtaSection /> */}
     
     </>
   );

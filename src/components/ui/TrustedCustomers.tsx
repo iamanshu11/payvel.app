@@ -17,41 +17,36 @@ export default function TrustedCustomers() {
   }, []);
 
   const flagPositions = [
-    { flag: 'https://flagcdn.com/w80/gb.png', position: 'top-20 left-[15%]', aos: 'fade-down-right' },
-    { flag: 'https://flagcdn.com/w80/ug.png', position: 'top-20 right-[15%]', aos: 'fade-down-left' },
-    { flag: 'https://flagcdn.com/w80/eu.png', position: 'top-32 right-[20%]', aos: 'fade-left' },
-    { flag: 'https://flagcdn.com/w80/gh.png', position: 'top-48 right-[18%]', aos: 'fade-left' },
-    { flag: 'https://flagcdn.com/w80/us.png', position: 'bottom-48 left-[12%]', aos: 'fade-right' },
+    { flag: 'https://flagcdn.com/w80/au.png', position: 'top-20 left-[15%]', aos: 'fade-down-right' },
+    { flag: 'https://flagcdn.com/w80/au.png', position: 'bottom-48 left-[12%]', aos: 'fade-right' },
     { flag: 'https://flagcdn.com/w80/ng.png', position: 'bottom-32 left-[10%]', aos: 'fade-up-right' },
-    { flag: 'https://flagcdn.com/w80/pt.png', position: 'bottom-40 left-[18%]', aos: 'fade-up' },
-    { flag: 'https://flagcdn.com/w80/ke.png', position: 'bottom-32 right-[15%]', aos: 'fade-up-left' },
-    { flag: 'https://flagcdn.com/w80/pk.png', position: 'bottom-48 right-[18%]', aos: 'fade-left' },
-    { flag: 'https://flagcdn.com/w80/us.png', position: 'bottom-20 right-[12%]', aos: 'fade-up-left' },
+    { flag: 'https://flagcdn.com/w80/ng.png', position: 'bottom-48 right-[18%]', aos: 'fade-left' },
+    { flag: 'https://flagcdn.com/w80/ca.png', position: 'bottom-20 right-[12%]', aos: 'fade-up-left' },
   ];
 
   const peopleImages = [
     { 
-      src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&h=300&fit=crop',
+      src: '/img/ngn-person/img-1.webp',
       position: 'top-24 left-[8%]',
-      flags: ['https://flagcdn.com/w40/ph.png'],
+      flags: ['https://flagcdn.com/w40/ng.png'],
       aos: 'zoom-in'
     },
     {
-      src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop',
+      src: '/img/ngn-person/img-2.webp',
       position: 'bottom-24 left-[10%]',
       flags: ['https://flagcdn.com/w40/ng.png'],
       aos: 'zoom-in'
     },
     {
-      src: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=300&h=300&fit=crop',
+      src: '/img/ngn-person/img-3.webp',
       position: 'top-24 right-[8%]',
-      flags: ['https://flagcdn.com/w40/gh.png', 'https://flagcdn.com/w40/ug.png'],
+      flags: ['https://flagcdn.com/w40/ng.png', 'https://flagcdn.com/w40/ca.png'],
       aos: 'zoom-in'
     },
     {
-      src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=300&fit=crop',
+      src: '/img/ngn-person/img-4.webp',
       position: 'bottom-24 right-[10%]',
-      flags: ['https://flagcdn.com/w40/pk.png'],
+      flags: ['https://flagcdn.com/w40/us.png'],
       aos: 'zoom-in'
     },
   ];
@@ -59,10 +54,13 @@ export default function TrustedCustomers() {
   return (
     <section className="relative min-h-screen flex items-center bg-white dark:bg-black py-20 px-4 overflow-hidden transition-colors duration-300">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-      </div>
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/img/map.webp')" }}
+      />
+      
+      {/* Overlay - Dark mode: darker overlay, Light mode: lighter overlay */}
+      <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
 
       {/* Floating Flags */}
       {flagPositions.map((item, index) => (

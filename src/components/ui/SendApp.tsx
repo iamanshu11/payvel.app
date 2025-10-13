@@ -8,7 +8,7 @@ export default function SendApp() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/img/dash-2.jpg')" }}
+        style={{ backgroundImage: "url('/img/dash-3.jpg')" }}
       />
       
       {/* Overlay - Dark mode: darker overlay, Light mode: lighter overlay */}
@@ -16,7 +16,7 @@ export default function SendApp() {
 
       {/* Content Card */}
       <div className="relative z-10 w-full max-w-2xl">
-        <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12">
+        <div className="bg-white/10 dark:bg-gray-900/10 backdrop-blur-xs rounded-3xl shadow-2xl p-8 md:p-12">
           {/* App Store Badges */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
             <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
@@ -40,7 +40,7 @@ export default function SendApp() {
           </h1>
 
           {/* QR Code Card */}
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="bg-gray-50/05 dark:bg-gray-800/05 rounded-2xl p-6 mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md">
               <div className="w-32 h-32 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
                 {/* QR Code Placeholder */}
