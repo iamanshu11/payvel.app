@@ -25,17 +25,32 @@ export default function Footer() {
     {
       title: "Product",
       color: "cyan",
-      links: ["Home", "About", "Features", "Pricing"],
+      links: [
+        { name: "Home", url: "/" },
+        { name: "About", url: "/about-us" },
+        { name: "Contact", url: "/contact" },
+      ],
     },
     {
       title: "Company",
       color: "cyan",
-      links: ["Services", "Careers", "Partners", "Contact"],
+      links: [
+        { name: "Careers", url: "/careers" },
+        { name: "Blog", url: "/blog" },
+        { name: "Faq", url: "/faq" },
+        { name: "Help Center", url: "/help-center" },
+        { name: "Press and  Media", url: "/press-and-media" },
+      ],
     },
     {
       title: "Legal",
       color: "cyan",
-      links: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Compliance"],
+      links: [
+        { name: "Privacy Policy", url: "/privacypolicy" },
+        { name: "Terms of Service", url: "/terms-and-service" },
+        { name: "Cookie Policy", url: "/cookiepolicy" },
+        { name: "Compliance", url: "/compliance-security" },
+      ],
     },
   ];
 
@@ -112,20 +127,22 @@ export default function Footer() {
             <div key={sectionIndex} className="group/section">
               <div className="relative mb-6">
                 <h3
-                  className={`font-bold text-xl text-gray-900 dark:text-white group-hover/section:text-${section.color}-500 dark:group-hover/section:text-${section.color}-400 transition-colors`}
+                  className={`font-bold text-xl text-gray-900 dark:text-white transition-colors group-hover/section:text-${section.color}-500`}
                 >
                   {section.title}
                 </h3>
                 <div
-                  className={`absolute -bottom-2 left-0 h-0.5 w-0 bg-gradient-to-r from-${section.color}-500 to-${section.color}-500 group-hover/section:w-full transition-all duration-500`}
+                  className={`absolute -bottom-2 left-0 h-0.5 w-0 bg-${section.color}-500 group-hover/section:w-full transition-all duration-500`}
                 ></div>
               </div>
               <ul className="space-y-4">
                 {section.links.map((link, index) => (
                   <li key={index}>
                     <a
-                      href="#"
+                      href={link.url}
                       className="group/link text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 flex items-center gap-2"
+                      onMouseEnter={() => setHoveredLink(`${section.title}-${index}`)}
+                      onMouseLeave={() => setHoveredLink(null)}
                     >
                       <span
                         className={`h-0.5 bg-${section.color}-500 transition-all duration-300 ${
@@ -137,7 +154,7 @@ export default function Footer() {
                           hoveredLink === `${section.title}-${index}` ? "translate-x-1" : ""
                         }`}
                       >
-                        {link}
+                        {link.name}
                       </span>
                     </a>
                   </li>
@@ -152,7 +169,7 @@ export default function Footer() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5 opacity-0 group-hover/newsletter:opacity-100 transition-opacity"></div>
 
           <div className="relative max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 text-teal-500  bg-clip-text">
+            <h3 className="text-2xl md:text-3xl font-bold mb-3 text-teal-500 bg-clip-text">
               Stay in the Loop
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6">

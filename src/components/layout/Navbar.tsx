@@ -207,16 +207,16 @@ export default function Header() {
             <CountriesDropdown
               isActive={activeDropdown === 'Send to'}
             />
-            <Link href="#" className={getLinkClass("#")}>
+            <Link href="how-it-works" className={getLinkClass("#")}>
               How It Works
             </Link>
-            <Link href="#" className={getLinkClass("#")}>
+            <Link href="/download-app" className={getLinkClass("#")}>
               Download App
             </Link>
-            <Link href="#" className={getLinkClass("#")}>
+            <Link href="/help-center" className={getLinkClass("#")}>
               Help Center
             </Link>
-            <Link href="#" className={getLinkClass("#")}>
+            <Link href="/blog" className={getLinkClass("#")}>
               Blog
             </Link>
           </div>
@@ -273,7 +273,7 @@ export default function Header() {
                   </div>
                   <div>
                     <div className="text-sm font-bold text-gray-900 dark:text-white">Global Reach</div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">190+ countries</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">16+ countries</div>
                   </div>
                 </div>
 
@@ -431,21 +431,21 @@ export default function Header() {
                     How It Works
                   </Link>
                   <Link
-                    href="#"
+                    href="/download-app"
                     className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
                     onClick={closeMobileMenu}
                   >
                     Download App
                   </Link>
                   <Link
-                    href="#"
+                    href="/help-center"
                     className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
                     onClick={closeMobileMenu}
                   >
                     Help Center
                   </Link>
                   <Link
-                    href="#"
+                    href="/blog"
                     className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
                     onClick={closeMobileMenu}
                   >

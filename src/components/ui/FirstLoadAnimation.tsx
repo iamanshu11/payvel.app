@@ -15,6 +15,9 @@ export default function FirstLoadAnimation() {
     if (!hasVisited) {
       setIsFirstLoad(true);
 
+      // Mark as visited so it doesn't appear next time
+      sessionStorage.setItem('hasVisited', 'true');
+
       // Typing animation
       let currentIndex = 0;
       const typingInterval = setInterval(() => {
@@ -43,6 +46,7 @@ export default function FirstLoadAnimation() {
         });
       }, 40);
 
+      // Cleanup intervals if component unmounts
       return () => {
         clearInterval(progressInterval);
         clearInterval(typingInterval);
