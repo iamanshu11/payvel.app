@@ -380,11 +380,11 @@ export default function BudgetHome() {
                                         Instantly check rates, access specialized hubs for students or travel, and manage your profile. Payvel puts your entire financial world at your fingertips.
                                     </p>
                                     <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
-                                        <a href="/dashboard" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
-                                            Get Started
+                                        <a href="/download-app" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            Download App
                                         </a>
-                                        <a href="/learn-more" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
-                                            Learn More
+                                        <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            How It Works
                                         </a>
                                     </div>
                                 </>
@@ -402,11 +402,11 @@ export default function BudgetHome() {
                                         Never guess the best time to send. Set your ideal exchange rate, and we'll monitor the markets 24/7, notifying you instantly when it's the right time to transfer.
                                     </p>
                                     <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
-                                        <a href="/rate-alerts" className="px-8 py-4 bg-cyan-500 text-white rounded-full font-semibold text-lg hover:bg-cyan-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
-                                            Set Alert
+                                        <a href="/download-app" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            Download App
                                         </a>
-                                        <a href="/view-rates" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
-                                            View Rates
+                                        <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            How It Works
                                         </a>
                                     </div>
                                 </>
@@ -424,11 +424,11 @@ export default function BudgetHome() {
                                         From automatic spending categories to personalized budgets and savings goals, Payvel gives you the tools to see where your money goes and make it work for you.
                                     </p>
                                     <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
-                                        <a href="/budget" className="px-8 py-4 bg-blue-500 text-white rounded-full font-semibold text-lg hover:bg-blue-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
-                                            View Budget
+                                        <a href="/download-app" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            Download App
                                         </a>
-                                        <a href="/add-expense" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
-                                            Add Expense
+                                        <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            How It Works
                                         </a>
                                     </div>
                                 </>

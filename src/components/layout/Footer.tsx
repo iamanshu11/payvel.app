@@ -56,8 +56,8 @@ export default function Footer() {
 
   const contactInfo = [
     { icon: Mail, text: "connect@payvel.com" },
-    { icon: MapPin, text: "123 Innovation Street, Tech Valley" },
-    { icon: MapPin, text: "456 Global Plaza, Business District" },
+    { icon: MapPin, text: "Payvel PTY LTD" },
+    { icon: MapPin, text: "SOUTH RIPLEY QLD 4306, Australia" },
   ];
 
   return (
