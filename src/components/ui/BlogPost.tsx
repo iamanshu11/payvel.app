@@ -25,7 +25,7 @@ const blogPosts: BlogPost[] = [
     category: 'Company News',
     title: 'Payvel Expands Service to New Countries',
     excerpt: "We're excited to announce that our seamless money transfer service is now available in three new corridors, connecting more families than ever before.",
-    image: '/img/people.webp',
+    image: '/img/company.png',
     author: 'Payvel Team',
     readTime: '5 min read',
     slug: '#',
@@ -35,7 +35,7 @@ const blogPosts: BlogPost[] = [
     id: '2',
     category: 'Finance Tips',
     title: '5 Tips for Budgeting Your International Transfers',
-    image: '/img/people.webp',
+    image: '/img/blog-1.png',
     author: 'Jane Doe',
     readTime: '5 min read',
     slug: '#'
@@ -44,7 +44,7 @@ const blogPosts: BlogPost[] = [
     id: '3',
     category: 'Security',
     title: 'How We Keep Your Money Safe',
-    image: '/img/people.webp',
+    image: '/img/blog-2.png',
     author: 'John Smith',
     readTime: '4 min read',
     slug: '#'
@@ -53,7 +53,7 @@ const blogPosts: BlogPost[] = [
     id: '4',
     category: 'Product Updates',
     title: 'Introducing Rate Alerts: Never Miss the Perfect Time to Send',
-    image: '/img/people.webp',
+    image: '/img/blog-3.png',
     author: 'The Payvel Team',
     readTime: '3 min read',
     slug: '#'

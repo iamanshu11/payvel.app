@@ -254,7 +254,7 @@ export default function Header() {
                 height={28}
                 className="transform group-hover:scale-110 transition-transform duration-300"
               />
-              <span className="text-2xl font-semibold text-[#001959] dark:text-[#fff]  tracking-wide group-hover:text-blue-500 transition-colors duration-300">
+              <span className="text-2xl font-semibold text-[#001959] dark:text-[#fff]  tracking-wide  transition-colors duration-300">
                 Payvel
               </span>
             </div>

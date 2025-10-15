@@ -98,7 +98,7 @@ const SendMoney = () => {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 text-center mb-12 max-w-3xl ">
-          The platform you love. Zero fees. Instant transfers. Global reach.
+          The platform you love. Zero fees. Instant transfers. Global reach. Experience the fast, secure, and simple way to support your loved ones back home.
         </p>
 
         {/* Feature Pills */}
@@ -118,57 +118,6 @@ const SendMoney = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Floating Currency Icons */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[
-            {
-              emoji: "💰",
-              pos: "top-[20%] left-[15%]",
-              delay: "0s",
-              size: "w-16 h-16",
-            },
-            {
-              emoji: "💸",
-              pos: "top-[30%] right-[20%]",
-              delay: "1s",
-              size: "w-20 h-20",
-            },
-            {
-              emoji: "💵",
-              pos: "bottom-[30%] left-[25%]",
-              delay: "2s",
-              size: "w-18 h-18",
-            },
-            {
-              emoji: "💳",
-              pos: "bottom-[25%] right-[15%]",
-              delay: "1.5s",
-              size: "w-16 h-16",
-            },
-            {
-              emoji: "🌍",
-              pos: "top-[15%] right-[10%]",
-              delay: "0.5s",
-              size: "w-24 h-24",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className={`absolute ${item.pos} ${item.size} flex items-center justify-center text-4xl opacity-30`}
-              style={{
-                animation: "float 6s ease-in-out infinite",
-                animationDelay: item.delay,
-                transform: `translate(${mousePosition.x * 0.5}px, ${
-                  mousePosition.y * 0.5
-                }px)`,
-                transition: "transform 0.3s ease-out",
-              }}
-            >
-              {item.emoji}
-            </div>
-          ))}
         </div>
 
         {/* Scroll Indicator */}

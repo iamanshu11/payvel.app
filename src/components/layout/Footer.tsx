@@ -1,6 +1,13 @@
 "use client";
 import { useState } from "react";
-import { Linkedin, Mail, MapPin, ArrowUp, Send, CheckCircle } from "lucide-react";
+import {
+  Linkedin,
+  Mail,
+  MapPin,
+  ArrowUp,
+  Send,
+  CheckCircle,
+} from "lucide-react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -83,12 +90,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           {/* Brand Section */}
           <div className="lg:col-span-2 space-y-6">
-            <img src="/img/web-logo.png" alt="Payvel Logo" />
+            <div className="flex items-center gap-2">
+              <img
+                src="/fav.svg"
+                alt="Payvel Logo"
+                width={28}
+                height={28}
+                className="transform group-hover:scale-110 transition-transform duration-300"
+              />
+              <span className="text-2xl font-semibold text-[#001959] dark:text-[#fff]  tracking-wide  transition-colors duration-300">
+                Payvel
+              </span>
+            </div>
 
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-sm transform transition-all duration-300 hover:text-gray-800 dark:hover:text-white">
-              Building bridges to connect you with what matters most. Experience the
-              future of seamless communication.
-            </p>
+<p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-sm">
+  Send money securely and instantly, connecting you with loved ones anywhere.
+</p>
 
             {/* Contact Info */}
             <div className="space-y-3">
@@ -141,17 +158,25 @@ export default function Footer() {
                     <a
                       href={link.url}
                       className="group/link text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 flex items-center gap-2"
-                      onMouseEnter={() => setHoveredLink(`${section.title}-${index}`)}
+                      onMouseEnter={() =>
+                        setHoveredLink(`${section.title}-${index}`)
+                      }
                       onMouseLeave={() => setHoveredLink(null)}
                     >
                       <span
-                        className={`h-0.5 bg-${section.color}-500 transition-all duration-300 ${
-                          hoveredLink === `${section.title}-${index}` ? "w-2" : "w-0"
+                        className={`h-0.5 bg-${
+                          section.color
+                        }-500 transition-all duration-300 ${
+                          hoveredLink === `${section.title}-${index}`
+                            ? "w-2"
+                            : "w-0"
                         }`}
                       ></span>
                       <span
                         className={`transition-transform duration-300 ${
-                          hoveredLink === `${section.title}-${index}` ? "translate-x-1" : ""
+                          hoveredLink === `${section.title}-${index}`
+                            ? "translate-x-1"
+                            : ""
                         }`}
                       >
                         {link.name}
@@ -173,7 +198,8 @@ export default function Footer() {
               Stay in the Loop
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              Subscribe to our newsletter for the latest updates and exclusive offers
+              Subscribe to our newsletter for the latest updates and exclusive
+              offers
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">

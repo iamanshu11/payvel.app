@@ -1,7 +1,10 @@
 
+import AudNgnSlider from "@/components/ui/AudNgnSlider";
+import BudgetHome from "@/components/ui/BudgetHome";
+import FAQComponent from "@/components/ui/FAQComponent";
+import HowItWorks from "@/components/ui/HowItWorks";
 import SendApp from "@/components/ui/SendApp";
 import SendMoney from "@/components/ui/SendMoney";
-import TransferGuaranteeV2 from "@/components/ui/TransferGuaranteeV2";
 import TrustedCustomers from "@/components/ui/TrustedCustomers";
 import type { Metadata } from "next";
 
@@ -17,11 +20,13 @@ export default function HomePage() {
     <>
      
       <SendMoney />
+      <HowItWorks />
+      <BudgetHome />
       <SendApp />
-      {/* <TransferGuaranteeV2 /> */}
-      <TrustedCustomers />
+      <AudNgnSlider />
+      {/* <TrustedCustomers /> */}
+      <FAQComponent />
     
-
     </>
   );
 }

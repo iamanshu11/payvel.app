@@ -383,9 +383,9 @@ export default function BudgetHome() {
                                         <a href="/download-app" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                                             Download App
                                         </a>
-                                        <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                        {/* <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                                             How It Works
-                                        </a>
+                                        </a> */}
                                     </div>
                                 </>
                             )}
@@ -405,9 +405,9 @@ export default function BudgetHome() {
                                         <a href="/download-app" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                                             Download App
                                         </a>
-                                        <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                        {/* <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                                             How It Works
-                                        </a>
+                                        </a> */}
                                     </div>
                                 </>
                             )}
@@ -427,9 +427,9 @@ export default function BudgetHome() {
                                         <a href="/download-app" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                                             Download App
                                         </a>
-                                        <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                        {/* <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                                             How It Works
-                                        </a>
+                                        </a> */}
                                     </div>
                                 </>
                             )}
