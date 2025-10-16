@@ -56,6 +56,7 @@ export default function Footer() {
         { name: "Privacy Policy", url: "/privacypolicy" },
         { name: "Terms of Service", url: "/terms-and-service" },
         { name: "Cookie Policy", url: "/cookiepolicy" },
+        { name: "Refund Policy", url: "/refund-policy" },
         { name: "Compliance", url: "/compliance-security" },
       ],
     },
