@@ -16,7 +16,7 @@ export default function HomePage() {
     <>
       <HomeHero />
       <NoFeesSection />
-      <ScrollingMarquee />
+      {/* <ScrollingMarquee /> */}
       <BudgetHome />
       <DirectLineHome />
       <AfriexHero />
