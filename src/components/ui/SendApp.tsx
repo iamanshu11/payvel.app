@@ -19,14 +19,14 @@ export default function SendApp() {
         <div className="bg-white/10 dark:bg-gray-900/10 backdrop-blur-xs rounded-3xl shadow-2xl p-8 md:p-12">
           {/* App Store Badges */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-            <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+            <div className="flex items-center gap-2 text-sm text-gray-300 dark:text-gray-300">
               <span className="flex items-center gap-1">
                 ⭐ <span className="font-semibold">4.8</span>
               </span>
               <span>on App Store</span>
             </div>
             <div className="w-px h-4 bg-gray-300 dark:bg-gray-600" />
-            <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+            <div className="flex items-center gap-2 text-sm text-gray-300 dark:text-gray-300">
               <span className="flex items-center gap-1">
                 ⭐ <span className="font-semibold">4.9</span>
               </span>
@@ -59,10 +59,10 @@ export default function SendApp() {
               </div>
             </div>
             <div className="text-center sm:text-left">
-              <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+              <p className="text-sm font-semibold text-gray-300 dark:text-white mb-1">
                 Scan to download
               </p>
-              <p className="text-xs text-gray-600 dark:text-gray-400">
+              <p className="text-xs text-gray-400 dark:text-gray-400">
                 for iPhone and Android
               </p>
             </div>
