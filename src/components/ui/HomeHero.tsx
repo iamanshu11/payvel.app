@@ -160,7 +160,7 @@ export default function HomeHero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           {/* Text Section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
-            <p className="bg-red-400 max-w-fit text-center lg:text-left lg:mx-0 mx-auto p-2 rounded-full px-6 text-white mb-4">
+            <p className="bg-green-300 max-w-fit text-center lg:text-left lg:mx-0 mx-auto p-2 rounded-full px-6 text-green-600 mb-4">
               AUSTRAC Registered
             </p>
 
