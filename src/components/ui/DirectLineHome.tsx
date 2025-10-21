@@ -53,7 +53,7 @@ export default function DirectLineHome() {
   const handleCountryClick = (countryName) => {
     if (countryName === 'Nigeria') {
       // Redirect to sendmoney page
-      window.location.href = '/send-money';
+      window.location.href = '/send-money-to-nigeria';
     } else {
       // Show coming soon popup for other countries
       setShowComingSoon(true);

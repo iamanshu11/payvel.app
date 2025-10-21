@@ -22,45 +22,120 @@ import {
 } from "lucide-react";
 
 const countries = [
-  { name: "Benin", flag: "🇧🇯", code: "benin", href: "/send-money/benin" },
-  { name: "Botswana", flag: "🇧🇼", code: "BW", href: "/send-money/botswana" },
+  {
+    name: "Benin",
+    flag: "🇧🇯",
+    code: "BJ",
+    href: "/send-money-to-benin",
+  },
+  {
+    name: "Botswana",
+    flag: "🇧🇼",
+    code: "BW",
+    href: "/send-money-to-botswana",
+  },
   {
     name: "Burkina Faso",
     flag: "🇧🇫",
     code: "BF",
-    href: "/send-money/burkina-faso",
+    href: "/send-money-to-burkina-faso",
   },
-  { name: "Cameroon", flag: "🇨🇲", code: "CM", href: "/send-money/cameroon" },
+  {
+    name: "Cameroon",
+    flag: "🇨🇲",
+    code: "CM",
+    href: "/send-money-to-cameroon",
+  },
   {
     name: "Cote d'Ivoire",
     flag: "🇨🇮",
     code: "CI",
-    href: "/send-money/cote-d-ivoire",
+    href: "/send-money-to-cote-d-ivoire",
   },
-  { name: "DR Congo", flag: "🇨🇩", code: "CD", href: "/send-money/dr-congo" },
-  { name: "Gabon", flag: "🇬🇦", code: "GA", href: "/send-money/gabon" },
-  { name: "Kenya", flag: "🇰🇪", code: "KE", href: "/send-money/kenya" },
-  { name: "Malawi", flag: "🇲🇼", code: "MW", href: "/send-money/malawi" },
-  { name: "Mali", flag: "🇲🇱", code: "ML", href: "/send-money/mali" },
-  { name: "Nigeria", flag: "🇳🇬", code: "NG", href: "/send-money/nigeria" },
+  {
+    name: "DR Congo",
+    flag: "🇨🇩",
+    code: "CD",
+    href: "/send-money-to-dr-congo",
+  },
+  {
+    name: "Gabon",
+    flag: "🇬🇦",
+    code: "GA",
+    href: "/send-money-to-gabon",
+  },
+  {
+    name: "Kenya",
+    flag: "🇰🇪",
+    code: "KE",
+    href: "/send-money-to-kenya",
+  },
+  {
+    name: "Malawi",
+    flag: "🇲🇼",
+    code: "MW",
+    href: "/send-money-to-malawi",
+  },
+  {
+    name: "Mali",
+    flag: "🇲🇱",
+    code: "ML",
+    href: "/send-money-to-mali",
+  },
+  {
+    name: "Nigeria",
+    flag: "🇳🇬",
+    code: "NG",
+    href: "/send-money-to-nigeria",
+  },
   {
     name: "Republic of Congo",
     flag: "🇨🇬",
     code: "CG",
-    href: "/send-money/republic-of-congo",
+    href: "/send-money-to-republic-of-congo",
   },
-  { name: "Rwanda", flag: "🇷🇼", code: "RW", href: "/send-money/rwanda" },
-  { name: "Senegal", flag: "🇸🇳", code: "SN", href: "/send-money/senegal" },
+  {
+    name: "Rwanda",
+    flag: "🇷🇼",
+    code: "RW",
+    href: "/send-money-to-rwanda",
+  },
+  {
+    name: "Senegal",
+    flag: "🇸🇳",
+    code: "SN",
+    href: "/send-money-to-senegal",
+  },
   {
     name: "South Africa",
     flag: "🇿🇦",
     code: "ZA",
-    href: "/send-money/south-africa",
+    href: "/send-money-to-south-africa",
   },
-  { name: "Tanzania", flag: "🇹🇿", code: "TZ", href: "/send-money/tanzania" },
-  { name: "Togo", flag: "🇹🇬", code: "TG", href: "/send-money/togo" },
-  { name: "Uganda", flag: "🇺🇬", code: "UG", href: "/send-money/uganda" },
-  { name: "Zambia", flag: "🇿🇲", code: "ZM", href: "/send-money/zambia" },
+  {
+    name: "Tanzania",
+    flag: "🇹🇿",
+    code: "TZ",
+    href: "/send-money-to-tanzania",
+  },
+  {
+    name: "Togo",
+    flag: "🇹🇬",
+    code: "TG",
+    href: "/send-money-to-togo",
+  },
+  {
+    name: "Uganda",
+    flag: "🇺🇬",
+    code: "UG",
+    href: "/send-money-to-uganda",
+  },
+  {
+    name: "Zambia",
+    flag: "🇿🇲",
+    code: "ZM",
+    href: "/send-money-to-zambia",
+  },
 ];
 
 export default function Header() {
@@ -132,16 +207,16 @@ export default function Header() {
             </h3>
             <div className="space-y-2">
               {countries.slice(0, 5).map((country, idx) => (
-                <a
+                <Link
                   key={idx}
-                  href={`/send-money/${country.code.toLowerCase()}`}
+                  href={country.href}
                   className="flex items-center gap-3 p-2 hover:bg-teal-50 dark:hover:bg-teal-900/20 rounded-lg transition-colors duration-200 group"
                 >
                   <span className="text-2xl">{country.flag}</span>
                   <span className="font-medium text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                     {country.name}
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -268,6 +343,9 @@ export default function Header() {
             </Link>
             <Link href="/download-app" className={getLinkClass("#")}>
               Download App
+            </Link>
+            <Link href="/travel" className={getLinkClass("#")}>
+              Travel
             </Link>
             <Link href="/help-center" className={getLinkClass("#")}>
               Help Center
@@ -440,9 +518,9 @@ export default function Header() {
             <div className="p-6 overflow-y-auto max-h-[calc(80vh-180px)]">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {filteredCountries.map((country, idx) => (
-                  <a
+                  <Link
                     key={idx}
-                    href={`/send-money/${country.code.toLowerCase()}`}
+                    href={country.href}
                     onClick={() => setShowAllCountries(false)}
                     className="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 dark:border-gray-800 hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 group"
                   >
@@ -454,7 +532,7 @@ export default function Header() {
                       size={16}
                       className="ml-auto text-gray-400 group-hover:text-teal-600 dark:group-hover:text-teal-400 group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100"
                     />
-                  </a>
+                  </Link>
                 ))}
               </div>
               {filteredCountries.length === 0 && (
@@ -622,9 +700,9 @@ export default function Header() {
               <div className="flex-1 overflow-y-auto p-6">
                 <div className="space-y-3">
                   {filteredCountries.map((country, idx) => (
-                    <a
+                    <Link
                       key={idx}
-                      href={`/send-money/${country.code.toLowerCase()}`}
+                      href={country.href}
                       className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all group"
                       onClick={closeMobileMenu}
                     >
@@ -638,7 +716,7 @@ export default function Header() {
                         size={20}
                         className="text-gray-400 group-hover:translate-x-1 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all"
                       />
-                    </a>
+                    </Link>
                   ))}
                   {filteredCountries.length === 0 && (
                     <div className="flex flex-col items-center justify-center py-12 space-y-4">

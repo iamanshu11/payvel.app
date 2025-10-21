@@ -44,7 +44,7 @@ export default function Footer() {
       links: [
         { name: "Careers", url: "/careers" },
         { name: "Blog", url: "/blog" },
-        { name: "Faq", url: "/faq" },
+        { name: "FAQ", url: "/faq" },
         { name: "Help Center", url: "/help-center" },
         { name: "Press and  Media", url: "/press-and-media" },
       ],

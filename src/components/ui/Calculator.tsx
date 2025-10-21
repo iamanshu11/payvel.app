@@ -2,15 +2,30 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Calculator() {
+interface CalculatorProps {
+  defaultToCurrency?: string;
+  defaultToCountry?: string;
+}
+
+export default function Calculator({ 
+  defaultToCurrency = 'NGN', 
+  defaultToCountry = 'Nigeria' 
+}: CalculatorProps) {
   const [sendAmount, setSendAmount] = useState('0');
   const [receiveAmount, setReceiveAmount] = useState('0');
   const [fromCurrency, setFromCurrency] = useState('AUD');
-  const [toCurrency, setToCurrency] = useState('NGN');
+  const [toCurrency, setToCurrency] = useState(defaultToCurrency);
+  const [toCountry, setToCountry] = useState(defaultToCountry);
   const [fromDropdownOpen, setFromDropdownOpen] = useState(false);
   const [toDropdownOpen, setToDropdownOpen] = useState(false);
   const [fromSearch, setFromSearch] = useState('');
   const [toSearch, setToSearch] = useState('');
+
+  // Update toCurrency and toCountry when defaults change
+  useEffect(() => {
+    setToCurrency(defaultToCurrency);
+    setToCountry(defaultToCountry);
+  }, [defaultToCurrency, defaultToCountry]);
 
   // ✅ Dynamic Exchange Rate Table (sending countries to receiving countries)
   const exchangeRates: Record<string, Record<string, number>> = {
@@ -88,6 +103,16 @@ export default function Calculator() {
     { code: 'ZMW', flag: 'zm', name: 'Zambian Kwacha', country: 'Zambia' },
   ];
 
+  // ✅ Get current selected country details based on both currency AND country name
+  const getSelectedToCountry = () => {
+    // Normalize country name for comparison (trim spaces, case-insensitive)
+    const normalizedToCountry = toCountry.trim().toLowerCase();
+    
+    return receivingCurrencies.find(
+      c => c.code === toCurrency && c.country.toLowerCase() === normalizedToCountry
+    ) || receivingCurrencies.find(c => c.code === toCurrency);
+  };
+
   // ✅ Update conversion
   useEffect(() => {
     const rate = exchangeRates[fromCurrency]?.[toCurrency] || 1;
@@ -116,6 +141,8 @@ export default function Calculator() {
       c.name.toLowerCase().includes(toSearch.toLowerCase()) ||
       c.country.toLowerCase().includes(toSearch.toLowerCase())
   );
+
+  const selectedToCountry = getSelectedToCountry();
 
   return (
     <div className="relative backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 rounded-3xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 p-6 max-w-lg mx-auto">
@@ -211,7 +238,7 @@ export default function Calculator() {
               className="flex items-center gap-2 px-3 py-2 bg-gray-200 dark:bg-gray-700 rounded-full"
             >
               <img
-                src={`https://flagcdn.com/24x18/${receivingCurrencies.find(c => c.code === toCurrency)?.flag}.png`}
+                src={`https://flagcdn.com/24x18/${selectedToCountry?.flag}.png`}
                 alt={toCurrency}
                 className="w-6 h-4 object-cover rounded"
               />
@@ -236,11 +263,12 @@ export default function Calculator() {
                 />
               </div>
               <div className="max-h-60 overflow-y-auto">
-                {filteredTo.map(currency => (
+                {filteredTo.map((currency, index) => (
                   <button
-                    key={currency.code}
+                    key={`${currency.code}-${currency.country}-${index}`}
                     onClick={() => {
                       setToCurrency(currency.code);
+                      setToCountry(currency.country);
                       setToDropdownOpen(false);
                       setToSearch('');
                     }}
