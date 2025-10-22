@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 import DirectLineHome from "@/components/ui/benin/DirectLineHome";
 
 export const metadata: Metadata = {
-  title: "Send Money To Gabon | Payvel - Fast, Secure, No Fees",
+  title: "Send Money To Togo | Payvel - Fast, Secure, No Fees",
   description:
     "Experience seamless money transfers with Payvel. Fast, secure, and no hidden fees.",
   alternates: { canonical: "/send-money" },
@@ -21,8 +21,8 @@ export default function HomePage() {
     <>
       <SendMoneyHero
         fromCountry="Australia"
-        toCountry="Gabon"
-        toCurrency="XAF"
+        toCountry="Togo"
+        toCurrency="XOF"
         heroImage="/img/send-money/gabon/image.webp"
       />
       <DirectLineHome />

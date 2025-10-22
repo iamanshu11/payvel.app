@@ -4,25 +4,25 @@ import React, { useState, useEffect } from 'react';
 import { Search, ChevronDown } from 'lucide-react';
 
 const countries = [
-  { name: 'Benin', code: 'bj' },
-  { name: 'Botswana', code: 'bw' },
-  { name: 'Burkina Faso', code: 'bf' },
-  { name: 'Cameroon', code: 'cm' },
-  { name: 'Cote d’Ivoire', code: 'ci' },
-  { name: 'DR Congo', code: 'cd' },
-  { name: 'Gabon', code: 'ga' },
-  { name: 'Kenya', code: 'ke' },
-  { name: 'Malawi', code: 'mw' },
-  { name: 'Mali', code: 'ml' },
-  { name: 'Nigeria', code: 'ng' },
-  { name: 'Republic of Congo', code: 'cg' },
-  { name: 'Rwanda', code: 'rw' },
-  { name: 'Senegal', code: 'sn' },
-  { name: 'South Africa', code: 'za' },
-  { name: 'Tanzania', code: 'tz' },
-  { name: 'Togo', code: 'tg' },
-  { name: 'Uganda', code: 'ug' },
-  { name: 'Zambia', code: 'zm' },
+  { name: 'Benin', code: 'bj', url: '/send-money-to-benin' },
+  { name: 'Botswana', code: 'bw', url: '/send-money-to-botswana' },
+  { name: 'Burkina Faso', code: 'bf', url: '/send-money-to-burkina-faso' },
+  { name: 'Cameroon', code: 'cm', url: '/send-money-to-cameroon' },
+  { name: "Cote d'Ivoire", code: 'ci', url: '/send-money-to-cote-d-ivoire' },
+  { name: 'DR Congo', code: 'cd', url: '/send-money-to-dr-congo' },
+  { name: 'Gabon', code: 'ga', url: '/send-money-to-gabon' },
+  { name: 'Kenya', code: 'ke', url: '/send-money-to-kenya' },
+  { name: 'Malawi', code: 'mw', url: '/send-money-to-malawi' },
+  { name: 'Mali', code: 'ml', url: '/send-money-to-mali' },
+  { name: 'Nigeria', code: 'ng', url: '/send-money-to-nigeria' },
+  { name: 'Republic of Congo', code: 'cg', url: '/send-money-to-republic-of-congo' },
+  { name: 'Rwanda', code: 'rw', url: '/send-money-to-rwanda' },
+  { name: 'Senegal', code: 'sn', url: '/send-money-to-senegal' },
+  { name: 'South Africa', code: 'za', url: '/send-money-to-south-africa' },
+  { name: 'Tanzania', code: 'tz', url: '/send-money-to-tanzania' },
+  { name: 'Togo', code: 'tg', url: '/send-money-to-togo' },
+  { name: 'Uganda', code: 'ug', url: '/send-money-to-uganda' },
+  { name: 'Zambia', code: 'zm', url: '/send-money-to-zambia' },
 ];
 
 export default function DirectLineHome() {
@@ -44,18 +44,15 @@ export default function DirectLineHome() {
     country.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const displayedCountries = isMobile && !showAll
-    ? filteredCountries.slice(0, 4)
-    : filteredCountries;
+  const displayedCountries =
+    isMobile && !showAll ? filteredCountries.slice(0, 4) : filteredCountries;
 
   const hasMore = isMobile && filteredCountries.length > 4 && !showAll;
 
-  const handleCountryClick = (countryName) => {
-    if (countryName === 'Nigeria') {
-      // Redirect to sendmoney page
-      window.location.href = '/send-money-to-nigeria';
+  const handleCountryClick = (country) => {
+    if (country.url) {
+      window.location.href = country.url;
     } else {
-      // Show coming soon popup for other countries
       setShowComingSoon(true);
       setTimeout(() => {
         setShowComingSoon(false);
@@ -65,13 +62,15 @@ export default function DirectLineHome() {
 
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100 py-12 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
-          }}
-        ></div>
-         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-teal-500 to-yellow-400 rounded-full blur-3xl opacity-20 floating-shape"></div>
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+        }}
+      ></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-teal-500 to-yellow-400 rounded-full blur-3xl opacity-20 floating-shape"></div>
       <div className="w-full container mx-auto px-4 md:px-12 lg:px-16">
         {/* Header */}
         <div className="text-center mb-16 animate-slideDown">
@@ -106,9 +105,8 @@ export default function DirectLineHome() {
               style={{
                 animationDelay: `${index * 100}ms`,
               }}
-              onClick={() => handleCountryClick(country.name)}
+              onClick={() => handleCountryClick(country)}
             >
-              {/* Gradient Border Wrapper */}
               <div className="p-[2px] rounded-full bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 transition-all duration-300 group-hover:from-teal-500 group-hover:to-teal-400">
                 <div className="backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 rounded-full w-48 flex items-center p-3 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
                   <div className="flex items-center space-x-4">
@@ -128,7 +126,6 @@ export default function DirectLineHome() {
             </div>
           ))}
         </div>
-
 
         {/* Show More Button */}
         {hasMore && (
@@ -178,7 +175,6 @@ export default function DirectLineHome() {
             opacity: 1;
           }
         }
-
         @keyframes slideDown {
           from {
             opacity: 0;
@@ -189,7 +185,6 @@ export default function DirectLineHome() {
             transform: translateY(0);
           }
         }
-
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -200,26 +195,6 @@ export default function DirectLineHome() {
             transform: translateY(0);
           }
         }
-
-        @keyframes popupFade {
-          0% {
-            opacity: 0;
-            transform: scale(0.8) translateY(20px);
-          }
-          10% {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-          90% {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-          100% {
-            opacity: 0;
-            transform: scale(0.8) translateY(-20px);
-          }
-        }
-
         @keyframes popupBounce {
           0% {
             opacity: 0;
@@ -236,24 +211,16 @@ export default function DirectLineHome() {
             transform: scale(1) rotate(0deg);
           }
         }
-
         .animate-fadeIn {
           animation: fadeIn 0.8s ease-out;
         }
-
         .animate-slideDown {
           animation: slideDown 0.8s ease-out;
         }
-
         .animate-fadeInUp {
           animation: fadeInUp 0.6s ease-out;
           animation-fill-mode: both;
         }
-
-        .animate-popupFade {
-          animation: popupFade 2s ease-in-out;
-        }
-
         .animate-popupBounce {
           animation: popupBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }

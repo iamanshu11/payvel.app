@@ -210,7 +210,7 @@ export default function HelpCenterPage() {
             </div>
 
             {/* Contact Options Grid */}
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
               {/* Email Option */}
               <a
                 href="mailto:connect@payvel.com"
@@ -230,7 +230,7 @@ export default function HelpCenterPage() {
               </a>
 
               {/* WhatsApp Option */}
-              <a
+              {/* <a
                 href="https://wa.me/1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -247,7 +247,7 @@ export default function HelpCenterPage() {
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Chat with us instantly</p>
                   <p className="text-green-500 font-medium text-sm">Start Conversation →</p>
                 </div>
-              </a>
+              </a> */}
 
               {/* Live Chat Option */}
               <Link

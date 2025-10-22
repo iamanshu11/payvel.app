@@ -145,7 +145,7 @@ export default function Calculator({
   const selectedToCountry = getSelectedToCountry();
 
   return (
-    <div className="relative backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 rounded-3xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 p-6 max-w-lg mx-auto">
+    <div className="relative backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 rounded-3xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 p-6 max-w-xl mx-auto">
 
       {/* From Section */}
       <div className="mb-6 relative">

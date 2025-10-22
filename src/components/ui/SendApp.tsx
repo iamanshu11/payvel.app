@@ -36,7 +36,7 @@ export default function SendApp() {
 
           {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-8 leading-tight">
-            Payvel is how the world moves money now
+            Payvel is how the world moves money 
           </h1>
 
           {/* QR Code Card */}

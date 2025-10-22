@@ -3,10 +3,11 @@ import AudNgnSlider from "@/components/ui/AudNgnSlider";
 import SendMoneyHero from "@/components/ui/benin/SendMoneyHero";
 import BudgetHome from "@/components/ui/BudgetHome";
 import FAQComponent from "@/components/ui/FAQComponent";
-import HowItWorks from "@/components/ui/HowItWorks";
+import HowItWorks from "@/components/ui/benin/HowItWorks";
 import SendApp from "@/components/ui/benin/SendApp";
 import SendMoney from "@/components/ui/SendMoney";
 import TrustedCustomers from "@/components/ui/TrustedCustomers";
+import DirectLineHome from "@/components/ui/benin/DirectLineHome";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,7 +27,8 @@ export default function HomePage() {
       toCurrency="XOF"
       heroImage="/img/send-money/benin/image.webp" // Your Benin hero image
     />
-      <HowItWorks />
+    <DirectLineHome />
+      <HowItWorks /> 
       <BudgetHome />
       <SendApp backgroundImage="/img/send-money/benin/app.webp" />
       <AudNgnSlider />

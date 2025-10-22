@@ -6,151 +6,158 @@ interface ScrollStep {
   title: string;
   description: string;
   component: React.ReactNode;
+  accent: string;
 }
 
 const DashboardView1 = () => (
-  <div className="w-full h-full bg-cyan-50 dark:bg-gradient-to-br dark:from-gray-950 dark:via-gray-900 dark:to-black p-4 overflow-auto">
+  <div className="w-full h-full bg-cyan-50 dark:bg-gradient-to-br from-gray-950 via-gray-900 to-black dark:from-black dark:via-gray-950 dark:to-gray-900 p-4 overflow-auto">
     <div className="flex items-center justify-between mb-4">
-      <div className="flex items-center gap-2">
-        <div className="w-6 h-6 flex items-center justify-center">
-          <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <div className="flex items-center gap-2 mt-2">
+        <div className="w-8 h-8 bg-black/80 dark:bg-cyan-100 backdrop-blur-sm rounded-full flex items-center justify-center">
+          <svg className="w-5 h-5 text-white dark:text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </div>
       </div>
-      <div className="w-6 h-6 relative">
-        <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></div>
-        <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <div className="w-8 h-8 bg-black/80 dark:bg-cyan-100 backdrop-blur-sm rounded-full relative flex items-center justify-center">
+        <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+        <svg className="w-5 h-5 text-white dark:text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
         </svg>
       </div>
     </div>
 
-    <div className="bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl p-4 mb-4 shadow-lg">
-      <div className="text-white text-xs font-semibold mb-3">TODAY RATE</div>
-      <div className="flex items-center gap-2 mb-2">
-        <div className="bg-white dark:bg-gray-800 rounded-lg px-2 py-2 flex items-center gap-1 text-xs">
-          🇺🇸 <span className="font-semibold text-gray-900 dark:text-gray-100">USD</span>
+    <div className="bg-gradient-to-br from-teal-400 to-cyan-500 backdrop-blur-xl rounded-3xl p-5 mb-4 shadow-2xl">
+      <div className="text-white-600 text-xs font-bold mb-3 tracking-wider">✈️ FLIGHT SEARCH</div>
+      <div className="space-y-3">
+        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-3 border-2 border-cyan-200">
+          <div className="text-xs text-gray-500 mb-1">FROM</div>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🇺🇸</span>
+            <div>
+              <div className="font-bold text-gray-900">New York</div>
+              <div className="text-xs text-gray-500">JFK Airport</div>
+            </div>
+          </div>
         </div>
-        <input
-          type="text"
-          placeholder="Enter amount"
-          className="w-32 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-300 dark:focus:ring-teal-500"
-        />
-      </div>
-      <div className="flex items-center justify-center my-2">
-        <div className="text-white dark:text-gray-900 text-2xl">⇅</div>
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-2 py-2 flex items-center gap-1 text-xs">
-          🇦🇺 <span className="font-semibold">AUD</span>
+        
+        <div className="flex justify-center -my-2 relative z-10">
+          <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center shadow-lg">
+            <svg className="w-5 h-5 text-white " viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+            </svg>
+          </div>
         </div>
-        <input
-          type="text"
-          placeholder="Enter amount"
-          className="w-32 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-300 dark:focus:ring-teal-500"
-        />
+
+        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-3 border-2 border-purple-200">
+          <div className="text-xs text-gray-500 mb-1">TO</div>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🇦🇺</span>
+            <div>
+              <div className="font-bold text-gray-900">Sydney</div>
+              <div className="text-xs text-gray-500">SYD Airport</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="text-white dark:text-gray-900 text-xs mt-3">Conversion Rate: 1.8</div>
+
+      <div className="grid grid-cols-2 gap-2 mt-4">
+        <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-2 border border-cyan-200">
+          <div className="text-xs text-gray-500">Departure</div>
+          <div className="text-sm font-semibold text-gray-900">Nov 15</div>
+        </div>
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-2 border border-purple-200">
+          <div className="text-xs text-gray-500">Return</div>
+          <div className="text-sm font-semibold text-gray-900">Nov 30</div>
+        </div>
+      </div>
+
+      <button className="w-full mt-4 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 rounded-2xl shadow-lg transform transition-all duration-200 hover:scale-105 active:scale-95">
+        Search Flights 🔍
+      </button>
     </div>
 
-    <div className="grid grid-cols-3 gap-3 mb-4">
-      <div className="flex flex-col items-center gap-1">
-        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-2xl">🎓</div>
-        <p className="text-xs text-blue-600 dark:text-blue-300 text-center font-medium">Student Hub</p>
+    <div className="grid grid-cols-3 gap-2">
+      <div className="bg-white/90 dark:bg-cyan-100 dark:text-white backdrop-blur-sm rounded-2xl p-3 text-center shadow-lg hover:shadow-xl transition-shadow">
+        <div className="text-2xl mb-1">💰</div>
+        <div className="text-xs font-semibold  text-gray-900">Best Price</div>
       </div>
-      <div className="flex flex-col items-center gap-1">
-        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-2xl">💸</div>
-        <p className="text-xs text-blue-600 dark:text-blue-300 text-center font-medium">Remittance Hub</p>
+      <div className="bg-white/90  dark:bg-cyan-100 backdrop-blur-sm rounded-2xl p-3 text-center shadow-lg hover:shadow-xl transition-shadow">
+        <div className="text-2xl mb-1">⚡</div>
+        <div className="text-xs font-semibold text-gray-900">Fast Track</div>
       </div>
-      <div className="flex flex-col items-center gap-1">
-        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-2xl">✈️</div>
-        <p className="text-xs text-blue-600 dark:text-blue-300 text-center font-medium">Travel Hub</p>
-      </div>
-    </div>
-
-    <div className="grid grid-cols-3 gap-3 mb-3">
-      <div className="flex flex-col items-center gap-1">
-        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-2xl">💰</div>
-        <p className="text-xs text-blue-600 dark:text-blue-300 text-center font-medium">Budget</p>
-      </div>
-      <div className="flex flex-col items-center gap-1">
-        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-2xl">💲</div>
-        <p className="text-xs text-blue-600 dark:text-blue-300 text-center font-medium">Rate alert</p>
-      </div>
-      <div className="flex flex-col items-center gap-1">
-        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-2xl">👤</div>
-        <p className="text-xs text-blue-600 dark:text-blue-300 text-center font-medium">My Profile</p>
-      </div>
-    </div>
-
-    <div className="flex justify-center mt-3">
-      <div className="flex flex-col items-center gap-1">
-        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-2xl">🎟️</div>
-        <p className="text-xs text-blue-600 dark:text-blue-300 font-medium">Vouchers</p>
+      <div className="bg-white/90 dark:bg-cyan-100 backdrop-blur-sm rounded-2xl p-3 text-center shadow-lg hover:shadow-xl transition-shadow">
+        <div className="text-2xl mb-1">🎫</div>
+        <div className="text-xs font-semibold text-gray-900">My Trips</div>
       </div>
     </div>
   </div>
 );
 
 const DashboardView2 = () => (
-  <div className="w-full h-full bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-950 dark:via-orange-950 dark:to-black p-4 overflow-auto">
+  <div className="w-full h-full bg-cyan-50 dark:bg-gradient-to-br from-gray-950 via-gray-900 to-black dark:from-black dark:via-gray-950 dark:to-gray-900 p-4 overflow-auto">
     <div className="flex items-center justify-between mb-4">
-      <h2 className="text-lg font-bold text-gray-900 dark:text-white">Student Hub</h2>
-      <button className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">View All</button>
-    </div>
-
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 mb-4 shadow-lg">
-      <div className="flex items-center gap-3 mb-3">
-        <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-2xl">🎓</div>
-        <div>
-          <p className="text-sm font-semibold text-gray-900 dark:text-white">University Payments</p>
-          <p className="text-xs text-gray-500 dark:text-gray-400">Secure & Fast</p>
+      <div className="flex items-center gap-2">
+        <div className="w-8 h-8 mt-4 dark:bg-white/20 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center">
+          <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-2">
-        <button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg py-2 text-sm font-medium transition-colors">Tuition Fee</button>
-        <button className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg py-2 text-sm font-medium transition-colors">Accommodation</button>
+      <h2 className="text-sm font-bold  mt-4 text-black dark:text-white">🎓 Student Hub</h2>
+      <div className="w-8"></div>
+    </div>
+
+    <div className="bg-gradient-to-br from-teal-400 to-cyan-500 backdrop-blur-xl rounded-3xl p-5 mb-4 shadow-2xl">
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <div className="text-xs text-gray-900 mb-1">TOTAL BALANCE</div>
+          <div className="text-2xl font-bold text-gray-900">$15,350</div>
+        </div>
+        <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+          💳
+        </div>
+      </div>
+      
+      <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-3 border-2 border-orange-200">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs font-semibold text-orange-600">Available Credit</span>
+          <span className="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <div className="text-xl font-bold text-gray-900">$25,000</div>
       </div>
     </div>
 
     <div className="space-y-3">
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-md">
-        <div className="flex justify-between items-center">
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-l-4 border-red-500">
+        <div className="flex justify-between items-start mb-2">
           <div>
-            <p className="text-sm font-medium text-gray-900 dark:text-white">Semester Fee</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">Due: Nov 30, 2025</p>
+            <div className="font-bold text-gray-900 mb-1">📚 Semester Fee</div>
+            <div className="text-xs text-gray-500">Due: Nov 30, 2025</div>
           </div>
-          <div className="text-right">
-            <p className="text-sm font-bold text-gray-900 dark:text-white">$12,500</p>
-            <span className="text-xs bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded-full">Pending</span>
-          </div>
+          <div className="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full font-bold">Overdue</div>
+        </div>
+        <div className="flex items-end justify-between">
+          <div className="text-2xl font-bold text-gray-900">$12,500</div>
+          <button className="text-xs bg-gradient-to-r from-red-500 to-pink-600 text-white px-4 py-2 rounded-xl font-bold hover:shadow-lg transition-shadow">
+            Pay Now
+          </button>
         </div>
       </div>
       
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-md">
-        <div className="flex justify-between items-center">
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-l-4 border-yellow-500">
+        <div className="flex justify-between items-start mb-2">
           <div>
-            <p className="text-sm font-medium text-gray-900 dark:text-white">Housing Deposit</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">Due: Dec 15, 2025</p>
+            <div className="font-bold text-gray-900 mb-1">📖 Books & Supplies</div>
+            <div className="text-xs text-gray-500">Due: Dec 15, 2025</div>
           </div>
-          <div className="text-right">
-            <p className="text-sm font-bold text-gray-900 dark:text-white">$2,000</p>
-            <span className="text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-full">Paid</span>
-          </div>
+          <div className="text-xs bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full font-bold">Pending</div>
         </div>
-      </div>
-
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-md">
-        <div className="flex justify-between items-center">
-          <div>
-            <p className="text-sm font-medium text-gray-900 dark:text-white">Books & Supplies</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">Due: Oct 25, 2025</p>
-          </div>
-          <div className="text-right">
-            <p className="text-sm font-bold text-gray-900 dark:text-white">$850</p>
-            <span className="text-xs bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 px-2 py-1 rounded-full">Overdue</span>
-          </div>
+        <div className="flex items-end justify-between">
+          <div className="text-2xl font-bold text-gray-900">$850</div>
+          <button className="text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-xl font-bold hover:shadow-lg transition-shadow">
+            Schedule
+          </button>
         </div>
       </div>
     </div>
@@ -158,55 +165,69 @@ const DashboardView2 = () => (
 );
 
 const DashboardView3 = () => (
-  <div className="w-full h-full bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-950 dark:via-emerald-950 dark:to-black p-4 overflow-auto">
+  <div className="w-full h-full bg-cyan-50 dark:bg-gradient-to-br from-gray-950 via-gray-900 to-black dark:from-black dark:via-gray-950 dark:to-gray-900 p-4 overflow-auto">
     <div className="flex items-center justify-between mb-4">
-      <h2 className="text-lg font-bold text-gray-900 dark:text-white">All Services</h2>
-      <div className="w-6 h-6 relative">
-        <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
-    </div>
-
-    <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-4 mb-4 shadow-lg text-white">
-      <p className="text-xs font-semibold mb-2 opacity-90">TOTAL TRANSACTIONS</p>
-      <p className="text-3xl font-bold mb-1">$45,820</p>
-      <p className="text-xs opacity-80">This month • Oct 2025</p>
-      <div className="mt-3 flex gap-2">
-        <div className="flex-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-2">
-          <p className="text-xs opacity-75">Sent</p>
-          <p className="text-sm font-semibold">$32,500</p>
+      <h2 className="text-sm font-bold text-black dark:text-white">📊 Dashboard</h2>
+      <div className="flex gap-2 mt-4">
+        <div className="w-8 h-8 bg-black/50 dark:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+          <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
         </div>
-        <div className="flex-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-2">
-          <p className="text-xs opacity-75">Received</p>
-          <p className="text-sm font-semibold">$13,320</p>
+        <div className="w-8 h-8 bg-black/50 dark:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+          <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
         </div>
       </div>
     </div>
 
-    <div className="grid grid-cols-2 gap-3 mb-3">
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-        <div className="w-10 h-10 bg-cyan-100 dark:bg-cyan-900 rounded-full flex items-center justify-center text-xl mb-2">💸</div>
-        <p className="text-sm font-semibold text-gray-900 dark:text-white">Send Money</p>
-        <p className="text-xs text-gray-500 dark:text-gray-400">Quick transfer</p>
+    <div className="bg-gradient-to-br from-teal-400 to-cyan-500 backdrop-blur-xl rounded-3xl p-5 mb-4 shadow-2xl">
+      <div className="text-xs text-gray-800 mb-1">THIS MONTH</div>
+      <div className="text-3xl font-bold text-gray-900 mb-4">$45,820</div>
+      
+      <div className="grid grid-cols-2 gap-3 mb-4">
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-3 border-2 border-green-200">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-xs">↑</div>
+            <span className="text-xs text-gray-600 font-semibold">Received</span>
+          </div>
+          <div className="text-xl font-bold text-gray-900">$13,320</div>
+        </div>
+        <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-3 border-2 border-red-200">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-xs">↓</div>
+            <span className="text-xs text-gray-600 font-semibold">Sent</span>
+          </div>
+          <div className="text-xl font-bold text-gray-900">$32,500</div>
+        </div>
       </div>
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-        <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center text-xl mb-2">✈️</div>
-        <p className="text-sm font-semibold text-gray-900 dark:text-white">Book Travel</p>
-        <p className="text-xs text-gray-500 dark:text-gray-400">Flights & Hotels</p>
-      </div>
+
     </div>
 
     <div className="grid grid-cols-2 gap-3">
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-        <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center text-xl mb-2">💰</div>
-        <p className="text-sm font-semibold text-gray-900 dark:text-white">Budget Plan</p>
-        <p className="text-xs text-gray-500 dark:text-gray-400">Track expenses</p>
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+        <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center text-xl mb-2 shadow-lg">💸</div>
+        <div className="font-bold text-gray-900 text-sm">Send Money</div>
+        <div className="text-xs text-gray-500">Instant transfer</div>
       </div>
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-xl mb-2">📊</div>
-        <p className="text-sm font-semibold text-gray-900 dark:text-white">Analytics</p>
-        <p className="text-xs text-gray-500 dark:text-gray-400">View insights</p>
+      
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+        <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center text-xl mb-2 shadow-lg">✈️</div>
+        <div className="font-bold text-gray-900 text-sm">Book Travel</div>
+        <div className="text-xs text-gray-500">Flights & Hotels</div>
+      </div>
+      
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+        <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center text-xl mb-2 shadow-lg">💰</div>
+        <div className="font-bold text-gray-900 text-sm">Budget Plan</div>
+        <div className="text-xs text-gray-500">Track expenses</div>
+      </div>
+      
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+        <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center text-xl mb-2 shadow-lg">📊</div>
+        <div className="font-bold text-gray-900 text-sm">Analytics</div>
+        <div className="text-xs text-gray-500">View insights</div>
       </div>
     </div>
   </div>
@@ -214,152 +235,220 @@ const DashboardView3 = () => (
 
 const ScrollytellingSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const scrollSteps: ScrollStep[] = [
     {
-      title: "Find the best flight deals.",
-      description: "Search thousands of routes from top airlines to find the perfect flight for your journey, all with transparent pricing and real-time currency conversion.",
-      component: <DashboardView1 />
+      title: "Find the best flight deals",
+      description: "Search thousands of routes with transparent pricing and real-time currency conversion. Your journey starts here.",
+      component: <DashboardView1 />,
+      accent: "from-cyan-500 to-blue-600"
     },
     {
-      title: "Manage your student finances.",
-      description: "From tuition fees to accommodation costs, keep track of all your educational expenses in one secure place with instant notifications and payment reminders.",
-      component: <DashboardView2 />
+      title: "Manage student finances",
+      description: "Track tuition, accommodation, and expenses in one secure place with instant notifications and smart reminders.",
+      component: <DashboardView2 />,
+      accent: "from-orange-500 to-pink-600"
     },
     {
-      title: "Manage it all in one place.",
-      description: "Your flight itinerary, hotel bookings, and money transfers are all organized in one simple, secure dashboard with real-time insights and analytics.",
-      component: <DashboardView3 />
+      title: "Everything in one dashboard",
+      description: "Flights, hotels, and money transfers organized beautifully with real-time insights and powerful analytics.",
+      component: <DashboardView3 />,
+      accent: "from-cyan-500 to-cyan-600"
     }
   ];
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-30% 0px -30% 0px',
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = stepRefs.current.indexOf(entry.target as HTMLDivElement);
-          if (index !== -1) {
-            setActiveIndex(index);
-          }
-        }
-      });
-    }, observerOptions);
-
-    stepRefs.current.forEach((step) => {
-      if (step) observer.observe(step);
-    });
+    if (!isPaused) {
+      timerRef.current = setInterval(() => {
+        setActiveIndex((prev) => (prev + 1) % scrollSteps.length);
+      }, 3000);
+    }
 
     return () => {
-      stepRefs.current.forEach((step) => {
-        if (step) observer.unobserve(step);
-      });
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
     };
-  }, []);
+  }, [isPaused, scrollSteps.length]);
+
+  const handlePhoneMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handlePhoneMouseLeave = () => {
+    setIsPaused(false);
+  };
+
+  const handleDotClick = (index: number) => {
+    setActiveIndex(index);
+  };
 
   return (
-    <section ref={sectionRef} className="relative py-20 px-4 bg-white dark:bg-gray-950 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cyan-50/50 via-transparent to-purple-50/50 dark:from-cyan-950/20 dark:via-transparent dark:to-purple-950/20 pointer-events-none"></div>
+    <section 
+      className="relative py-12 sm:py-16 lg:py-20 px-4 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 overflow-hidden"
+    >
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
       
       <div className="relative max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          
           {/* Text Content - Left Side */}
-          <div className="order-2 lg:order-1">
-            {scrollSteps.map((step, index) => (
-              <div
-                key={index}
-                ref={(el) => { stepRefs.current[index] = el; }}
-                className={`min-h-[70vh] lg:min-h-[80vh] flex flex-col justify-center py-12 transition-all duration-700 ease-out ${
-                  activeIndex === index
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-30 translate-y-8'
-                }`}
-              >
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                  <span className="bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400 bg-clip-text text-transparent">
-                    {step.title}
-                  </span>
+          <div className="relative flex flex-col justify-center order-2 lg:order-1">
+            {/* Step Indicator */}
+            <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${scrollSteps[activeIndex].accent} text-white text-xs font-bold mb-4 sm:mb-6 shadow-lg transition-all duration-500 w-fit`}>
+              Step {activeIndex + 1} of {scrollSteps.length}
+            </div>
+
+            {/* Animated Title */}
+            <div className="relative h-20 sm:h-20 lg:h-48  overflow-hidden">
+              {scrollSteps.map((step, index) => (
+                <h2
+                  key={index}
+                  className={`absolute top-0 left-0 w-full text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight bg-gradient-to-r ${step.accent} bg-clip-text text-transparent transition-all duration-700 ease-out ${
+                    activeIndex === index
+                      ? 'opacity-100 translate-y-0'
+                      : activeIndex > index
+                      ? 'opacity-0 -translate-y-full'
+                      : 'opacity-0 translate-y-full'
+                  }`}
+                >
+                  {step.title}
                 </h2>
-                <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
+              ))}
+            </div>
+
+            {/* Animated Description */}
+            <div className="relative h-20 sm:h-20 lg:h-32 mb-6 sm:mb-8 overflow-hidden">
+              {scrollSteps.map((step, index) => (
+                <p
+                  key={index}
+                  className={`absolute top-0 left-0 w-full text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed transition-all duration-700 ease-out ${
+                    activeIndex === index
+                      ? 'opacity-100 translate-y-0'
+                      : activeIndex > index
+                      ? 'opacity-0 -translate-y-full'
+                      : 'opacity-0 translate-y-full'
+                  }`}
+                >
                   {step.description}
                 </p>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Navigation Dots - Desktop: between text and phone, Mobile: at bottom */}
+            <div className="hidden lg:flex gap-3 mb-4">
+              {scrollSteps.map((step, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleDotClick(index)}
+                  className={`group relative transition-all duration-300 ${
+                    activeIndex === index ? 'scale-110' : 'scale-100 hover:scale-105'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                >
+                  <div className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                    activeIndex === index
+                      ? `bg-gradient-to-r ${step.accent} shadow-lg`
+                      : 'bg-gray-300 dark:bg-gray-700 group-hover:bg-gray-400 dark:group-hover:bg-gray-600'
+                  }`}></div>
+                  {activeIndex === index && (
+                    <div className={`absolute inset-0 rounded-full animate-ping bg-gradient-to-r ${step.accent}`}></div>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Sticky Phone Mockup - Right Side */}
-          <div className="order-1 lg:order-2 lg:sticky lg:top-24 lg:h-screen flex items-center justify-center">
-            <div className="relative w-full max-w-[320px] mx-auto" style={{ height: '640px' }}>
+          {/* Phone Mockup - Right Side */}
+          <div 
+            className="relative flex items-center justify-center order-1 lg:order-2"
+            onMouseEnter={handlePhoneMouseEnter}
+            onMouseLeave={handlePhoneMouseLeave}
+          >
+            <div className="relative w-full max-w-[320px] sm:max-w-[320px] lg:max-w-[340px] mx-auto">
               {/* Phone Frame */}
               <div 
-                className="absolute inset-0 bg-gray-900 dark:bg-gray-800 rounded-[40px] p-3 shadow-2xl transition-all duration-700 ease-out"
+                className="relative bg-gray-950 rounded-[40px] sm:rounded-[48px] p-2 sm:p-3 shadow-2xl transition-all duration-700 ease-out"
                 style={{
-                  transform: `scale(${0.98 + activeIndex * 0.01}) rotateY(${activeIndex === 1 ? 2 : 0}deg)`,
-                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                  transform: `scale(${0.95 + activeIndex * 0.025}) rotateY(${Math.sin(activeIndex) * 3}deg)`,
                 }}
               >
                 {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 dark:bg-gray-800 rounded-b-2xl z-10"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 sm:w-36 h-6 sm:h-7 bg-gray-950 rounded-b-2xl sm:rounded-b-3xl z-10 flex items-center justify-center">
+                  <div className="w-12 sm:w-16 h-1 bg-gray-800 rounded-full mt-2"></div>
+                </div>
                 
                 {/* Screen Container */}
-                <div className="relative w-full h-full bg-white dark:bg-gray-900 rounded-[32px] overflow-hidden shadow-inner">
-                  {/* Animated Content */}
+                <div className="relative w-full bg-white rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-inner" style={{height: '600px'}}>
+                  {/* Sliding Content */}
                   {scrollSteps.map((step, index) => (
                     <div
                       key={index}
-                      className={`absolute inset-0 transition-all duration-700 ease-out ${
-                        activeIndex === index
-                          ? 'opacity-100 scale-100 translate-x-0'
-                          : activeIndex > index
-                          ? 'opacity-0 scale-95 -translate-x-full'
-                          : 'opacity-0 scale-95 translate-x-full'
-                      }`}
+                      className="absolute top-0 left-0 w-full h-full transition-transform duration-700 ease-out"
+                      style={{
+                        transform: `translateY(${(index - activeIndex) * 100}%)`
+                      }}
                     >
                       {step.component}
                     </div>
                   ))}
                 </div>
+
+                {/* Volume Buttons */}
+                <div className="absolute -left-1 top-28 sm:top-32 w-1 h-10 sm:h-12 bg-gray-800 rounded-l-lg"></div>
+                <div className="absolute -left-1 top-40 sm:top-48 w-1 h-10 sm:h-12 bg-gray-800 rounded-l-lg"></div>
+                
+                {/* Power Button */}
+                <div className="absolute -right-1 top-32 sm:top-40 w-1 h-12 sm:h-16 bg-gray-800 rounded-r-lg"></div>
               </div>
 
-              {/* Animated Glow Effect */}
+              {/* Dynamic Glow Effect */}
               <div 
-                className="absolute -inset-4 rounded-[48px] opacity-30 blur-3xl transition-all duration-1000 -z-10"
+                className="absolute -inset-6 sm:-inset-8 rounded-full opacity-40 blur-3xl transition-all duration-1000 -z-10"
                 style={{
                   background: activeIndex === 0 
-                    ? 'radial-gradient(circle at center, #06b6d4 0%, #0891b2 50%, transparent 70%)'
+                    ? 'radial-gradient(circle at center, #06b6d4 0%, #3b82f6 50%, transparent 70%)'
                     : activeIndex === 1
-                    ? 'radial-gradient(circle at center, #f59e0b 0%, #f97316 50%, transparent 70%)'
+                    ? 'radial-gradient(circle at center, #f97316 0%, #ec4899 50%, transparent 70%)'
                     : 'radial-gradient(circle at center, #a855f7 0%, #ec4899 50%, transparent 70%)'
                 }}
               ></div>
-            </div>
 
-            {/* Indicator Dots */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center gap-2">
-              {scrollSteps.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    stepRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  }}
-                  className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
-                    activeIndex === index
-                      ? 'w-8 bg-cyan-500 dark:bg-cyan-400'
-                      : 'w-2 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600'
-                  }`}
-                  aria-label={`Go to step ${index + 1}`}
-                ></button>
-              ))}
+              {/* Floating Particles */}
+              <div className="absolute top-10 -right-4 w-2 sm:w-3 h-2 sm:h-3 bg-cyan-400 rounded-full animate-ping"></div>
+              <div className="absolute bottom-20 -left-4 w-2 h-2 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
             </div>
           </div>
+        </div>
+
+        {/* Navigation Dots - Mobile: at bottom of section */}
+        <div className="flex lg:hidden justify-center gap-3 mt-8">
+          {scrollSteps.map((step, index) => (
+            <button
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`group relative transition-all duration-300 ${
+                activeIndex === index ? 'scale-110' : 'scale-100 hover:scale-105'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            >
+              <div className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                activeIndex === index
+                  ? `bg-gradient-to-r ${step.accent} shadow-lg`
+                  : 'bg-gray-300 dark:bg-gray-700 group-hover:bg-gray-400 dark:group-hover:bg-gray-600'
+              }`}></div>
+              {activeIndex === index && (
+                <div className={`absolute inset-0 rounded-full animate-ping bg-gradient-to-r ${step.accent}`}></div>
+              )}
+            </button>
+          ))}
         </div>
       </div>
     </section>

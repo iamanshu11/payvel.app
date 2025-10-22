@@ -632,6 +632,14 @@ export default function Header() {
                     Download App
                   </Link>
                   <Link
+                    href="/travel"
+                    className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Travel
+                  </Link>
+                  
+                  <Link
                     href="/help-center"
                     className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
                     onClick={closeMobileMenu}
