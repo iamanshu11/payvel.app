@@ -23,14 +23,14 @@ export default function HomePage() {
         fromCountry="Australia"
         toCountry="Tanzania"
         toCurrency="TZS"
-        heroImage="/img/send-money/gabon/image.webp"
+        heroImage="/img/send-money/tanzania/image.webp"
       />
       <DirectLineHome />
       <HowItWorks />
       <BudgetHome />
-      <SendApp backgroundImage="/img/send-money/gabon/app.webp" />
+      <SendApp backgroundImage="/img/send-money/tanzania/app.webp" />
       <AudNgnSlider />
-      <FAQComponent />
+      <FAQComponent country="Tanzania" />
     </>
   );
 }

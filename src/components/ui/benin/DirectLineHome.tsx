@@ -42,7 +42,6 @@ export default function DirectLineHome() {
 
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100 py-12 px-4 relative overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-teal-500 to-yellow-400 rounded-full blur-3xl opacity-20 floating-shape"></div>
       
       <div className="w-full container mx-auto px-4 md:px-12 lg:px-16">
         {/* Header */}

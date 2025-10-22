@@ -30,7 +30,7 @@ export default function HomePage() {
       <BudgetHome />
       <SendApp backgroundImage="/img/send-money/gabon/app.webp" />
       <AudNgnSlider />
-      <FAQComponent />
+      <FAQComponent country="Gabon"/>
     </>
   );
 }

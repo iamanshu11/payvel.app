@@ -23,14 +23,14 @@ export default function HomePage() {
         fromCountry="Australia"
         toCountry="Rwanda"
         toCurrency="RWF"
-        heroImage="/img/send-money/gabon/image.webp"
+        heroImage="/img/send-money/rwanda/image.webp"
       />
       <DirectLineHome />
       <HowItWorks />
       <BudgetHome />
-      <SendApp backgroundImage="/img/send-money/gabon/app.webp" />
+      <SendApp backgroundImage="/img/send-money/rwanda/app.webp" />
       <AudNgnSlider />
-      <FAQComponent />
+      <FAQComponent country="Rwanda"/>
     </>
   );
 }

@@ -30,7 +30,7 @@ export default function BudgetHome() {
     useEffect(() => {
         if (!isPaused) {
             const interval = setInterval(() => {
-                setCurrentSlide((prev) => (prev + 1) % 3);
+                setCurrentSlide((prev) => (prev + 1) % 4);
             }, 4000);
             return () => clearInterval(interval);
         }
@@ -335,6 +335,107 @@ export default function BudgetHome() {
                     </div>
                 </div>
             )
+        },
+        {
+            title: "travel",
+            component: (
+                <div className="w-full h-full bg-cyan-50 dark:bg-gradient-to-br from-gray-950 via-gray-900 to-black dark:from-black dark:via-gray-950 dark:to-gray-900 p-4 overflow-auto">
+                    {/* Header */}
+                    <div className="flex items-center mb-4">
+                        <button className="mr-3">
+                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <h2 className="text-base font-bold">Travel Hub</h2>
+                    </div>
+
+                    {/* Flight Booking Card */}
+                    <div className="bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl p-4 shadow-lg mb-4">
+                        <div className="flex items-center justify-between mb-3">
+                            <h3 className="text-white text-sm font-semibold">✈️ Book Your Flight</h3>
+                        </div>
+
+                        {/* From Location */}
+                        <div className="mb-3">
+                            <label className="text-white text-xs font-semibold mb-1 block">From</label>
+                            <div className="bg-white dark:bg-gray-800 rounded-lg px-3 py-2 flex items-center gap-2">
+                                <span className="text-lg">🛫</span>
+                                <input
+                                    type="text"
+                                    placeholder="New York (JFK)"
+                                    className="flex-1 bg-transparent text-gray-900 dark:text-gray-100 text-sm focus:outline-none"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Swap Button */}
+                        <div className="flex justify-center -my-1 relative z-10">
+                            <button className="bg-white dark:bg-gray-800 rounded-full p-2 shadow-md">
+                                <svg className="w-4 h-4 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* To Location */}
+                        <div className="mb-3">
+                            <label className="text-white text-xs font-semibold mb-1 block">To</label>
+                            <div className="bg-white dark:bg-gray-800 rounded-lg px-3 py-2 flex items-center gap-2">
+                                <span className="text-lg">🛬</span>
+                                <input
+                                    type="text"
+                                    placeholder="Sydney (SYD)"
+                                    className="flex-1 bg-transparent text-gray-900 dark:text-gray-100 text-sm focus:outline-none"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Date Selection */}
+                        <div className="grid grid-cols-2 gap-2 mb-3">
+                            <div>
+                                <label className="text-white text-xs font-semibold mb-1 block">Departure</label>
+                                <div className="bg-white dark:bg-gray-800 rounded-lg px-3 py-2 flex items-center gap-2">
+                                    <span className="text-sm">📅</span>
+                                    <input
+                                        type="text"
+                                        placeholder="Oct 25"
+                                        className="flex-1 bg-transparent text-gray-900 dark:text-gray-100 text-xs focus:outline-none"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label className="text-white text-xs font-semibold mb-1 block">Return</label>
+                                <div className="bg-white dark:bg-gray-800 rounded-lg px-3 py-2 flex items-center gap-2">
+                                    <span className="text-sm">📅</span>
+                                    <input
+                                        type="text"
+                                        placeholder="Nov 05"
+                                        className="flex-1 bg-transparent text-gray-900 dark:text-gray-100 text-xs focus:outline-none"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Passengers */}
+                        <div className="mb-3">
+                            <label className="text-white text-xs font-semibold mb-1 block">Passengers</label>
+                            <div className="bg-white dark:bg-gray-800 rounded-lg px-3 py-2 flex items-center gap-2">
+                                <span className="text-sm">👤</span>
+                                <input
+                                    type="text"
+                                    placeholder="1 Adult"
+                                    className="flex-1 bg-transparent text-gray-900 dark:text-gray-100 text-sm focus:outline-none"
+                                />
+                            </div>
+                        </div>
+
+                        <button className="w-full bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">
+                            Search Flights
+                        </button>
+                    </div>
+                </div>
+            )
         }
     ];
 
@@ -426,6 +527,27 @@ export default function BudgetHome() {
                                     <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
                                         <a href="/download-app" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                                             Download App
+                                        </a>
+                                        {/* <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            How It Works
+                                        </a> */}
+                                    </div>
+                                </>
+                            )}
+                            {currentSlide === 3 && (
+                                <>
+                                    <h1 className="hero-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                                        <span className="relative">
+                                            <span className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-500 to-purple-400 opacity-40 -z-10"></span>
+                                            Your Entire Journey  <span className="text-blue-500">in One Place</span>
+                                        </span>
+                                    </h1>
+                                    <p className="hero-subtitle mt-6 text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-xl">
+                                        Instantly check rates, book your next flight, reserve a hotel, and manage your entire financial world. Payvel puts everything you need at your fingertips.
+                                    </p>
+                                    <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                                        <a href="/travel" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+                                            Explore Travel & Remit
                                         </a>
                                         {/* <a href="/how-it-works" className="px-8 py-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-semibold text-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                                             How It Works

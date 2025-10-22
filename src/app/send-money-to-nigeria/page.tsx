@@ -32,7 +32,7 @@ export default function HomePage() {
       <BudgetHome />
       <SendApp />
       <AudNgnSlider />
-      <FAQComponent />
+      <FAQComponent  country="Nigeria"/>
     
     </>
   );

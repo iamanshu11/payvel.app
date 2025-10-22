@@ -82,7 +82,7 @@ const SendMoneyHero = ({
         }}
       >
         {/* Floating Badge */}
-        <div className="mb-2 mt-8 animate-bounce">
+        <div className=" mt-16 animate-bounce">
           <div className="hidden lg:flex  items-center gap-2 px-4 py-2 bg-white/70 dark:bg-gray-900/7 border border-gray-200/50 dark:border-gray-700/50  backdrop-blur-xl rounded-full ">
             <Sparkles size={16} className="text-yellow-400" />
             <span className="text-sm dark:text-white text-gray-900font-medium">
@@ -91,7 +91,7 @@ const SendMoneyHero = ({
           </div>
         </div>
 
-        <h1 className="text-3xl mt-6 md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white text-center mb-6 leading-tight">
+        <h1 className="text-3xl mt-12 md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white text-center mb-6 leading-tight">
           Send Money from <br />{" "}
           <span className="bg-gradient-to-r from-teal-400 via-purple-400 to-teal-400 bg-clip-text text-transparent animate-pulse">
             {fromCountry}

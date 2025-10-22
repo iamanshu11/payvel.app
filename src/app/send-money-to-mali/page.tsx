@@ -23,14 +23,14 @@ export default function HomePage() {
         fromCountry="Australia"
         toCountry="Mali"
         toCurrency="XOF"
-        heroImage="/img/send-money/gabon/image.webp"
+        heroImage="/img/send-money/mali/image.webp"
       />
       <DirectLineHome />
       <HowItWorks />
       <BudgetHome />
-      <SendApp backgroundImage="/img/send-money/gabon/app.webp" />
+      <SendApp backgroundImage="/img/send-money/mali/app.webp" />
       <AudNgnSlider />
-      <FAQComponent />
+      <FAQComponent country="Mali"/>
     </>
   );
 }

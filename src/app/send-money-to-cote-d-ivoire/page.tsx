@@ -32,7 +32,7 @@ export default function HomePage() {
       <BudgetHome />
       <SendApp backgroundImage="/img/send-money/cote/app.webp" />
       <AudNgnSlider />
-      <FAQComponent />
+      <FAQComponent country="Cote d'Ivoire"/>
     
     </>
   );

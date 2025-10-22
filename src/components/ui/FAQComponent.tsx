@@ -9,31 +9,37 @@ interface FAQItem {
   answer: string;
 }
 
-const faqData: FAQItem[] = [
-  {
-    id: 1,
-    question: "Are there really no fees?",
-    answer: "That's correct! Payvel does not charge any transfer fees. The amount you see in the calculator is the exact amount your recipient will get. We make money from a small margin on the exchange rate, which is how we keep our service free for you to use."
-  },
-  {
-    id: 2,
-    question: "How long does a transfer to Nigeria take?",
-    answer: "Most transfers to Nigeria are instant or arrive within minutes. In rare cases, some bank processing times may cause a slight delay, but you can track the status of your transfer in real-time right from the app."
-  },
-  {
-    id: 3,
-    question: "Is my money and data secure with Payvel?",
-    answer: "Absolutely. Security is our top priority. We use industry-standard 256-bit encryption, secure servers, and comply with all financial regulations in both Australia and Nigeria. Your data is never shared with third parties."
-  },
-  {
-    id: 4,
-    question: "What payment methods can I use?",
-    answer: "You can fund your transfer using several convenient methods, including debit card, credit card, and direct bank transfer (PayID/Poli). We are continuously working to add more payment options to suit your needs."
-  }
-];
+interface FAQComponentProps {
+  country?: string;
+}
 
-const FAQComponent: React.FC = () => {
+const FAQComponent: React.FC<FAQComponentProps> = ({ country = 'Nigeria' }) => {
   const [openId, setOpenId] = useState<number | null>(1);
+
+  const getFAQData = (countryName: string): FAQItem[] => [
+    {
+      id: 1,
+      question: "Are there really no fees?",
+      answer: "That's correct! Payvel does not charge any transfer fees. The amount you see in the calculator is the exact amount your recipient will get. We make money from a small margin on the exchange rate, which is how we keep our service free for you to use."
+    },
+    {
+      id: 2,
+      question: `How long does a transfer to ${countryName} take?`,
+      answer: `Most transfers to ${countryName} are instant or arrive within minutes. In rare cases, some bank processing times may cause a slight delay, but you can track the status of your transfer in real-time right from the app.`
+    },
+    {
+      id: 3,
+      question: "Is my money and data secure with Payvel?",
+      answer: `Absolutely. Security is our top priority. We use industry-standard 256-bit encryption, secure servers, and comply with all financial regulations in both Australia and ${countryName}. Your data is never shared with third parties.`
+    },
+    {
+      id: 4,
+      question: "What payment methods can I use?",
+      answer: "You can fund your transfer using several convenient methods, including debit card, credit card, and direct bank transfer (PayID/Poli). We are continuously working to add more payment options to suit your needs."
+    }
+  ];
+
+  const faqData = getFAQData(country);
 
   useEffect(() => {
     AOS.init({
@@ -49,9 +55,7 @@ const FAQComponent: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 md:mt-22 bg-white dark:bg-black transition-colors duration-500  relative overflow-hidden">
-      {/* Animated Background Elements */}
-     
+    <section className="py-16 md:py-24 md:mt-22 bg-white dark:bg-black transition-colors duration-500 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">

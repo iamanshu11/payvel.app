@@ -23,14 +23,14 @@ export default function HomePage() {
         fromCountry="Australia"
         toCountry="Kenya"
         toCurrency="KES"
-        heroImage="/img/send-money/gabon/image.webp"
+        heroImage="/img/send-money/kenya/image.webp"
       />
       <DirectLineHome />
       <HowItWorks />
       <BudgetHome />
-      <SendApp backgroundImage="/img/send-money/gabon/app.webp" />
+      <SendApp backgroundImage="/img/send-money/kenya/app.webp" />
       <AudNgnSlider />
-      <FAQComponent />
+      <FAQComponent country="Kenya"/>
     </>
   );
 }

@@ -24,115 +24,115 @@ import {
 const countries = [
   {
     name: "Benin",
-    flag: "🇧🇯",
+    flag: "https://flagcdn.com/w40/bj.png",
     code: "BJ",
     href: "/send-money-to-benin",
   },
   {
     name: "Botswana",
-    flag: "🇧🇼",
+    flag: "https://flagcdn.com/w40/bw.png",
     code: "BW",
     href: "/send-money-to-botswana",
   },
   {
     name: "Burkina Faso",
-    flag: "🇧🇫",
+    flag: "https://flagcdn.com/w40/bf.png",
     code: "BF",
     href: "/send-money-to-burkina-faso",
   },
   {
     name: "Cameroon",
-    flag: "🇨🇲",
+    flag: "https://flagcdn.com/w40/cm.png",
     code: "CM",
     href: "/send-money-to-cameroon",
   },
   {
     name: "Cote d'Ivoire",
-    flag: "🇨🇮",
+    flag: "https://flagcdn.com/w40/ci.png",
     code: "CI",
     href: "/send-money-to-cote-d-ivoire",
   },
   {
     name: "DR Congo",
-    flag: "🇨🇩",
+    flag: "https://flagcdn.com/w40/cd.png",
     code: "CD",
     href: "/send-money-to-dr-congo",
   },
   {
     name: "Gabon",
-    flag: "🇬🇦",
+    flag: "https://flagcdn.com/w40/ga.png",
     code: "GA",
     href: "/send-money-to-gabon",
   },
   {
     name: "Kenya",
-    flag: "🇰🇪",
+    flag: "https://flagcdn.com/w40/ke.png",
     code: "KE",
     href: "/send-money-to-kenya",
   },
   {
     name: "Malawi",
-    flag: "🇲🇼",
+    flag: "https://flagcdn.com/w40/mw.png",
     code: "MW",
     href: "/send-money-to-malawi",
   },
   {
     name: "Mali",
-    flag: "🇲🇱",
+    flag: "https://flagcdn.com/w40/ml.png",
     code: "ML",
     href: "/send-money-to-mali",
   },
   {
     name: "Nigeria",
-    flag: "🇳🇬",
+    flag: "https://flagcdn.com/w40/ng.png",
     code: "NG",
     href: "/send-money-to-nigeria",
   },
   {
     name: "Republic of Congo",
-    flag: "🇨🇬",
+    flag: "https://flagcdn.com/w40/cg.png",
     code: "CG",
     href: "/send-money-to-republic-of-congo",
   },
   {
     name: "Rwanda",
-    flag: "🇷🇼",
+    flag: "https://flagcdn.com/w40/rw.png",
     code: "RW",
     href: "/send-money-to-rwanda",
   },
   {
     name: "Senegal",
-    flag: "🇸🇳",
+    flag: "https://flagcdn.com/w40/sn.png",
     code: "SN",
     href: "/send-money-to-senegal",
   },
   {
     name: "South Africa",
-    flag: "🇿🇦",
+    flag: "https://flagcdn.com/w40/za.png",
     code: "ZA",
     href: "/send-money-to-south-africa",
   },
   {
     name: "Tanzania",
-    flag: "🇹🇿",
+    flag: "https://flagcdn.com/w40/tz.png",
     code: "TZ",
     href: "/send-money-to-tanzania",
   },
   {
     name: "Togo",
-    flag: "🇹🇬",
+    flag: "https://flagcdn.com/w40/tg.png",
     code: "TG",
     href: "/send-money-to-togo",
   },
   {
     name: "Uganda",
-    flag: "🇺🇬",
+    flag: "https://flagcdn.com/w40/ug.png",
     code: "UG",
     href: "/send-money-to-uganda",
   },
   {
     name: "Zambia",
-    flag: "🇿🇲",
+    flag: "https://flagcdn.com/w40/zm.png",
     code: "ZM",
     href: "/send-money-to-zambia",
   },
@@ -212,7 +212,12 @@ export default function Header() {
                   href={country.href}
                   className="flex items-center gap-3 p-2 hover:bg-teal-50 dark:hover:bg-teal-900/20 rounded-lg transition-colors duration-200 group"
                 >
-                  <span className="text-2xl">{country.flag}</span>
+                  <img
+                    src={country.flag}
+                    alt={`${country.name} flag`}
+                    className="w-6 h-4 rounded-sm object-cover"
+                  />
+
                   <span className="font-medium text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                     {country.name}
                   </span>
@@ -524,7 +529,12 @@ export default function Header() {
                     onClick={() => setShowAllCountries(false)}
                     className="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 dark:border-gray-800 hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-200 group"
                   >
-                    <span className="text-3xl">{country.flag}</span>
+                    <img
+                      src={country.flag}
+                      alt={`${country.name} flag`}
+                      className="w-6 h-4 rounded-sm object-cover"
+                    />
+
                     <span className="font-medium text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                       {country.name}
                     </span>
@@ -638,7 +648,7 @@ export default function Header() {
                   >
                     Travel
                   </Link>
-                  
+
                   <Link
                     href="/help-center"
                     className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
