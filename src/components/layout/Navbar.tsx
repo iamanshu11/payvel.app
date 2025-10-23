@@ -22,121 +22,27 @@ import {
 } from "lucide-react";
 
 const countries = [
-  {
-    name: "Benin",
-    flag: "https://flagcdn.com/w40/bj.png",
-    code: "BJ",
-    href: "/send-money-to-benin",
-  },
-  {
-    name: "Botswana",
-    flag: "https://flagcdn.com/w40/bw.png",
-    code: "BW",
-    href: "/send-money-to-botswana",
-  },
-  {
-    name: "Burkina Faso",
-    flag: "https://flagcdn.com/w40/bf.png",
-    code: "BF",
-    href: "/send-money-to-burkina-faso",
-  },
-  {
-    name: "Cameroon",
-    flag: "https://flagcdn.com/w40/cm.png",
-    code: "CM",
-    href: "/send-money-to-cameroon",
-  },
-  {
-    name: "Cote d'Ivoire",
-    flag: "https://flagcdn.com/w40/ci.png",
-    code: "CI",
-    href: "/send-money-to-cote-d-ivoire",
-  },
-  {
-    name: "DR Congo",
-    flag: "https://flagcdn.com/w40/cd.png",
-    code: "CD",
-    href: "/send-money-to-dr-congo",
-  },
-  {
-    name: "Gabon",
-    flag: "https://flagcdn.com/w40/ga.png",
-    code: "GA",
-    href: "/send-money-to-gabon",
-  },
-  {
-    name: "Kenya",
-    flag: "https://flagcdn.com/w40/ke.png",
-    code: "KE",
-    href: "/send-money-to-kenya",
-  },
-  {
-    name: "Malawi",
-    flag: "https://flagcdn.com/w40/mw.png",
-    code: "MW",
-    href: "/send-money-to-malawi",
-  },
-  {
-    name: "Mali",
-    flag: "https://flagcdn.com/w40/ml.png",
-    code: "ML",
-    href: "/send-money-to-mali",
-  },
-  {
-    name: "Nigeria",
-    flag: "https://flagcdn.com/w40/ng.png",
-    code: "NG",
-    href: "/send-money-to-nigeria",
-  },
-  {
-    name: "Republic of Congo",
-    flag: "https://flagcdn.com/w40/cg.png",
-    code: "CG",
-    href: "/send-money-to-republic-of-congo",
-  },
-  {
-    name: "Rwanda",
-    flag: "https://flagcdn.com/w40/rw.png",
-    code: "RW",
-    href: "/send-money-to-rwanda",
-  },
-  {
-    name: "Senegal",
-    flag: "https://flagcdn.com/w40/sn.png",
-    code: "SN",
-    href: "/send-money-to-senegal",
-  },
-  {
-    name: "South Africa",
-    flag: "https://flagcdn.com/w40/za.png",
-    code: "ZA",
-    href: "/send-money-to-south-africa",
-  },
-  {
-    name: "Tanzania",
-    flag: "https://flagcdn.com/w40/tz.png",
-    code: "TZ",
-    href: "/send-money-to-tanzania",
-  },
-  {
-    name: "Togo",
-    flag: "https://flagcdn.com/w40/tg.png",
-    code: "TG",
-    href: "/send-money-to-togo",
-  },
-  {
-    name: "Uganda",
-    flag: "https://flagcdn.com/w40/ug.png",
-    code: "UG",
-    href: "/send-money-to-uganda",
-  },
-  {
-    name: "Zambia",
-    flag: "https://flagcdn.com/w40/zm.png",
-    code: "ZM",
-    href: "/send-money-to-zambia",
-  },
+  { name: "Benin", flag: "/img/flags/benin.png", code: "BJ", href: "/send-money-to-benin" },
+  { name: "Botswana", flag: "/img/flags/botswana.png", code: "BW", href: "/send-money-to-botswana" },
+  { name: "Burkina Faso", flag: "/img/flags/burkina-faso.png", code: "BF", href: "/send-money-to-burkina-faso" },
+  { name: "Cameroon", flag: "/img/flags/cameroon.png", code: "CM", href: "/send-money-to-cameroon" },
+  { name: "Cote d'Ivoire", flag: "/img/flags/cote.png", code: "CI", href: "/send-money-to-cote-d-ivoire" },
+  { name: "DR Congo", flag: "/img/flags/dr-congo.png", code: "CD", href: "/send-money-to-dr-congo" },
+  { name: "Gabon", flag: "/img/flags/gabon.png", code: "GA", href: "/send-money-to-gabon" },
+  { name: "Kenya", flag: "/img/flags/kenya.png", code: "KE", href: "/send-money-to-kenya" },
+  { name: "Malawi", flag: "/img/flags/malawi.png", code: "MW", href: "/send-money-to-malawi" },
+  { name: "Mali", flag: "/img/flags/mali.png", code: "ML", href: "/send-money-to-mali" },
+  { name: "Nigeria", flag: "/img/flags/nigeria.png", code: "NG", href: "/send-money-to-nigeria" },
+  { name: "Republic of Congo", flag: "/img/flags/republic.png", code: "CG", href: "/send-money-to-republic-of-congo" },
+  { name: "Rwanda", flag: "/img/flags/rwanda.png", code: "RW", href: "/send-money-to-rwanda" },
+  { name: "Senegal", flag: "/img/flags/senegal.png", code: "SN", href: "/send-money-to-senegal" },
+  { name: "South Africa", flag: "/img/flags/south-africa.png", code: "ZA", href: "/send-money-to-south-africa" },
+  { name: "Tanzania", flag: "/img/flags/tanzania.png", code: "TZ", href: "/send-money-to-tanzania" },
+  { name: "Togo", flag: "/img/flags/togo.png", code: "TG", href: "/send-money-to-togo" },
+  { name: "Uganda", flag: "/img/flags/uganda.png", code: "UG", href: "/send-money-to-uganda" },
+  { name: "Zambia", flag: "/img/flags/zambia.png", code: "ZM", href: "/send-money-to-zambia" },
 ];
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -215,7 +121,7 @@ export default function Header() {
                   <img
                     src={country.flag}
                     alt={`${country.name} flag`}
-                    className="w-6 h-4 rounded-sm object-cover"
+                    className="w-10 h-10 rounded-full object-cover"
                   />
 
                   <span className="font-medium text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
@@ -352,8 +258,8 @@ export default function Header() {
             <Link href="/travel" className={getLinkClass("#")}>
               Travel
             </Link>
-            <Link href="/students" className={getLinkClass("#")}>
-              Students
+            <Link href="/student" className={getLinkClass("#")}>
+              Student
             </Link>
             <Link href="/help-center" className={getLinkClass("#")}>
               Help Center
@@ -535,10 +441,10 @@ export default function Header() {
                     <img
                       src={country.flag}
                       onError={(e) =>
-                        (e.currentTarget.src = "/fallback-flag.png")
+                        (e.currentTarget.src = "")
                       }
                       alt={`${country.name} flag`}
-                      className="w-6 h-4 rounded-sm object-cover"
+                      className="w-10 h-10 rounded-full object-cover"
                     />
 
                     <span className="font-medium text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
@@ -654,6 +560,13 @@ export default function Header() {
                   >
                     Travel
                   </Link>
+                  <Link
+                    href="/student"
+                    className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Student
+                  </Link>
 
                   <Link
                     href="/help-center"
@@ -730,7 +643,12 @@ export default function Header() {
                       className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all group"
                       onClick={closeMobileMenu}
                     >
-                      <span className="text-3xl">{country.flag}</span>
+                      <img
+                        src={country.flag}
+                        onError={(e) => (e.currentTarget.src = "")}
+                        alt={`${country.name} flag`}
+                        className="w-8 h-8 rounded-full  object-cover"
+                      />
                       <div className="flex-1">
                         <div className="font-bold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                           {country.name}
