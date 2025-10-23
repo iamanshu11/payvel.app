@@ -142,7 +142,7 @@ const DashboardView2 = () => (
   <div className="w-full h-full bg-cyan-50 dark:bg-gradient-to-br from-gray-950 via-gray-900 to-black dark:from-black dark:via-gray-950 dark:to-gray-900 p-4 overflow-auto">
     <div className="flex items-center justify-between mb-4">
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 mt-4 dark:bg-white/20 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center">
+        <div className="w-8 h-8 mt-4 dark:bg-white/20 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
           <svg
             className="w-5 h-5 text-white"
             viewBox="0 0 24 24"
@@ -158,71 +158,69 @@ const DashboardView2 = () => (
           </svg>
         </div>
       </div>
-      <h2 className="text-sm font-bold  mt-4 text-black dark:text-white">
-        🎓 Student Hub
+      <h2 className="text-sm font-bold mt-4 text-black dark:text-white">
+        🏨 Hotel Bookings
       </h2>
       <div className="w-8"></div>
     </div>
 
-    <div className="bg-gradient-to-br from-teal-400 to-cyan-500 backdrop-blur-xl rounded-3xl p-5 mb-4 shadow-2xl">
+    <div className="bg-gradient-to-br from-teal-400 to-teal-500 backdrop-blur-xl rounded-3xl p-5 mb-4 shadow-2xl">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <div className="text-xs text-gray-900 mb-1">TOTAL BALANCE</div>
-          <div className="text-2xl font-bold text-gray-900">$15,350</div>
+          <div className="text-xs text-white/80 mb-1">BOOKING CREDITS</div>
+          <div className="text-2xl font-bold text-white">$2,450</div>
         </div>
-        <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg">
-          💳
+        <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+          🎫
         </div>
-      </div>
-
-      <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl p-3 border-2 border-orange-200">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-semibold text-orange-600">
-            Available Credit
-          </span>
-          <span className="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded-full font-bold">
-            Active
-          </span>
-        </div>
-        <div className="text-xl font-bold text-gray-900">$25,000</div>
       </div>
     </div>
 
     <div className="space-y-3">
-      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-l-4 border-red-500">
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-l-4 border-green-500">
         <div className="flex justify-between items-start mb-2">
           <div>
-            <div className="font-bold text-gray-900 mb-1">📚 Semester Fee</div>
-            <div className="text-xs text-gray-500">Due: Nov 30, 2025</div>
+            <div className="font-bold text-gray-900 mb-1">
+              🏖️ Beach Resort Deluxe
+            </div>
+            <div className="text-xs text-gray-500">Check-in: Dec 20, 2025</div>
           </div>
-          <div className="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full font-bold">
-            Overdue
+          <div className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">
+            Confirmed
           </div>
         </div>
+        <div className="text-xs text-gray-600 mb-3">
+          <span className="mr-3">📍 Miami Beach, FL</span>
+          <span>🛏️ 2 Guests • 3 Nights</span>
+        </div>
         <div className="flex items-end justify-between">
-          <div className="text-2xl font-bold text-gray-900">$12,500</div>
-          <button className="text-xs bg-gradient-to-r from-red-500 to-pink-600 text-white px-4 py-2 rounded-xl font-bold hover:shadow-lg transition-shadow">
-            Pay Now
+          <div className="text-2xl font-bold text-gray-900">$890</div>
+          <button className="text-xs bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-xl font-bold hover:shadow-lg transition-shadow">
+            View Details
           </button>
         </div>
       </div>
 
-      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-l-4 border-yellow-500">
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-l-4 border-blue-500">
         <div className="flex justify-between items-start mb-2">
           <div>
             <div className="font-bold text-gray-900 mb-1">
-              📖 Books & Supplies
+              🏔️ Mountain Lodge Suite
             </div>
-            <div className="text-xs text-gray-500">Due: Dec 15, 2025</div>
+            <div className="text-xs text-gray-500">Check-in: Jan 10, 2026</div>
           </div>
-          <div className="text-xs bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full font-bold">
-            Pending
+          <div className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-bold">
+            Upcoming
           </div>
         </div>
+        <div className="text-xs text-gray-600 mb-3">
+          <span className="mr-3">📍 Aspen, CO</span>
+          <span>🛏️ 4 Guests • 5 Nights</span>
+        </div>
         <div className="flex items-end justify-between">
-          <div className="text-2xl font-bold text-gray-900">$850</div>
-          <button className="text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-xl font-bold hover:shadow-lg transition-shadow">
-            Schedule
+          <div className="text-2xl font-bold text-gray-900">$1,560</div>
+          <button className="text-xs bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-4 py-2 rounded-xl font-bold hover:shadow-lg transition-shadow">
+            Manage
           </button>
         </div>
       </div>
@@ -348,12 +346,13 @@ const ScrollytellingSection: React.FC = () => {
       accent: "from-cyan-500 to-blue-600",
     },
     {
-      title: "Manage student finances",
+      title: "Seamless Hotel Booking",
       description:
-        "Track tuition, accommodation, and expenses in one secure place with instant notifications and smart reminders.",
+        "Discover and book your perfect stay with ease. Compare prices, explore amenities, and enjoy instant confirmations — all in one place.",
       component: <DashboardView2 />,
-      accent: "from-orange-500 to-pink-600",
+      accent: "from-blue-500 to-indigo-600",
     },
+
     {
       title: "Everything in one dashboard",
       description:
@@ -387,6 +386,14 @@ const ScrollytellingSection: React.FC = () => {
 
   const handleDotClick = (index: number) => {
     setActiveIndex(index);
+  };
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + scrollSteps.length) % scrollSteps.length);
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % scrollSteps.length);
   };
 
   return (
@@ -453,34 +460,6 @@ const ScrollytellingSection: React.FC = () => {
               ))}
             </div>
 
-            {/* Navigation Dots - Desktop: between text and phone, Mobile: at bottom */}
-            <div className="hidden lg:flex gap-3 mb-4">
-              {scrollSteps.map((step, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleDotClick(index)}
-                  className={`group relative transition-all duration-300 ${
-                    activeIndex === index
-                      ? "scale-110"
-                      : "scale-100 hover:scale-105"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                >
-                  <div
-                    className={`w-3 h-3 rounded-full transition-all duration-500 ${
-                      activeIndex === index
-                        ? `bg-gradient-to-r ${step.accent} shadow-lg`
-                        : "bg-gray-300 dark:bg-gray-700 group-hover:bg-gray-400 dark:group-hover:bg-gray-600"
-                    }`}
-                  ></div>
-                  {activeIndex === index && (
-                    <div
-                      className={`absolute inset-0 rounded-full animate-ping bg-gradient-to-r ${step.accent}`}
-                    ></div>
-                  )}
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Phone Mockup - Right Side */}
@@ -556,8 +535,8 @@ const ScrollytellingSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Navigation Dots - Mobile: at bottom of section */}
-        <div className="flex lg:hidden justify-center gap-3 mt-8">
+  {/* Navigation Dots - Mobile: at bottom of section */}
+  <div className="flex lg:hidden justify-center gap-3 mt-8">
           {scrollSteps.map((step, index) => (
             <button
               key={index}
@@ -583,6 +562,51 @@ const ScrollytellingSection: React.FC = () => {
               )}
             </button>
           ))}
+        </div>
+
+        {/* Centered Prev/Next control bar (responsive) */}
+        <div className="w-full flex justify-center mt-6">
+          <div className="flex items-center gap-4 bg-white/0 dark:bg-transparent">
+            <button
+              onClick={handlePrev}
+              aria-label="Previous"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800/80 shadow-md hover:scale-105 transition-transform"
+            >
+              <svg className="w-5 h-5 text-gray-800 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Dots - visible on all sizes in this control bar */}
+            <div className="hidden sm:flex items-center gap-3">
+              {scrollSteps.map((step, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleDotClick(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                  className="relative"
+                >
+                  <div
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      activeIndex === index
+                        ? `bg-gradient-to-r ${step.accent} shadow-lg`
+                        : "bg-gray-300 dark:bg-gray-700 hover:bg-gray-400"
+                    }`}
+                  ></div>
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={handleNext}
+              aria-label="Next"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800/80 shadow-md hover:scale-105 transition-transform"
+            >
+              <svg className="w-5 h-5 text-gray-800 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

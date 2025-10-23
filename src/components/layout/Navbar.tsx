@@ -352,6 +352,9 @@ export default function Header() {
             <Link href="/travel" className={getLinkClass("#")}>
               Travel
             </Link>
+            <Link href="/students" className={getLinkClass("#")}>
+              Students
+            </Link>
             <Link href="/help-center" className={getLinkClass("#")}>
               Help Center
             </Link>
@@ -531,6 +534,9 @@ export default function Header() {
                   >
                     <img
                       src={country.flag}
+                      onError={(e) =>
+                        (e.currentTarget.src = "/fallback-flag.png")
+                      }
                       alt={`${country.name} flag`}
                       className="w-6 h-4 rounded-sm object-cover"
                     />
