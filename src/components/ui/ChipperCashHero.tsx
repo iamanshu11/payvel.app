@@ -22,9 +22,9 @@ const ChipperCashHero = () => {
         <div className="container mx-auto px-6 md:px-12 lg:px-16">
           <div className="max-w-2xl">
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
               Get Help, Say Hello
-            </h1>
+            </h2>
 
             {/* Description */}
             <p className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">

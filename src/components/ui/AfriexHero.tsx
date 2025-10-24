@@ -35,9 +35,9 @@ export default function AfriexHero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-200 dark:text-white mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-200 dark:text-white mb-8 leading-tight">
             Payvel is how the world moves money
-          </h1>
+          </h2>
 
           {/* QR Code Card */}
           <div className="bg-gray-50/5 dark:bg-gray-800/5 rounded-2xl p-6 mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">

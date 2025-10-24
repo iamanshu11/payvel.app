@@ -44,11 +44,11 @@ export default function TrustedEverywhere() {
                     </div>
 
                     {/* Title */}
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-12 text-gray-900 dark:text-white transition-colors">
+                    <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-12 text-gray-900 dark:text-white transition-colors">
                         Trusted
                         <br />
                         Everywhere
-                    </h1>
+                    </h2>
 
                 </div>
 

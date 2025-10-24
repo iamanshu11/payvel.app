@@ -74,9 +74,9 @@ export default function DirectLineHome() {
       <div className="w-full container mx-auto px-4 md:px-12 lg:px-16">
         {/* Header */}
         <div className="text-center mb-16 animate-slideDown">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Closer to Home
-          </h1>
+          </h2>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Send fast, low-cost transfers to family and friends across Africa.
           </p>
