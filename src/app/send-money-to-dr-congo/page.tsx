@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Send Money To DR Congo | Payvel - Fast, Secure, No Fees",
   description:
     "Experience seamless money transfers with Payvel. Fast, secure, and no hidden fees.",
-  alternates: { canonical: "/send-money" },
+  alternates: { canonical: "/send-money-to-dr-congo" },
 };
 
 export default function HomePage() {

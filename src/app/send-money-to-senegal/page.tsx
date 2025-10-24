@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Send Money To Senegal | Payvel - Fast, Secure, No Fees",
   description:
     "Experience seamless money transfers with Payvel. Fast, secure, and no hidden fees.",
-  alternates: { canonical: "/send-money" },
+  alternates: { canonical: "/send-money-to-senegal" },
 };
 
 export default function HomePage() {

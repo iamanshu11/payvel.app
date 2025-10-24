@@ -540,7 +540,7 @@ export default function Header() {
                 {/* Other Links */}
                 <div className="space-y-2 pt-4">
                   <Link
-                    href="#"
+                    href="how-it-works"
                     className="block p-4 rounded-lg text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
                     onClick={closeMobileMenu}
                   >

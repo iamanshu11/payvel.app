@@ -1,7 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Briefcase, Globe, Heart, Rocket, Mail, Upload, X, CheckCircle } from "lucide-react";
+import {
+  Briefcase,
+  Globe,
+  Heart,
+  Rocket,
+  Mail,
+  Upload,
+  X,
+  CheckCircle,
+} from "lucide-react";
 
 export default function CareersClient() {
   const [showForm, setShowForm] = useState(false);
@@ -14,7 +23,7 @@ export default function CareersClient() {
     phone: "",
     linkedin: "",
     experience: "",
-    message: ""
+    message: "",
   });
 
   useEffect(() => {
@@ -51,7 +60,7 @@ export default function CareersClient() {
       phone: "",
       linkedin: "",
       experience: "",
-      message: ""
+      message: "",
     });
   };
 
@@ -79,31 +88,42 @@ export default function CareersClient() {
       title: "Senior Software Engineer (Backend)",
       location: "Remote | Full-time",
       department: "Engineering",
-      icon: "💻"
+      icon: "💻",
     },
     {
       title: "Product Manager, Mobile",
       location: "South Ripley, QLD | Full-time",
       department: "Product",
-      icon: "📱"
+      icon: "📱",
     },
     {
       title: "Customer Support Specialist",
       location: "Remote | Part-time",
       department: "Support",
-      icon: "💬"
+      icon: "💬",
     },
   ];
 
   const perks = [
-    { icon: <Rocket className="w-8 h-8" />, title: "Innovation-Driven", desc: "Tackle complex challenges with cutting-edge technology to create a seamless financial experience." },
-    { icon: <Heart className="w-8 h-8" />, title: "Customer-Centric", desc: "Our users are at the heart of everything we do. We build products that solve real-world problems." },
-    { icon: <Globe className="w-8 h-8" />, title: "Global Team", desc: "Be part of a diverse and talented team making a worldwide impact, one transfer at a time." },
+    {
+      icon: <Rocket className="w-8 h-8" />,
+      title: "Innovation-Driven",
+      desc: "Tackle complex challenges with cutting-edge technology to create a seamless financial experience.",
+    },
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "Customer-Centric",
+      desc: "Our users are at the heart of everything we do. We build products that solve real-world problems.",
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Global Team",
+      desc: "Be part of a diverse and talented team making a worldwide impact, one transfer at a time.",
+    },
   ];
 
   return (
     <div className="bg-gradient-to-br from-gray-50 via-white to-teal-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300 overflow-hidden">
-      
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-teal-300 dark:bg-teal-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -128,25 +148,33 @@ export default function CareersClient() {
           connect people to what matters most.
         </p>
         <div className="mt-8 flex gap-4 justify-center flex-wrap">
-          <a href="#openings" className="px-8 py-3 bg-teal-500 text-white rounded-full font-semibold hover:bg-teal-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
+          <a
+            href="#openings"
+            className="px-8 py-3 bg-teal-500 text-white rounded-full font-semibold hover:bg-teal-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl"
+          >
             View Open Roles
           </a>
-          <a href="#culture" className="px-8 py-3 border-2 border-teal-500 text-teal-500 rounded-full font-semibold hover:bg-teal-500 hover:text-white hover:scale-105 transition-all duration-300">
+          <a
+            href="#culture"
+            className="px-8 py-3 border-2 border-teal-500 text-teal-500 rounded-full font-semibold hover:bg-teal-500 hover:text-white hover:scale-105 transition-all duration-300"
+          >
             Learn More
           </a>
         </div>
       </section>
 
       {/* Company Culture */}
-      <section id="culture" className="relative container mx-auto px-6 py-20 lg:py-28">
+      <section
+        id="culture"
+        className="relative container mx-auto px-6 py-20 lg:py-28"
+      >
         <div className="text-center mb-16 fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why Work at{" "}
-            <span className="text-teal-500">Payvel?</span>
+            Why Work at <span className="text-teal-500">Payvel?</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto rounded-full"></div>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {perks.map((item, index) => (
             <div
@@ -173,16 +201,21 @@ export default function CareersClient() {
 
       {/* Stats Section */}
       <section className="relative container mx-auto px-6 py-16">
-        <div className="bg-gradient-to-r from-teal-500 to-blue-600 rounded-3xl p-12 shadow-2xl fade-up">
+        <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-3xl p-12 shadow-2xl fade-up">
           <div className="grid md:grid-cols-4 gap-8 text-center text-white">
             {[
-              { number: "150+", label: "Team Members" },
-              { number: "25+", label: "Countries" },
+              { number: "100+", label: "Team Members" },
+              { number: "18+", label: "Countries" },
               { number: "10M+", label: "Transfers Made" },
-              { number: "4.9★", label: "Employee Rating" }
+              { number: "4.9★", label: "Employee Rating" },
             ].map((stat, i) => (
-              <div key={i} className="transform hover:scale-110 transition-transform duration-300">
-                <div className="text-4xl md:text-5xl font-extrabold mb-2">{stat.number}</div>
+              <div
+                key={i}
+                className="transform hover:scale-110 transition-transform duration-300"
+              >
+                <div className="text-4xl md:text-5xl font-extrabold mb-2">
+                  {stat.number}
+                </div>
                 <div className="text-teal-100 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -191,14 +224,17 @@ export default function CareersClient() {
       </section>
 
       {/* Open Positions */}
-      <section id="openings" className="relative container mx-auto px-6 py-20 lg:py-28">
+      <section
+        id="openings"
+        className="relative container mx-auto px-6 py-20 lg:py-28"
+      >
         <div className="text-center mb-16 fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Current <span className="text-teal-500">Openings</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto rounded-full"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto space-y-6">
           {jobs.map((job, index) => (
             <div
@@ -226,7 +262,7 @@ export default function CareersClient() {
                 </div>
                 <button
                   onClick={() => openForm(job.title)}
-                  className="whitespace-nowrap px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-500 text-white rounded-full font-semibold hover:from-teal-600 hover:to-blue-600 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl"
+                  className="whitespace-nowrap px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-500 text-white rounded-full font-semibold hover:from-teal-600 hover:to-teal-600 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl"
                 >
                   Apply Now →
                 </button>
@@ -267,7 +303,8 @@ export default function CareersClient() {
                     <Briefcase className="w-10 h-10 text-teal-500" />
                   </div>
                   <h3 className="text-3xl font-bold mb-2">
-                    Apply for <span className="text-teal-500">{selectedRole}</span>
+                    Apply for{" "}
+                    <span className="text-teal-500">{selectedRole}</span>
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400">
                     We're excited to learn more about you!
@@ -276,11 +313,29 @@ export default function CareersClient() {
 
                 {/* Progress Indicator */}
                 <div className="flex items-center justify-center gap-3 mb-8">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${formStep >= 1 ? 'bg-teal-500 text-white scale-110' : 'bg-gray-200 dark:bg-gray-700'}`}>
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${
+                      formStep >= 1
+                        ? "bg-teal-500 text-white scale-110"
+                        : "bg-gray-200 dark:bg-gray-700"
+                    }`}
+                  >
                     1
                   </div>
-                  <div className={`h-1 w-16 rounded-full transition-all duration-300 ${formStep >= 2 ? 'bg-teal-500' : 'bg-gray-200 dark:bg-gray-700'}`}></div>
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${formStep >= 2 ? 'bg-teal-500 text-white scale-110' : 'bg-gray-200 dark:bg-gray-700'}`}>
+                  <div
+                    className={`h-1 w-16 rounded-full transition-all duration-300 ${
+                      formStep >= 2
+                        ? "bg-teal-500"
+                        : "bg-gray-200 dark:bg-gray-700"
+                    }`}
+                  ></div>
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${
+                      formStep >= 2
+                        ? "bg-teal-500 text-white scale-110"
+                        : "bg-gray-200 dark:bg-gray-700"
+                    }`}
+                  >
                     2
                   </div>
                 </div>
@@ -342,7 +397,7 @@ export default function CareersClient() {
                     <button
                       onClick={handleNext}
                       disabled={!formData.name || !formData.email}
-                      className="w-full py-4 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 text-white font-bold hover:from-teal-600 hover:to-blue-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      className="w-full py-4 rounded-xl bg-gradient-to-r from-teal-500 to-teal-500 text-white font-bold hover:from-teal-600 hover:to-teal-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       Next Step →
                     </button>
@@ -411,7 +466,7 @@ export default function CareersClient() {
                       <button
                         onClick={handleSubmit}
                         disabled={!formData.experience || !formData.message}
-                        className="flex-1 py-4 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 text-white font-bold hover:from-teal-600 hover:to-blue-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        className="flex-1 py-4 rounded-xl bg-gradient-to-r from-teal-500 to-teal-500 text-white font-bold hover:from-teal-600 hover:to-teal-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                       >
                         Submit Application
                       </button>
@@ -428,7 +483,8 @@ export default function CareersClient() {
                   Application Submitted!
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-lg">
-                  Thank you for applying. We'll review your application and get back to you soon.
+                  Thank you for applying. We'll review your application and get
+                  back to you soon.
                 </p>
               </div>
             )}
@@ -438,73 +494,96 @@ export default function CareersClient() {
 
       <style jsx>{`
         @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
-        
+
         @keyframes slideUp {
-          from { 
+          from {
             opacity: 0;
             transform: translateY(30px);
           }
-          to { 
+          to {
             opacity: 1;
             transform: translateY(0);
           }
         }
-        
+
         @keyframes blob {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(20px, -50px) scale(1.1); }
-          50% { transform: translate(-20px, 20px) scale(0.9); }
-          75% { transform: translate(50px, 50px) scale(1.05); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          25% {
+            transform: translate(20px, -50px) scale(1.1);
+          }
+          50% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          75% {
+            transform: translate(50px, 50px) scale(1.05);
+          }
         }
-        
+
         @keyframes gradient {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
+          0%,
+          100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
         }
-        
+
         @keyframes bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
         }
-        
+
         .animate-fadeIn {
           animation: fadeIn 0.4s ease-out;
         }
-        
+
         .animate-slideUp {
           animation: slideUp 0.5s ease-out;
         }
-        
+
         .animate-blob {
           animation: blob 7s infinite;
         }
-        
+
         .animation-delay-2000 {
           animation-delay: 2s;
         }
-        
+
         .animation-delay-4000 {
           animation-delay: 4s;
         }
-        
+
         .animate-gradient {
           background-size: 200% 200%;
           animation: gradient 3s ease infinite;
         }
-        
+
         .animate-bounce-slow {
           animation: bounce 3s infinite;
         }
-        
+
         .fade-up {
           opacity: 0;
           transform: translateY(30px);
           transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .fade-up.animate-in {
           opacity: 1;
           transform: translateY(0);

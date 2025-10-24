@@ -1,4 +1,3 @@
-
 import AudNgnSlider from "@/components/ui/AudNgnSlider";
 import BudgetHome from "@/components/ui/BudgetHome";
 import FAQComponent from "@/components/ui/FAQComponent";
@@ -14,26 +13,24 @@ export const metadata: Metadata = {
   title: "Send Money To Nigeria | Payvel - Fast, Secure, No Fees",
   description:
     "Experience seamless money transfers with Payvel. Fast, secure, and no hidden fees.",
-  alternates: { canonical: "/send-money" },
+  alternates: { canonical: "/send-money-to-nigeria" },
 };
 
 export default function HomePage() {
   return (
     <>
-     
       <SendMoneyHero
-  fromCountry="Australia"
-  toCountry="Nigeria"  
-  toCurrency="NGN"
-  heroImage="/img/ngn-hero.webp"
-/>
-<DirectLineHome />
+        fromCountry="Australia"
+        toCountry="Nigeria"
+        toCurrency="NGN"
+        heroImage="/img/ngn-hero.webp"
+      />
+      <DirectLineHome />
       <HowItWorks />
       <BudgetHome />
       <SendApp />
       <AudNgnSlider />
-      <FAQComponent  country="Nigeria"/>
-    
+      <FAQComponent country="Nigeria" />
     </>
   );
 }

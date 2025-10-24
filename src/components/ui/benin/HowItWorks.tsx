@@ -263,8 +263,6 @@ const HowItWorks: React.FC = () => {
         </p>
         <div className="relative inline-block group">
           {/* Animated Glow Effect */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#00B6DE] to-[#0066CC] rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-
           <a
             href="/download-app"
             className="relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-teal-500 to-[#00B6DE] text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-300 transform group-hover:scale-105"

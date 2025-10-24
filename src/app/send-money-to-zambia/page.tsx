@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Send Money To Zambia | Payvel - Fast, Secure, No Fees",
   description:
     "Experience seamless money transfers with Payvel. Fast, secure, and no hidden fees.",
-  alternates: { canonical: "/send-money" },
+  alternates: { canonical: "/send-money-to-zambia" },
 };
 
 export default function HomePage() {

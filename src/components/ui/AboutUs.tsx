@@ -130,7 +130,7 @@ export default function AboutUs() {
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white">
               We're Building{' '}
-              <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-teal-600 bg-clip-text text-transparent">
                 Bridges
               </span>
             </h1>
@@ -171,7 +171,7 @@ export default function AboutUs() {
                 <Globe className="w-6 h-6 text-white" />
               </div>
               <h3 className="mt-4 font-bold text-gray-900 dark:text-white">Global Reach</h3>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">190+ countries supported</p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">18+ countries supported</p>
             </div>
           </div>
         </section>
@@ -202,7 +202,7 @@ export default function AboutUs() {
                   <div className="flex items-center gap-3 bg-white dark:bg-gray-800 px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700">
                     <Globe className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                     <div>
-                      <p className="text-2xl font-bold text-gray-900 dark:text-white">190+</p>
+                      <p className="text-2xl font-bold text-gray-900 dark:text-white">18+</p>
                       <p className="text-xs text-gray-600 dark:text-gray-400">Countries</p>
                     </div>
                   </div>
@@ -240,7 +240,7 @@ export default function AboutUs() {
           </div>
 
           <div className="mt-12 grid sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="opacity-0 animate-scale-in animate-delay-2 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 p-8 rounded-2xl border border-red-100 dark:border-red-800/50 text-left hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 group">
+            <div className="opacity-0 animate-scale-in animate-delay-2 bg-gradient-to-br from-green-50 to-orange-50 dark:from-green-900/20 dark:to-yellow-900/20 p-8 rounded-2xl border border-green-100 dark:border-green-800/50 text-left hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-14 h-14 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   🇦🇺
@@ -251,7 +251,7 @@ export default function AboutUs() {
                 Payvel PTY LTD is a registered entity based in Australia and is regulated by the Australian Transaction 
                 Reports and Analysis Centre (AUSTRAC). This ensures our operations meet the highest standards of financial oversight.
               </p>
-              <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-red-600 dark:text-red-400">
+              <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-green-600 dark:text-green-400">
                 <Shield className="w-4 h-4" />
                 AUSTRAC Regulated
               </div>
@@ -283,7 +283,7 @@ export default function AboutUs() {
 
         {/* Join Us Section */}
         <section className="container mx-auto px-6 py-16 lg:py-24">
-          <div className="opacity-0 animate-scale-in bg-gradient-to-br from-teal-500 via-blue-500 to-purple-600 rounded-2xl p-8 md:p-16 text-center relative overflow-hidden">
+          <div className="opacity-0 animate-scale-in bg-gradient-to-br from-teal-500 via-teal-500 to-teal-600 rounded-2xl p-8 md:p-16 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-black/20"></div>
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-extrabold text-white">Join Our Mission</h2>
