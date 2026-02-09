@@ -20,6 +20,124 @@ export default function Calculator({
   const [toDropdownOpen, setToDropdownOpen] = useState(false);
   const [fromSearch, setFromSearch] = useState('');
   const [toSearch, setToSearch] = useState('');
+  const [exchangeRates, setExchangeRates] = useState<Record<string, Record<string, number>>>({});
+  const [isLoadingRates, setIsLoadingRates] = useState(true);
+  const [currentRate, setCurrentRate] = useState<number | null>(null);
+
+  // Fixer.io API Key
+  const FIXER_API_KEY = '64e5f72a3da85c491d9375360071650b';
+  const FIXER_API_URL = `https://data.fixer.io/api/latest`;
+
+  // Minimal fallback rates (only used if API completely fails)
+  const minimalFallbackRates: Record<string, Record<string, number>> = {
+    AUD: { 
+      XOF: 1,
+      BWP: 1,
+      XAF: 1,
+      CDF: 1,
+      KES: 1,
+      MWK: 1,
+      NGN: 1,
+      RWF: 1,
+      ZAR: 1,
+      TZS: 1,
+      UGX: 1,
+      ZMW: 1,
+    },
+    USD: { 
+      XOF: 1, 
+      BWP: 1, 
+      XAF: 1, 
+      CDF: 1, 
+      KES: 1, 
+      MWK: 1, 
+      NGN: 1, 
+      RWF: 1, 
+      ZAR: 1, 
+      TZS: 1, 
+      UGX: 1, 
+      ZMW: 1,
+    },
+    CAD: { 
+      XOF: 1, 
+      BWP: 1, 
+      XAF: 1, 
+      CDF: 1, 
+      KES: 1, 
+      MWK: 1, 
+      NGN: 1, 
+      RWF: 1, 
+      ZAR: 1, 
+      TZS: 1, 
+      UGX: 1, 
+      ZMW: 1,
+    },
+  };
+
+  // Get unique receiving currencies
+  const uniqueReceivingCurrencies = ['XOF', 'BWP', 'XAF', 'CDF', 'KES', 'MWK', 'NGN', 'RWF', 'ZAR', 'TZS', 'UGX', 'ZMW'];
+  const sendingCurrenciesList = ['AUD', 'USD', 'CAD'];
+
+  // Fetch exchange rates from Fixer.io
+  useEffect(() => {
+    const fetchExchangeRates = async () => {
+      setIsLoadingRates(true);
+      try {
+        // Fetch rates with EUR as base (free tier limitation)
+        const symbols = [...uniqueReceivingCurrencies, ...sendingCurrenciesList].join(',');
+        const response = await fetch(
+          `${FIXER_API_URL}?access_key=${FIXER_API_KEY}&base=EUR&symbols=${symbols}`
+        );
+        
+        const data = await response.json();
+        
+        if (data.success && data.rates) {
+          const eurRates = data.rates;
+          
+          // Calculate cross-rates for each sending currency
+          const calculatedRates: Record<string, Record<string, number>> = {};
+          
+          sendingCurrenciesList.forEach((fromCurr) => {
+            calculatedRates[fromCurr] = {};
+            
+            // Check if sending currency is available in API response
+            if (eurRates[fromCurr]) {
+              const fromCurrToEur = 1 / eurRates[fromCurr]; // Convert EUR to sending currency
+              
+              uniqueReceivingCurrencies.forEach((toCurr) => {
+                if (eurRates[toCurr]) {
+                  // Convert: 1 FROM_CURR = (1/EUR_TO_FROM) * EUR_TO_TO = TO_CURR
+                  calculatedRates[fromCurr][toCurr] = eurRates[toCurr] * fromCurrToEur;
+                } else {
+                  // If currency not available, show error state (rate = 0)
+                  calculatedRates[fromCurr][toCurr] = 0;
+                }
+              });
+            } else {
+              // If sending currency not available, set all to 0
+              uniqueReceivingCurrencies.forEach((toCurr) => {
+                calculatedRates[fromCurr][toCurr] = 0;
+              });
+            }
+          });
+          
+          setExchangeRates(calculatedRates);
+        } else {
+          // Only use minimal fallback if API completely fails
+          console.error('Fixer.io API returned error:', data.error || 'Unknown error');
+          setExchangeRates(minimalFallbackRates);
+        }
+      } catch (error) {
+        console.error('Error fetching exchange rates:', error);
+        // Only use minimal fallback on network error
+        setExchangeRates(minimalFallbackRates);
+      } finally {
+        setIsLoadingRates(false);
+      }
+    };
+
+    fetchExchangeRates();
+  }, []);
 
   // Update toCurrency and toCountry when defaults change
   useEffect(() => {
@@ -27,51 +145,14 @@ export default function Calculator({
     setToCountry(defaultToCountry);
   }, [defaultToCurrency, defaultToCountry]);
 
-  // ✅ Dynamic Exchange Rate Table (sending countries to receiving countries)
-  const exchangeRates: Record<string, Record<string, number>> = {
-    AUD: { 
-      XOF: 380, // Benin, Burkina Faso, Cote d'Ivoire, Mali, Senegal, Togo (West African CFA franc)
-      BWP: 8.5, // Botswana
-      XAF: 380, // Cameroon, Gabon, Republic of Congo (Central African CFA franc)
-      CDF: 1850, // DR Congo
-      KES: 85, // Kenya
-      MWK: 1100, // Malawi
-      NGN: 1140, // Nigeria
-      RWF: 850, // Rwanda
-      ZAR: 11.5, // South Africa
-      TZS: 1650, // Tanzania
-      UGX: 2450, // Uganda
-      ZMW: 16.5, // Zambia
-    },
-    USD: { 
-      XOF: 585, 
-      BWP: 13.2, 
-      XAF: 585, 
-      CDF: 2850, 
-      KES: 131, 
-      MWK: 1700, 
-      NGN: 1760, 
-      RWF: 1310, 
-      ZAR: 18, 
-      TZS: 2550, 
-      UGX: 3780, 
-      ZMW: 25.5,
-    },
-    CAD: { 
-      XOF: 430, 
-      BWP: 9.7, 
-      XAF: 430, 
-      CDF: 2100, 
-      KES: 96, 
-      MWK: 1250, 
-      NGN: 1290, 
-      RWF: 965, 
-      ZAR: 13.2, 
-      TZS: 1875, 
-      UGX: 2780, 
-      ZMW: 18.7,
-    },
-  };
+  // Update current rate when currencies change
+  useEffect(() => {
+    if (exchangeRates[fromCurrency]?.[toCurrency] && exchangeRates[fromCurrency][toCurrency] > 0) {
+      setCurrentRate(exchangeRates[fromCurrency][toCurrency]);
+    } else {
+      setCurrentRate(null);
+    }
+  }, [fromCurrency, toCurrency, exchangeRates]);
 
   // ✅ Sending countries
   const sendingCurrencies = [
@@ -115,13 +196,15 @@ export default function Calculator({
 
   // ✅ Update conversion
   useEffect(() => {
-    const rate = exchangeRates[fromCurrency]?.[toCurrency] || 1;
-    if (!isNaN(Number(sendAmount)) && sendAmount !== '') {
-      setReceiveAmount((Number(sendAmount) * rate).toFixed(2));
+    if (!isNaN(Number(sendAmount)) && sendAmount !== '' && currentRate && currentRate > 0) {
+      setReceiveAmount((Number(sendAmount) * currentRate).toFixed(2));
+    } else if (!isNaN(Number(sendAmount)) && sendAmount !== '') {
+      // If rate not available, show 0
+      setReceiveAmount('0');
     } else {
       setReceiveAmount('0');
     }
-  }, [sendAmount, fromCurrency, toCurrency]);
+  }, [sendAmount, fromCurrency, toCurrency, currentRate]);
 
   const handleSendAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -295,7 +378,13 @@ export default function Calculator({
       <div className="flex justify-between items-center text-gray-700 dark:text-gray-300 mb-4">
         <span>Exchange Rate</span>
         <span className="font-semibold">
-          1 {fromCurrency} ≈ {exchangeRates[fromCurrency]?.[toCurrency] || 1} {toCurrency}
+          {isLoadingRates ? (
+            'Loading...'
+          ) : currentRate && currentRate > 0 ? (
+            `1 ${fromCurrency} ≈ ${currentRate.toFixed(2)} ${toCurrency}`
+          ) : (
+            'Rate unavailable'
+          )}
         </span>
       </div>
 
