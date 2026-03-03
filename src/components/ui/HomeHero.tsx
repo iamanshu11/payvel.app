@@ -174,7 +174,7 @@ export default function HomeHero() {
               Send money from Australia, US and Canada, to Africa with love. Fast, secure, and low-cost transfers right from your phone. Because family is everything.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
-              <a href="/send-money" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
+              <a href="/send-money-to-nigeria" className="px-8 py-4 bg-teal-500 text-white rounded-full font-semibold text-lg hover:bg-teal-600 transition-all shadow-lg hover:shadow-2xl hover:scale-105">
                 Send Money
               </a>
             </div>

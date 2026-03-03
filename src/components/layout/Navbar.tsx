@@ -278,7 +278,7 @@ export default function Header() {
               Contact Sales
             </Link>
             <a
-              href="/send-money"
+              href="/send-money-to-nigeria"
               target="_blank"
               rel="noopener noreferrer"
               className="group px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
@@ -596,7 +596,7 @@ export default function Header() {
                 Contact Sales
               </Link>
               <a
-                href="/send-money"
+                href="/send-money-to-nigeria"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full px-4 py-3 text-center rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transition-all"
