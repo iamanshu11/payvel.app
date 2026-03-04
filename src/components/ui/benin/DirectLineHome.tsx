@@ -55,7 +55,7 @@ export default function DirectLineHome() {
             Closer to Home
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Send fast, low-cost transfers to family and friends across Africa.
+            Send fast, low-cost transfers to family and friends across our network.
           </p>
         </div>
 

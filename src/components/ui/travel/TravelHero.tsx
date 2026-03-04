@@ -83,52 +83,51 @@ const TravelHero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Hero Content */}
           <div className="space-y-8 animate-fade-in">
-  <div className="inline-block">
-    <div className="flex items-center gap-2 bg-gray-100 dark:bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-300 dark:border-white/20">
-      <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
-      <span className="text-gray-800 dark:text-white text-sm font-medium">
-        All-in-One Travel Platform
-      </span>
-    </div>
-  </div>
+            <div className="inline-block">
+              <div className="flex items-center gap-2 bg-gray-100 dark:bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-300 dark:border-white/20">
+                <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-gray-800 dark:text-white text-sm font-medium">
+                  All-in-One Travel Platform
+                </span>
+              </div>
+            </div>
 
-  <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-    Your Journey,{" "}
-    <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
-      Simplified
-    </span>
-    : Send, Book, Go.
-  </h1>
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+              Your Journey,{" "}
+              <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
+                Simplified
+              </span>
+              : Send, Book, Go.
+            </h1>
 
-  <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-    Your entire trip, simplified. Send money to any destination, book your
-    flight and hotel—all in one secure app.
-  </p>
+            <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+              Your entire trip, simplified. Send money to any destination, book
+              your flight and hotel—all in one secure app.
+            </p>
 
-  <div className="flex flex-wrap gap-4 pt-4">
-    <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-      <div className="w-5 h-5 bg-green-100 dark:bg-green-500/20 rounded-full flex items-center justify-center">
-        <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full"></div>
-      </div>
-      <span className="text-sm">Instant Transfers</span>
-    </div>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                <div className="w-5 h-5 bg-green-100 dark:bg-green-500/20 rounded-full flex items-center justify-center">
+                  <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full"></div>
+                </div>
+                <span className="text-sm">Instant Transfers</span>
+              </div>
 
-    <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-      <div className="w-5 h-5 bg-blue-100 dark:bg-blue-500/20 rounded-full flex items-center justify-center">
-        <div className="w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full"></div>
-      </div>
-      <span className="text-sm">Best Price Guarantee</span>
-    </div>
+              <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                <div className="w-5 h-5 bg-blue-100 dark:bg-blue-500/20 rounded-full flex items-center justify-center">
+                  <div className="w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full"></div>
+                </div>
+                <span className="text-sm">Best Price Guarantee</span>
+              </div>
 
-    <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-      <div className="w-5 h-5 bg-purple-100 dark:bg-purple-500/20 rounded-full flex items-center justify-center">
-        <div className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full"></div>
-      </div>
-      <span className="text-sm">24/7 Support</span>
-    </div>
-  </div>
-</div>
-
+              <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                <div className="w-5 h-5 bg-purple-100 dark:bg-purple-500/20 rounded-full flex items-center justify-center">
+                  <div className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full"></div>
+                </div>
+                <span className="text-sm">24/7 Support</span>
+              </div>
+            </div>
+          </div>
 
           {/* Interactive Widget */}
           <div className="relative">
@@ -280,11 +279,11 @@ const TravelHero: React.FC = () => {
                   </div>
 
                   <a
-    href="/download-app"
-    className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
-  >
-    Search Flights
-  </a>
+                    href="/download-app"
+                    className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
+                  >
+                    Search Flights
+                  </a>
                 </div>
               )}
 
@@ -346,8 +345,8 @@ const TravelHero: React.FC = () => {
                     />
                   </div>
 
-                  <a href="/download-app"
-                    
+                  <a
+                    href="/download-app"
                     className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
                   >
                     Search Hotels
