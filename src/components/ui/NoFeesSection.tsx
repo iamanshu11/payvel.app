@@ -534,8 +534,7 @@ export default function NoFeesSection() {
               </div>
 
               <a
-                href="/send-money-to-nigeria"
-                target="_blank"
+                href="/download-app"
                 rel="noopener noreferrer"
                 className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
               >

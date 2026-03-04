@@ -55,6 +55,7 @@ export default function Footer() {
       links: [
         { name: "Privacy Policy", url: "/privacypolicy" },
         { name: "Terms of Service", url: "/terms-and-service" },
+        { name: "Customer Onboarding Policy", url: "/onboarding-policy" },
         { name: "Cookie Policy", url: "/cookiepolicy" },
         { name: "Refund Policy", url: "/refund-policy" },
         { name: "Compliance", url: "/compliance-security" },

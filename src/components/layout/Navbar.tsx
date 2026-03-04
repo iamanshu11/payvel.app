@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ComponentType } from "react";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import {
@@ -46,12 +46,12 @@ const countries = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mobileSubmenu, setMobileSubmenu] = useState(null);
+  const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showAllCountries, setShowAllCountries] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [dropdownTimeout, setDropdownTimeout] = useState(null);
+  const [dropdownTimeout, setDropdownTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleDropdownEnter = (dropdown) => {
+  const handleDropdownEnter = (dropdown: string) => {
     if (dropdownTimeout) {
       clearTimeout(dropdownTimeout);
     }
@@ -76,7 +76,7 @@ export default function Header() {
     setDropdownTimeout(timeout);
   };
 
-  const getLinkClass = (path) =>
+  const getLinkClass = (path: string) =>
     pathname === path
       ? "text-teal-500 font-bold"
       : "hover:text-teal-400 transition-colors duration-200";
@@ -85,7 +85,7 @@ export default function Header() {
     country.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const CountriesDropdown = ({ isActive }) => (
+  const CountriesDropdown = ({ isActive }: { isActive: boolean }) => (
     <div
       className="relative"
       onMouseEnter={() => handleDropdownEnter("Send to")}
@@ -153,7 +153,15 @@ export default function Header() {
     </div>
   );
 
-  const DropdownMenu = ({ title, items, isActive }) => (
+  const DropdownMenu = ({
+    title,
+    items,
+    isActive,
+  }: {
+    title: string;
+    items: Array<{ name: string; desc: string; icon: ComponentType<{ size?: number; className?: string }> }>;
+    isActive: boolean;
+  }) => (
     <div
       className="relative"
       onMouseEnter={() => handleDropdownEnter(title)}
@@ -207,7 +215,7 @@ export default function Header() {
     </div>
   );
 
-  const handleMobileMenuClick = (menu) => {
+  const handleMobileMenuClick = (menu: string) => {
     setMobileSubmenu(menu);
   };
 
@@ -278,9 +286,7 @@ export default function Header() {
               Contact Sales
             </Link>
             <a
-              href="/send-money-to-nigeria"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/download-app"
               className="group px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
             >
               Send Money
@@ -596,9 +602,7 @@ export default function Header() {
                 Contact Sales
               </Link>
               <a
-                href="/send-money-to-nigeria"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/download-app"
                 className="block w-full px-4 py-3 text-center rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transition-all"
               >
                 Send Money
