@@ -38,6 +38,11 @@ export default function NoFeesSection() {
       TZS: 0,
       UGX: 0,
       ZMW: 0,
+      FJD: 0,
+      GHS: 0,
+      INR: 0,
+      LRD: 0,
+      SLL: 0,
     },
     USD: {
       XOF: 0,
@@ -52,6 +57,11 @@ export default function NoFeesSection() {
       TZS: 0,
       UGX: 0,
       ZMW: 0,
+      FJD: 0,
+      GHS: 0,
+      INR: 0,
+      LRD: 0,
+      SLL: 0,
     },
     CAD: {
       XOF: 0,
@@ -66,10 +76,15 @@ export default function NoFeesSection() {
       TZS: 0,
       UGX: 0,
       ZMW: 0,
+      FJD: 0,
+      GHS: 0,
+      INR: 0,
+      LRD: 0,
+      SLL: 0,
     },
   };
 
-  // Get unique receiving currencies
+  // Get unique receiving currencies (includes commented-out countries so rates work when enabled)
   const uniqueReceivingCurrencies = [
     "XOF",
     "BWP",
@@ -83,6 +98,11 @@ export default function NoFeesSection() {
     "TZS",
     "UGX",
     "ZMW",
+    "FJD",
+    "GHS",
+    "INR",
+    "LRD",
+    "SLL",
   ];
   const sendingCurrenciesList = ["AUD", "USD", "CAD"];
 
@@ -186,13 +206,13 @@ export default function NoFeesSection() {
       name: "West African CFA Franc",
       country: "Benin",
     },
-    { code: "BWP", flag: "bw", name: "Botswana Pula", country: "Botswana" },
-    {
-      code: "XOF",
-      flag: "bf",
-      name: "West African CFA Franc",
-      country: "Burkina Faso",
-    },
+    // { code: "BWP", flag: "bw", name: "Botswana Pula", country: "Botswana" },
+    // {
+    //   code: "XOF",
+    //   flag: "bf",
+    //   name: "West African CFA Franc",
+    //   country: "Burkina Faso",
+    // },
     {
       code: "XAF",
       flag: "cm",
@@ -205,28 +225,33 @@ export default function NoFeesSection() {
       name: "West African CFA Franc",
       country: "Cote d'Ivoire",
     },
-    { code: "CDF", flag: "cd", name: "Congolese Franc", country: "DR Congo" },
-    {
-      code: "XAF",
-      flag: "ga",
-      name: "Central African CFA Franc",
-      country: "Gabon",
-    },
+    { code: "FJD", flag: "fj", name: "Fijian Dollar", country: "Fiji" },
+    { code: "GHS", flag: "gh", name: "Ghanaian Cedi", country: "Ghana" },
+    { code: "INR", flag: "in", name: "Indian Rupee", country: "India" },
+    { code: "LRD", flag: "lr", name: "Liberian Dollar", country: "Liberia" },
+    
+    // { code: "CDF", flag: "cd", name: "Congolese Franc", country: "DR Congo" },
+    // {
+    //   code: "XAF",
+    //   flag: "ga",
+    //   name: "Central African CFA Franc",
+    //   country: "Gabon",
+    // },
     { code: "KES", flag: "ke", name: "Kenyan Shilling", country: "Kenya" },
-    { code: "MWK", flag: "mw", name: "Malawian Kwacha", country: "Malawi" },
-    {
-      code: "XOF",
-      flag: "ml",
-      name: "West African CFA Franc",
-      country: "Mali",
-    },
+    // { code: "MWK", flag: "mw", name: "Malawian Kwacha", country: "Malawi" },
+    // {
+    //   code: "XOF",
+    //   flag: "ml",
+    //   name: "West African CFA Franc",
+    //   country: "Mali",
+    // },
     { code: "NGN", flag: "ng", name: "Nigerian Naira", country: "Nigeria" },
-    {
-      code: "XAF",
-      flag: "cg",
-      name: "Central African CFA Franc",
-      country: "Republic of Congo",
-    },
+    // {
+    //   code: "XAF",
+    //   flag: "cg",
+    //   name: "Central African CFA Franc",
+    //   country: "Republic of Congo",
+    // },
     { code: "RWF", flag: "rw", name: "Rwandan Franc", country: "Rwanda" },
     {
       code: "XOF",
@@ -234,6 +259,7 @@ export default function NoFeesSection() {
       name: "West African CFA Franc",
       country: "Senegal",
     },
+    { code: "SLL", flag: "sl", name: "Sierra Leonean Leone", country: "Sierra Leone" },
     {
       code: "ZAR",
       flag: "za",
@@ -246,12 +272,12 @@ export default function NoFeesSection() {
       name: "Tanzanian Shilling",
       country: "Tanzania",
     },
-    {
-      code: "XOF",
-      flag: "tg",
-      name: "West African CFA Franc",
-      country: "Togo",
-    },
+    // {
+    //   code: "XOF",
+    //   flag: "tg",
+    //   name: "West African CFA Franc",
+    //   country: "Togo",
+    // },
     { code: "UGX", flag: "ug", name: "Ugandan Shilling", country: "Uganda" },
     { code: "ZMW", flag: "zm", name: "Zambian Kwacha", country: "Zambia" },
   ];

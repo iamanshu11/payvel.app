@@ -43,6 +43,11 @@ export default function Calculator({
       TZS: 1,
       UGX: 1,
       ZMW: 1,
+      FJD: 1,
+      GHS: 1,
+      INR: 1,
+      LRD: 1,
+      SLL: 1,
     },
     USD: { 
       XOF: 1, 
@@ -57,6 +62,11 @@ export default function Calculator({
       TZS: 1, 
       UGX: 1, 
       ZMW: 1,
+      FJD: 1,
+      GHS: 1,
+      INR: 1,
+      LRD: 1,
+      SLL: 1,
     },
     CAD: { 
       XOF: 1, 
@@ -71,11 +81,16 @@ export default function Calculator({
       TZS: 1, 
       UGX: 1, 
       ZMW: 1,
+      FJD: 1,
+      GHS: 1,
+      INR: 1,
+      LRD: 1,
+      SLL: 1,
     },
   };
 
-  // Get unique receiving currencies
-  const uniqueReceivingCurrencies = ['XOF', 'BWP', 'XAF', 'CDF', 'KES', 'MWK', 'NGN', 'RWF', 'ZAR', 'TZS', 'UGX', 'ZMW'];
+  // Get unique receiving currencies (includes commented-out countries so rates work when enabled)
+  const uniqueReceivingCurrencies = ['XOF', 'BWP', 'XAF', 'CDF', 'KES', 'MWK', 'NGN', 'RWF', 'ZAR', 'TZS', 'UGX', 'ZMW', 'FJD', 'GHS', 'INR', 'LRD', 'SLL'];
   const sendingCurrenciesList = ['AUD', 'USD', 'CAD'];
 
   // Fetch exchange rates from Fixer.io
@@ -164,22 +179,27 @@ export default function Calculator({
   // ✅ Receiving Countries (TO)
   const receivingCurrencies = [
     { code: 'XOF', flag: 'bj', name: 'West African CFA Franc', country: 'Benin' },
-    { code: 'BWP', flag: 'bw', name: 'Botswana Pula', country: 'Botswana' },
-    { code: 'XOF', flag: 'bf', name: 'West African CFA Franc', country: 'Burkina Faso' },
+    // { code: 'BWP', flag: 'bw', name: 'Botswana Pula', country: 'Botswana' },
+    // { code: 'XOF', flag: 'bf', name: 'West African CFA Franc', country: 'Burkina Faso' },
     { code: 'XAF', flag: 'cm', name: 'Central African CFA Franc', country: 'Cameroon' },
     { code: 'XOF', flag: 'ci', name: 'West African CFA Franc', country: "Cote d'Ivoire" },
-    { code: 'CDF', flag: 'cd', name: 'Congolese Franc', country: 'DR Congo' },
-    { code: 'XAF', flag: 'ga', name: 'Central African CFA Franc', country: 'Gabon' },
+    { code: 'FJD', flag: 'fj', name: 'Fijian Dollar', country: 'Fiji' },
+    { code: 'GHS', flag: 'gh', name: 'Ghanaian Cedi', country: 'Ghana' },
+    { code: 'INR', flag: 'in', name: 'Indian Rupee', country: 'India' },
+    { code: 'LRD', flag: 'lr', name: 'Liberian Dollar', country: 'Liberia' },
+    // { code: 'CDF', flag: 'cd', name: 'Congolese Franc', country: 'DR Congo' },
+    // { code: 'XAF', flag: 'ga', name: 'Central African CFA Franc', country: 'Gabon' },
     { code: 'KES', flag: 'ke', name: 'Kenyan Shilling', country: 'Kenya' },
-    { code: 'MWK', flag: 'mw', name: 'Malawian Kwacha', country: 'Malawi' },
+    // { code: 'MWK', flag: 'mw', name: 'Malawian Kwacha', country: 'Malawi' },
     { code: 'XOF', flag: 'ml', name: 'West African CFA Franc', country: 'Mali' },
     { code: 'NGN', flag: 'ng', name: 'Nigerian Naira', country: 'Nigeria' },
-    { code: 'XAF', flag: 'cg', name: 'Central African CFA Franc', country: 'Republic of Congo' },
+    // { code: 'XAF', flag: 'cg', name: 'Central African CFA Franc', country: 'Republic of Congo' },
     { code: 'RWF', flag: 'rw', name: 'Rwandan Franc', country: 'Rwanda' },
     { code: 'XOF', flag: 'sn', name: 'West African CFA Franc', country: 'Senegal' },
+    { code: 'SLL', flag: 'sl', name: 'Sierra Leonean Leone', country: 'Sierra Leone' },
     { code: 'ZAR', flag: 'za', name: 'South African Rand', country: 'South Africa' },
     { code: 'TZS', flag: 'tz', name: 'Tanzanian Shilling', country: 'Tanzania' },
-    { code: 'XOF', flag: 'tg', name: 'West African CFA Franc', country: 'Togo' },
+    // { code: 'XOF', flag: 'tg', name: 'West African CFA Franc', country: 'Togo' },
     { code: 'UGX', flag: 'ug', name: 'Ugandan Shilling', country: 'Uganda' },
     { code: 'ZMW', flag: 'zm', name: 'Zambian Kwacha', country: 'Zambia' },
   ];
@@ -393,9 +413,13 @@ export default function Calculator({
         <span className="font-bold text-teal-500 text-lg">$0.00</span>
       </div>
 
-      <button className="w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105">
-        Send Money Now
-      </button>
+      <a
+                href="/download-app"
+                rel="noopener noreferrer"
+                className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
+              >
+                Send Money Now
+              </a>
     </div>
   );
 }

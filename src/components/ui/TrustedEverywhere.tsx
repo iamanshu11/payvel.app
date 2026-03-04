@@ -5,22 +5,27 @@ import React from 'react';
 export default function TrustedEverywhere() {
    const africanFlags = [
         'https://flagcdn.com/w160/bj.png', // Benin
-        'https://flagcdn.com/w160/bw.png', // Botswana
-        'https://flagcdn.com/w160/bf.png', // Burkina Faso
+        // 'https://flagcdn.com/w160/bw.png', // Botswana
+        // 'https://flagcdn.com/w160/bf.png', // Burkina Faso
         'https://flagcdn.com/w160/cm.png', // Cameroon
         'https://flagcdn.com/w160/ci.png', // Côte d'Ivoire
-        'https://flagcdn.com/w160/cd.png', // DR Congo
-        'https://flagcdn.com/w160/ga.png', // Gabon
+        'https://flagcdn.com/w160/fj.png', // Fiji
+        'https://flagcdn.com/w160/gh.png', // Ghana
+        'https://flagcdn.com/w160/in.png', // India
+        'https://flagcdn.com/w160/lr.png', // Liberia
+        // 'https://flagcdn.com/w160/cd.png', // DR Congo
+        // 'https://flagcdn.com/w160/ga.png', // Gabon
         'https://flagcdn.com/w160/ke.png', // Kenya
-        'https://flagcdn.com/w160/mw.png', // Malawi
-        'https://flagcdn.com/w160/ml.png', // Mali
+        // 'https://flagcdn.com/w160/mw.png', // Malawi
+        // 'https://flagcdn.com/w160/ml.png', // Mali
         'https://flagcdn.com/w160/ng.png', // Nigeria
-        'https://flagcdn.com/w160/cg.png', // Republic of Congo
+        // 'https://flagcdn.com/w160/cg.png', // Republic of Congo
         'https://flagcdn.com/w160/rw.png', // Rwanda
         'https://flagcdn.com/w160/sn.png', // Senegal
+        'https://flagcdn.com/w160/sl.png', // Sierra Leone
         'https://flagcdn.com/w160/za.png', // South Africa
         'https://flagcdn.com/w160/tz.png', // Tanzania
-        'https://flagcdn.com/w160/tg.png', // Togo
+        // 'https://flagcdn.com/w160/tg.png', // Togo
         'https://flagcdn.com/w160/ug.png', // Uganda
         'https://flagcdn.com/w160/zm.png', // Zambia
     ];
