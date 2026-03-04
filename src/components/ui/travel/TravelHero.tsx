@@ -279,12 +279,12 @@ const TravelHero: React.FC = () => {
                     )}
                   </div>
 
-                  <button
-                    onClick={handleSearch}
-                    className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold py-4 rounded-xl hover:shadow-lg hover:shadow-teal-500/50 dark:hover:shadow-teal-500/50 transition-all duration-300 transform hover:scale-105"
-                  >
-                    Search Flights
-                  </button>
+                  <a
+    href="/download-app"
+    className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
+  >
+    Search Flights
+  </a>
                 </div>
               )}
 
@@ -346,12 +346,12 @@ const TravelHero: React.FC = () => {
                     />
                   </div>
 
-                  <button
-                    onClick={handleSearch}
-                    className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold py-4 rounded-xl hover:shadow-lg hover:shadow-teal-500/50 dark:hover:shadow-teal-500/50 transition-all duration-300 transform hover:scale-105"
+                  <a href="/download-app"
+                    
+                    className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
                   >
                     Search Hotels
-                  </button>
+                  </a>
                 </div>
               )}
             </div>
