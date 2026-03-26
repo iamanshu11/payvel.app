@@ -264,7 +264,7 @@ const HowItWorks: React.FC = () => {
         <div className="relative inline-block group">
           {/* Animated Glow Effect */}
           <a
-            href="/download-app"
+            href="https://staging.payvelremit.com/sign-up"
             className="relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-teal-500 to-[#00B6DE] text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-300 transform group-hover:scale-105"
           >
             <span className="relative z-10">Get Started Now</span>

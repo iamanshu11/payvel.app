@@ -414,7 +414,7 @@ export default function Calculator({
       </div>
 
       <a
-                href="/download-app"
+                href="https://staging.payvelremit.com/sign-up"
                 rel="noopener noreferrer"
                 className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
               >

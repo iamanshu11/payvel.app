@@ -292,7 +292,7 @@ export default function Header() {
               Contact Sales
             </Link>
             <a
-              href="/download-app"
+              href="https://staging.payvelremit.com/sign-up"
               className="group px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
             >
               Send Money
@@ -608,7 +608,7 @@ export default function Header() {
                 Contact Sales
               </Link>
               <a
-                href="/download-app"
+                href="https://staging.payvelremit.com/sign-up"
                 className="block w-full px-4 py-3 text-center rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transition-all"
               >
                 Send Money
