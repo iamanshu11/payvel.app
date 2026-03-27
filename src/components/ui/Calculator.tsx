@@ -91,7 +91,10 @@ export default function Calculator({
 
   // Get unique receiving currencies (includes commented-out countries so rates work when enabled)
   const uniqueReceivingCurrencies = ['XOF', 'BWP', 'XAF', 'CDF', 'KES', 'MWK', 'NGN', 'RWF', 'ZAR', 'TZS', 'UGX', 'ZMW', 'FJD', 'GHS', 'INR', 'LRD', 'SLL'];
-  const sendingCurrenciesList = ['AUD', 'USD', 'CAD'];
+  const sendingCurrenciesList = ['AUD', 
+    // 'USD', 
+    // 'CAD'
+  ];
 
   // Fetch exchange rates from Fixer.io
   useEffect(() => {
@@ -172,8 +175,8 @@ export default function Calculator({
   // ✅ Sending countries
   const sendingCurrencies = [
     { code: 'AUD', flag: 'au', name: 'Australian Dollar', country: 'Australia' },
-    { code: 'USD', flag: 'us', name: 'US Dollar', country: 'United States' },
-    { code: 'CAD', flag: 'ca', name: 'Canadian Dollar', country: 'Canada' },
+    // { code: 'USD', flag: 'us', name: 'US Dollar', country: 'United States' },
+    // { code: 'CAD', flag: 'ca', name: 'Canadian Dollar', country: 'Canada' },
   ];
 
   // ✅ Receiving Countries (TO)
@@ -414,8 +417,7 @@ export default function Calculator({
       </div>
 
       <a
-                href="https://staging.payvelremit.com/sign-up"
-                rel="noopener noreferrer"
+                href="https://staging.payvelremit.com/sign-up" rel="noopener noreferrer" target="_blank"
                 className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
               >
                 Send Money Now

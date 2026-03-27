@@ -76,7 +76,7 @@ export default function SendApp({ backgroundImage }: SendAppProps) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {/* App Store Button */}
             <a
-              href="#"
+              href="/download-app"
               className="inline-flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto"
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -90,7 +90,7 @@ export default function SendApp({ backgroundImage }: SendAppProps) {
 
             {/* Google Play Button */}
             <a
-              href="#"
+              href="/download-app"
               className="inline-flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto"
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">

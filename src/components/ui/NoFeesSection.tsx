@@ -104,7 +104,11 @@ export default function NoFeesSection() {
     "LRD",
     "SLL",
   ];
-  const sendingCurrenciesList = ["AUD", "USD", "CAD"];
+  const sendingCurrenciesList = [
+    "AUD",
+    // "USD",
+    // "CAD",
+  ];
 
   // Fetch exchange rates from Fixer.io
   useEffect(() => {
@@ -194,8 +198,8 @@ export default function NoFeesSection() {
       name: "Australian Dollar",
       country: "Australia",
     },
-    { code: "USD", flag: "us", name: "US Dollar", country: "United States" },
-    { code: "CAD", flag: "ca", name: "Canadian Dollar", country: "Canada" },
+    // { code: "USD", flag: "us", name: "US Dollar", country: "United States" },
+    // { code: "CAD", flag: "ca", name: "Canadian Dollar", country: "Canada" },
   ];
 
   // ✅ Receiving Countries (TO)
@@ -560,8 +564,7 @@ export default function NoFeesSection() {
               </div>
 
               <a
-                href="https://staging.payvelremit.com/sign-up"
-                rel="noopener noreferrer"
+                href="https://staging.payvelremit.com/sign-up" rel="noopener noreferrer" target="_blank"
                 className="block w-full py-4 bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:scale-105 text-center"
               >
                 Send Money Now

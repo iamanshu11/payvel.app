@@ -199,7 +199,7 @@ const DownloadApp: React.FC = () => {
 
                 {/* Button */}
                 <div className={`mt-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '800ms' }}>
-                    <button
+                    <a href='https://staging.payvelremit.com' rel="noopener noreferrer" target="_blank"
                       type="submit"
                       className="group relative w-full lg:w-auto flex items-center justify-center max-w-lg px-8 py-4 bg-gradient-to-r from-[#00B6DE] to-[#0066CC] text-white rounded-xl font-bold text-xl shadow-lg shadow-[#00B6DE]/30 hover:shadow-2xl hover:shadow-[#00B6DE]/50 duration-500 transform hover:-translate-y-1 overflow-hidden"
                     >
@@ -211,7 +211,7 @@ const DownloadApp: React.FC = () => {
                         <div className="absolute inset-0 bg-gradient-to-r from-[#0066CC] to-[#00B6DE] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                         {/* Shimmer Effect */}
                         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent z-30"></div>
-                    </button>
+                    </a>
                 </div>
             </div>
           </div>

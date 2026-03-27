@@ -80,7 +80,7 @@ export default function BudgetHome() {
             </div>
             <div className="flex items-center gap-2 mb-2">
               <div className="bg-white dark:bg-gray-800 rounded-lg px-2 py-2 flex items-center gap-1 text-xs">
-                🇺🇸 <span className="font-semibold">USD</span>
+                <img src="https://flagcdn.com/24x18/au.png" alt="AUD" className="w-4 h-3 object-cover rounded" /> <span className="font-semibold">AUD</span>
               </div>
               <input
                 type=""
@@ -93,7 +93,7 @@ export default function BudgetHome() {
             </div>
             <div className="flex items-center gap-2 mb-2">
               <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-2 py-2 flex items-center gap-1 text-xs">
-                🇦🇺 <span className="font-semibold">AUD</span>
+                <img src="https://flagcdn.com/24x18/ng.png" alt="NGN" className="w-4 h-3 object-cover rounded" /> <span className="font-semibold">NGN</span>
               </div>
               <input
                 type=""
@@ -206,12 +206,12 @@ export default function BudgetHome() {
             <div className="flex items-center gap-2 mb-2">
               <div className="flex-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-3 py-2 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span>🇺🇸</span>
-                  <span className="text-sm font-medium">USA</span>
+                  <span><img src="https://flagcdn.com/24x18/au.png" alt="AUD" className="w-4 h-3 object-cover rounded" /></span>
+                  <span className="text-sm font-medium">AUSTRALIA</span>
                 </div>
               </div>
               <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-3 py-2 text-sm font-semibold">
-                USD
+                AUD
               </div>
               <button className="text-blue-500">✏️</button>
             </div>
@@ -226,24 +226,24 @@ export default function BudgetHome() {
               <div className="flex items-center gap-2">
                 <div className="flex-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-3 py-2 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span>🇦🇺</span>
-                    <span className="text-sm font-medium">AUSTRALIA</span>
+                    <span><img src="https://flagcdn.com/24x18/ng.png" alt="AUD" className="w-4 h-3 object-cover rounded" /></span>
+                    <span className="text-sm font-medium">NIGERIA</span>
                   </div>
                 </div>
                 <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-3 py-2 text-sm font-semibold">
-                  AUD
+                  NGN
                 </div>
                 <button className="text-red-500">🗑️</button>
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-3 py-2 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span>🇯🇵</span>
-                    <span className="text-sm font-medium">JAPAN</span>
+                    <span><img src="https://flagcdn.com/24x18/ke.png" alt="KES" className="w-4 h-3 object-cover rounded" /></span>
+                    <span className="text-sm font-medium">KENYA</span>
                   </div>
                 </div>
                 <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-3 py-2 text-sm font-semibold">
-                  JPY
+                  KES
                 </div>
                 <button className="text-red-500">🗑️</button>
               </div>
@@ -260,14 +260,14 @@ export default function BudgetHome() {
             </label>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-xs">
-                <span>1 | USD</span>
+                <span>1 | AUD</span>
                 <span className="text-teal-500">⇄</span>
-                <span>1.54 | AUD</span>
+                <span>1.54 | NGN</span>
               </div>
               <div className="flex items-center gap-2 text-xs">
-                <span>1 | USD</span>
+                <span>1 | AUD</span>
                 <span className="text-teal-500">⇄</span>
-                <span>151.621 | JPY</span>
+                <span>151.621 | KES</span>
               </div>
             </div>
           </div>
@@ -282,10 +282,10 @@ export default function BudgetHome() {
             <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg p-3 mb-2">
               <div className="flex items-center gap-2 mb-2">
                 <div className="flex items-center gap-1 text-xs">
-                  <span>1 | USD</span>
+                  <span>1 | AUD</span>
                 </div>
                 <div className="flex items-center gap-1 text-xs">
-                  <span>1.60 | AUD</span>
+                  <span>1.60 | KES</span>
                 </div>
                 <button className="ml-auto text-blue-500 text-xs">✏️</button>
                 <button className="text-red-500 text-xs">🗑️</button>
